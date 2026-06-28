@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="MedRankGPT">
+  <path d="M11 7 H29 A6 6 0 0 1 35 13 V24 A6 6 0 0 1 29 30 H19 L12 35 V30 H11 A6 6 0 0 1 5 24 V13 A6 6 0 0 1 11 7 Z" fill="#0BA56A"/>
+  <path d="M20 25 V14 M14.7 19.3 L20 14 L25.3 19.3" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="30.4" cy="10.4" r="3.6" fill="#C7F559" stroke="#FFFFFF" stroke-width="1.4"/>
+</svg>
