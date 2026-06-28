@@ -32,3 +32,11 @@ def test_no_site_yields_unknown():
     ctx = _ctx(); ctx.doctor.site = None
     out = SiteAnalysisCollector(http=FakeHttp("")).collect(ctx)
     assert all(s.status == Status.unknown for s in out.signals)
+
+def test_unreachable_site_yields_unknown_not_crash():
+    class BoomHttp:
+        def get_text(self, url): raise ConnectionError("boom")
+    out = SiteAnalysisCollector(http=BoomHttp()).collect(_ctx())
+    assert len(out.signals) == 5
+    assert all(s.status == Status.unknown for s in out.signals)
+    assert "inacess" in out.signals[0].observacao.lower()

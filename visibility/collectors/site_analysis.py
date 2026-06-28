@@ -25,7 +25,12 @@ class SiteAnalysisCollector:
         site = ctx.doctor.site
         if not site:
             return CollectorOutput(signals=[self._unknown(i, l) for i, l in self._labels()])
-        html = self.http.get_text(site)
+        try:
+            html = self.http.get_text(site)
+        except Exception as exc:
+            reason = f"Site inacessível: {type(exc).__name__}."
+            return CollectorOutput(signals=[
+                self._unknown(i, l, reason, reason) for i, l in self._labels()])
         soup = BeautifulSoup(html, "html.parser")
         text = soup.get_text(" ", strip=True)
         data = extruct.extract(html, base_url=site, syntaxes=["json-ld", "microdata"])
@@ -104,7 +109,8 @@ class SiteAnalysisCollector:
                 ("pagina_procedimento", "Tem página por procedimento"),
                 ("conteudo_perguntas", "Conteúdo que responde perguntas reais")]
 
-    def _unknown(self, id_: str, label: str) -> SignalResult:
+    def _unknown(self, id_: str, label: str,
+                 resumo: str = "Médico sem site informado.",
+                 obs: str = "Sem site para analisar.") -> SignalResult:
         return SignalResult(id_, label, Status.unknown, False, 5, 0.0, "site_scrape",
-                            [{"fonte": "site", "resumo": "Médico sem site informado."}],
-                            "Sem site para analisar.")
+                            [{"fonte": "site", "resumo": resumo}], obs)
