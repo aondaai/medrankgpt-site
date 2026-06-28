@@ -1,0 +1,4 @@
+{"nome": "Dra. Fulana de Tal", "crm": "SP 123456", "rqe": "12345",
+ "especialidade_principal": "Dermatologia", "especialidades": ["Dermatologia"],
+ "procedimentos_foco": ["botox", "acne"], "cidade": "São Paulo", "uf": "SP",
+ "site": "https://drafulana.com.br"}
