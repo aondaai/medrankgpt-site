@@ -93,3 +93,32 @@ def test_supply_top_decil_profile():
     # top 10% = 1 médico (o de score 100), media_por_categoria do topo destaca-se
     assert d["top_decil"]["n"] >= 1
     assert d["top_decil"]["media_por_categoria"]["visibilidade_ia"] >= d["media_por_categoria"]["visibilidade_ia"]
+
+def test_demand_divergencia_ignora_concordancia_em_nenhum():
+    # ambos os motores não nomeiam médico (marketplace) -> CONCORDAM -> não diverge
+    res = [
+        _r("Dermatologia", "SP", "melhor_especialista", "chatgpt", "Busque no Doctoralia."),
+        _r("Dermatologia", "SP", "melhor_especialista", "gemini", "Busque no BoaConsulta."),
+    ]
+    agg = aggregate_demand(res)
+    assert agg.divergencia_motores_pct == 0.0
+
+def test_demand_divergencia_usa_moda_das_repeticoes():
+    # chatgpt: Ana (2x) e Bruno (1x) -> moda Ana; gemini: Ana (1x) -> concordam -> 0
+    res = [
+        _r("Dermatologia", "SP", "melhor_especialista", "chatgpt", "Dra. Ana Lima.", rep=1),
+        _r("Dermatologia", "SP", "melhor_especialista", "chatgpt", "Dra. Ana Lima.", rep=2),
+        _r("Dermatologia", "SP", "melhor_especialista", "chatgpt", "Dr. Bruno Souza.", rep=3),
+        _r("Dermatologia", "SP", "melhor_especialista", "gemini", "Dra. Ana Lima.", rep=1),
+    ]
+    agg = aggregate_demand(res)
+    assert agg.divergencia_motores_pct == 0.0
+
+def test_demand_divergencia_nomeia_vs_ninguem():
+    # chatgpt nomeia, gemini não -> divergem
+    res = [
+        _r("Dermatologia", "SP", "melhor_especialista", "chatgpt", "Dra. Ana Lima."),
+        _r("Dermatologia", "SP", "melhor_especialista", "gemini", "Busque no Doctoralia."),
+    ]
+    agg = aggregate_demand(res)
+    assert agg.divergencia_motores_pct == 1.0

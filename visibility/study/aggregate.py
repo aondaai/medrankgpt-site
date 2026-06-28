@@ -56,17 +56,25 @@ def aggregate_demand(responses: list[DemandResponse], top_n: int = 20) -> Demand
             "cfm_risco_pct": _safe_div(sum(1 for c in cs if c.cfm_risco), n),
         }
 
-    # divergência entre motores: por célula (esp,cidade,tipo,procedimento),
-    # olha o "top médico" (1º citado) de cada motor; diverge se há >1 médico distinto.
-    cells: dict[tuple, dict[str, str | None]] = defaultdict(dict)
+    # divergência entre motores: por célula (esp,cidade,tipo,procedimento), cada motor
+    # tem um "top médico" de consenso = a moda dos tops ao longo das repetições. Diverge
+    # se os motores discordam — incluindo "nomeia X" vs "não nomeia ninguém". Mas se TODOS
+    # os motores concordam (mesmo médico, OU todos sem médico), NÃO é divergência.
+    cell_engine_tops: dict[tuple, dict[str, list]] = defaultdict(lambda: defaultdict(list))
     for r, c in classifs:
         key = (r.especialidade, r.cidade, r.tipo, r.procedimento)
         top = c.medicos[0] if c.medicos else None
-        cells[key][r.engine] = top
-    multi = [d for d in cells.values() if len(d) >= 2]
-    divergentes = sum(1 for d in multi if len({v for v in d.values() if v}) > 1
-                      or any(v is None for v in d.values()))
-    divergencia = _safe_div(divergentes, len(multi))
+        cell_engine_tops[key][r.engine].append(top)
+    multi = 0
+    divergentes = 0
+    for eng_map in cell_engine_tops.values():
+        if len(eng_map) < 2:
+            continue
+        multi += 1
+        consenso = {eng: Counter(tops).most_common(1)[0][0] for eng, tops in eng_map.items()}
+        if len(set(consenso.values())) > 1:
+            divergentes += 1
+    divergencia = _safe_div(divergentes, multi)
 
     return DemandAggregate(
         total_respostas=total,
