@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Mecanismos de resposta por IA (AEO/GEO) — liberados para indexação/citação
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://medrankgpt.com.br/sitemap.xml
