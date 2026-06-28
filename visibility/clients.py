@@ -29,3 +29,17 @@ class SerpApiClient:
         r = self._client.get("https://serpapi.com/search.json", params=params)
         r.raise_for_status()
         return r.json()
+
+class PlacesClient(Protocol):
+    def text_search(self, query: str) -> dict: ...
+
+class GooglePlacesClient:
+    def __init__(self, api_key: str, timeout: float = 20.0):
+        self.api_key = api_key
+        self._client = httpx.Client(timeout=timeout)
+    def text_search(self, query: str) -> dict:
+        r = self._client.get(
+            "https://maps.googleapis.com/maps/api/place/textsearch/json",
+            params={"query": query, "key": self.api_key, "language": "pt-BR"})
+        r.raise_for_status()
+        return r.json()
