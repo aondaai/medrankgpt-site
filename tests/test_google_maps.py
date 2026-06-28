@@ -25,3 +25,12 @@ def test_fail_when_no_match():
     out = GoogleMapsCollector(places=FakePlaces({"results": [
         {"name": "Padaria do Zé", "place_id": "x"}]})).collect(_ctx())
     assert out.signals[0].status == Status.fail
+
+
+def test_search_error_degrades_to_unknown():
+    class BoomPlaces:
+        def text_search(self, query):
+            raise RuntimeError("500 Server Error")
+    out = GoogleMapsCollector(places=BoomPlaces()).collect(_ctx())
+    assert out.signals[0].id == "google_maps"
+    assert out.signals[0].status == Status.unknown

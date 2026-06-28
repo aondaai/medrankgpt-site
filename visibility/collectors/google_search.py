@@ -15,7 +15,15 @@ class GoogleSearchCollector:
 
     def collect(self, ctx: CollectorContext) -> CollectorOutput:
         query = f"{ctx.doctor.nome} {ctx.doctor.especialidade_principal}"
-        payload = self.search.search(query, location=ctx.regiao_busca)
+        try:
+            payload = self.search.search(query, location=ctx.regiao_busca)
+        except Exception as exc:
+            return CollectorOutput(signals=[SignalResult(
+                "google_marca", "Aparece no Google ao buscar o nome", Status.unknown,
+                False, 12.5, 0.0, "serp_scrape",
+                [{"fonte": "google_search", "query": query,
+                  "resumo": f"Busca indisponível: {type(exc).__name__}."}],
+                "Não foi possível consultar o Google.")])
         results = payload.get("organic_results", [])[:10]
         own = _domain(ctx.doctor.site) if ctx.doctor.site else None
         own_hit = bool(own) and any(_domain(r.get("link", "")) == own for r in results)
@@ -32,4 +40,4 @@ class GoogleSearchCollector:
             0.9, "serp_scrape",
             [{"fonte": "google_search", "query": query,
               "resumo": f"top10={len(results)}, dominio proprio={own_hit}",
-              "raw": top}], obs)])
+              "raw": {"resultados": top}}], obs)])

@@ -1,17 +1,10 @@
 from __future__ import annotations
-import unicodedata
 from urllib.parse import quote_plus
 from bs4 import BeautifulSoup
 from visibility.clients import HttpClient
 from visibility.collectors.base import CollectorContext, CollectorOutput, SignalResult
 from visibility.models import Status
-
-def _norm(s: str) -> str:
-    return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii").lower()
-
-def _tokens(name: str) -> set[str]:
-    drop = {"dr", "dra", "de", "da", "do", "dos", "das"}
-    return {t for t in _norm(name).replace(".", " ").split() if t and t not in drop}
+from visibility.names import tokens, same_person
 
 _PLATFORMS = [
     ("doctoralia", "Doctoralia", "https://www.doctoralia.com.br/pesquisa?q={q}"),
@@ -25,7 +18,7 @@ class MedicalPlatformsCollector:
         self.http = http
 
     def collect(self, ctx: CollectorContext) -> CollectorOutput:
-        wanted = _tokens(ctx.doctor.nome)
+        wanted = tokens(ctx.doctor.nome)
         signals = []
         for id_, label, tmpl in _PLATFORMS:
             url = tmpl.format(q=quote_plus(ctx.doctor.nome))
@@ -48,6 +41,6 @@ class MedicalPlatformsCollector:
             return None
         soup = BeautifulSoup(html, "html.parser")
         for a in soup.find_all("a"):
-            if wanted <= _tokens(a.get_text(" ")):
+            if same_person(wanted, tokens(a.get_text(" "))):
                 return a.get("href")
         return None

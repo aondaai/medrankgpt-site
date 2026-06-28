@@ -51,3 +51,20 @@ def test_extract_competitors_excludes_self():
     assert "Dr. João Silva" in comps
     assert "Dra. Ana" in comps
     assert all("Fulana" not in c for c in comps)
+
+
+def test_cited_does_not_fire_across_different_names():
+    from visibility.collectors.ai_engines import _cited
+    # 'Ana Silva' must not be considered cited just because 'Ana Costa' and
+    # 'Bruno Silva' each share one token with her.
+    assert _cited("Recomendo a Dra. Ana Costa e o Dr. Bruno Silva.",
+                  "Dra. Ana Silva") is False
+
+
+def test_extract_competitors_keeps_same_first_name_doctor():
+    from visibility.collectors.ai_engines import extract_competitors
+    # 'Dr. João Pedro Costa' shares only 'joao' with 'Dra. Maria João Silva'
+    # → different person → kept as a competitor.
+    comps = extract_competitors("Quem indica? O Dr. João Pedro Costa.",
+                                "Dra. Maria João Silva")
+    assert "Dr. João Pedro Costa" in comps

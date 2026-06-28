@@ -35,3 +35,27 @@ def test_fail_when_absent():
     # To test fail, use an empty result set:
     out_empty = GoogleSearchCollector(search=FakeSearch({"organic_results": []})).collect(_ctx())
     assert out_empty.signals[0].status == Status.fail
+
+
+def test_raw_round_trips_through_to_sinal():
+    # raw must be a dict (not a list) so the Evidencia model accepts it.
+    payload = {"organic_results": [
+        {"position": 1, "title": "A", "link": "https://a.com"},
+        {"position": 2, "title": "B", "link": "https://b.com"}]}
+    ctx = _ctx()
+    out = GoogleSearchCollector(search=FakeSearch(payload)).collect(ctx)
+    sinal = out.signals[0].to_sinal(ctx)  # must NOT raise ValidationError
+    raw = sinal.evidencia[0].raw
+    assert isinstance(raw, dict)
+    assert raw == {"resultados": [
+        {"position": 1, "link": "https://a.com"},
+        {"position": 2, "link": "https://b.com"}]}
+
+
+def test_search_error_degrades_to_unknown():
+    class BoomSearch:
+        def search(self, query, location=None):
+            raise RuntimeError("429 Too Many Requests")
+    out = GoogleSearchCollector(search=BoomSearch()).collect(_ctx())
+    assert out.signals[0].id == "google_marca"
+    assert out.signals[0].status == Status.unknown

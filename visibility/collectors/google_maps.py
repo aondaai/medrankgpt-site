@@ -1,15 +1,8 @@
 from __future__ import annotations
-import unicodedata
 from visibility.clients import PlacesClient
 from visibility.collectors.base import CollectorContext, CollectorOutput, SignalResult
 from visibility.models import Status
-
-def _norm(s: str) -> str:
-    return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii").lower()
-
-def _name_tokens(name: str) -> set[str]:
-    drop = {"dr", "dra", "de", "da", "do", "dos", "das"}
-    return {t for t in _norm(name).replace(".", " ").split() if t and t not in drop}
+from visibility.names import tokens, same_person
 
 class GoogleMapsCollector:
     category = "busca_tradicional"
@@ -19,11 +12,19 @@ class GoogleMapsCollector:
 
     def collect(self, ctx: CollectorContext) -> CollectorOutput:
         query = f"{ctx.doctor.nome} {ctx.doctor.cidade}"
-        payload = self.places.text_search(query)
-        wanted = _name_tokens(ctx.doctor.nome)
+        try:
+            payload = self.places.text_search(query)
+        except Exception as exc:
+            return CollectorOutput(signals=[SignalResult(
+                "google_maps", "Aparece no Google Maps / Perfil de Empresa", Status.unknown,
+                False, 12.5, 0.0, "gmaps_api",
+                [{"fonte": "google_maps", "query": query,
+                  "resumo": f"Maps indisponível: {type(exc).__name__}."}],
+                "Não foi possível consultar o Google Maps.")])
+        wanted = tokens(ctx.doctor.nome)
         match = None
         for r in payload.get("results", []):
-            if wanted and wanted <= _name_tokens(r.get("name", "")):
+            if same_person(wanted, tokens(r.get("name", ""))):
                 match = r
                 break
         status = Status.pass_ if match else Status.fail

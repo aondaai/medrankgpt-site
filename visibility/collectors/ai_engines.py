@@ -1,44 +1,27 @@
 from __future__ import annotations
-import re
-import unicodedata
 from visibility.clients import LLMClient
 from visibility.collectors.base import CollectorContext, CollectorOutput, SignalResult
 from visibility.models import Status, PromptIA, DoctorMeta
+from visibility.names import tokens, same_person, mentioned_names
 
-# "Dr." / "Dra." followed by 1–3 capitalized (incl. accented) name words.
-_DOCTOR_NAME_RE = re.compile(
-    r"\bDr[a]?\.?\s+[A-ZÀ-Ý][\wÀ-ÿ]+(?:\s+[A-ZÀ-Ý][\wÀ-ÿ]+){0,2}")
-
-def _norm(s: str) -> str:
-    return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii").lower()
-
-def _tokens(name: str) -> set[str]:
-    drop = {"dr", "dra", "de", "da", "do", "dos", "das"}
-    return {t for t in _norm(name).replace(".", " ").split() if t and t not in drop}
-
-def _cited(answer: str, name: str) -> bool:
-    return bool(_tokens(name)) and _tokens(name) <= set(_norm(answer).replace(".", " ").split())
+def _cited(answer: str, doctor_name: str) -> bool:
+    own = tokens(doctor_name)
+    return any(same_person(own, tokens(span)) for span in mentioned_names(answer))
 
 def extract_competitors(answer: str, own_name: str) -> list[str]:
-    """Pull 'Dr./Dra. Nome' mentions from a free-text answer, excluding the doctor.
-    Deduplicates while preserving first-seen order."""
-    own = _tokens(own_name)
-    seen: list[str] = []
-    for raw in _DOCTOR_NAME_RE.findall(answer):
-        name = re.sub(r"\s+", " ", raw).strip()
-        cand = _tokens(name)
-        # skip if this mention IS the doctor — the regex stops at lowercase connectives
-        # ("Dra. Fulana de Tal" -> "Dra. Fulana"), so match a subset in EITHER direction.
-        if own and cand and (cand <= own or own <= cand):
+    own = tokens(own_name)
+    out: list[str] = []
+    for span in mentioned_names(answer):
+        if same_person(own, tokens(span)):   # skip the doctor herself
             continue
-        if name not in seen:
-            seen.append(name)
-    return seen
+        if span not in out:
+            out.append(span)
+    return out
 
 def build_prompts(doctor: DoctorMeta, regiao: str | None) -> list[dict]:
     loc = regiao or f"{doctor.cidade}, {doctor.uf}"
     prompts = [{"tipo": "marca",
-                "prompt": f"O que você sabe sobre a médica {doctor.nome}, "
+                "prompt": f"O que você sabe sobre {doctor.nome}, "
                           f"{doctor.especialidade_principal} em {loc}?"}]
     for proc in doctor.procedimentos_foco:
         prompts.append({"tipo": "procedimento",
