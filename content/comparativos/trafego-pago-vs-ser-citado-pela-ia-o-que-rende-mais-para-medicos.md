@@ -72,7 +72,7 @@ Priorize essa frente quando:
 
 ## O que rende mais: a leitura honesta
 
-Não existe um número universal, e prometer ROI seria irresponsável e contrário ao espírito do CFM. O que se pode dizer com honestidade: o tráfego pago é **alugado** e o resultado some quando o investimento para; a autoridade em busca e IA é um **ativo** que tende a render de forma mais durável depois de construído `[DADO A VALIDAR — qualquer comparação numérica de ROI deve sair das páginas de /estudos/]`.
+Não existe um número universal, e prometer ROI seria irresponsável e contrário ao espírito do CFM. O que se pode dizer com honestidade: o tráfego pago é **alugado** e o resultado some quando o investimento para; a autoridade em busca e IA é um **ativo** que tende a render de forma mais durável depois de construído.
 
 Por isso, para a maioria das clínicas, o mix faz mais sentido do que a escolha. O MedRankGPT atua na frente de **autoridade durável** — SEO, AEO/GEO e menções offsite, feito-para-você e dentro do CFM —, que pode conviver com a sua estratégia de mídia paga. Para comparar quem executa cada frente, veja [MedRankGPT vs agência](/comparativos/medrankgpt-vs-agencia-de-marketing-medico-tradicional).
 

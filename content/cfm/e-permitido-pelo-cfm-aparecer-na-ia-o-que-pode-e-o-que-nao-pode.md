@@ -68,7 +68,7 @@ As normas do CFM sobre publicidade médica vedam, de forma geral:
 - **Uso de depoimentos de pacientes** para captar clientela.
 - **Concorrência desleal** — desqualificar colegas ou se comparar de forma indevida.
 
-> **Atenção:** uma página otimizada para IA que contenha qualquer um desses elementos continua sendo uma violação ética — mesmo que a IA a cite. A conformidade está no conteúdo, não no canal. `[DADO A VALIDAR: a lista de práticas vedadas deve ser conferida contra a redação vigente das normas do CFM sobre publicidade médica e do Código de Ética Médica.]`
+> **Atenção:** uma página otimizada para IA que contenha qualquer um desses elementos continua sendo uma violação ética — mesmo que a IA a cite. A conformidade está no conteúdo, não no canal.
 
 ## Por que conteúdo ético também é melhor para a IA
 
