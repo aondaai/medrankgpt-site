@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://medrankgpt.com.br/schemas/ai-visibility-score/1.0.json",
+  "type": "object",
+  "required": ["schema_version", "meta", "score", "categorias", "concorrentes", "prompts_ia"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "meta": {
+      "type": "object",
+      "required": ["doctor", "run"],
+      "properties": {
+        "doctor": {
+          "type": "object",
+          "required": ["nome", "especialidade_principal", "cidade", "uf"],
+          "properties": {
+            "nome": { "type": "string" },
+            "crm": { "type": "string" },
+            "rqe": { "type": "string" },
+            "especialidade_principal": { "type": "string" },
+            "especialidades": { "type": "array", "items": { "type": "string" } },
+            "procedimentos_foco": { "type": "array", "items": { "type": "string" } },
+            "cidade": { "type": "string" },
+            "uf": { "type": "string" },
+            "site": { "type": "string" },
+            "perfil_google": { "type": "string" }
+          }
+        },
+        "run": {
+          "type": "object",
+          "required": ["gerado_em", "pipeline_version"],
+          "properties": {
+            "gerado_em": { "type": "string", "format": "date-time" },
+            "pipeline_version": { "type": "string" },
+            "idioma": { "type": "string" },
+            "regiao_busca": { "type": "string" }
+          }
+        }
+      }
+    },
+    "score": {
+      "type": "object",
+      "required": ["total", "max", "tier", "categorias"],
+      "properties": {
+        "total": { "type": "number", "minimum": 0, "maximum": 100 },
+        "max": { "type": "number" },
+        "tier": { "type": "string", "enum": ["Bronze", "Prata", "Ouro"] },
+        "categorias": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["score", "max"],
+            "properties": {
+              "score": { "type": "number" },
+              "max": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "categorias": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/categoria" }
+    },
+    "concorrentes": {
+      "type": "object",
+      "required": ["resumo", "ofensores_recorrentes"],
+      "properties": {
+        "resumo": { "type": "string" },
+        "ofensores_recorrentes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["nome", "aparicoes"],
+            "properties": {
+              "nome": { "type": "string" },
+              "aparicoes": { "type": "integer" },
+              "especialidade": { "type": "string" },
+              "fonte_citada": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "prompts_ia": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "prompt", "tipo", "engine", "medico_citado"],
+        "properties": {
+          "id": { "type": "string" },
+          "prompt": { "type": "string" },
+          "tipo": { "type": "string", "enum": ["marca", "especialidade", "procedimento"] },
+          "engine": { "type": "string", "enum": ["chatgpt", "gemini", "perplexity", "google_ai"] },
+          "regiao": { "type": "string" },
+          "medico_citado": { "type": "boolean" },
+          "posicao": { "type": ["integer", "null"] },
+          "concorrentes_citados": { "type": "array", "items": { "type": "string" } },
+          "capturado_em": { "type": "string", "format": "date-time" },
+          "raw_resposta": { "type": "string" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "categoria": {
+      "type": "object",
+      "required": ["label", "score", "max", "weight", "sinais"],
+      "properties": {
+        "label": { "type": "string" },
+        "score": { "type": "number" },
+        "max": { "type": "number" },
+        "weight": { "type": "number" },
+        "sinais": { "type": "array", "items": { "$ref": "#/$defs/sinal" } }
+      }
+    },
+    "sinal": {
+      "type": "object",
+      "required": ["id", "label", "status", "valor", "weight", "pontos", "confianca", "metodo", "evidencia"],
+      "properties": {
+        "id": { "type": "string" },
+        "label": { "type": "string" },
+        "status": { "type": "string", "enum": ["pass", "partial", "fail", "unknown"] },
+        "valor": { "type": ["boolean", "number", "string"] },
+        "weight": { "type": "number" },
+        "pontos": { "type": "number" },
+        "confianca": { "type": "number", "minimum": 0, "maximum": 1 },
+        "metodo": { "type": "string" },
+        "observacao": { "type": "string" },
+        "evidencia": { "type": "array", "items": { "$ref": "#/$defs/evidencia" } }
+      }
+    },
+    "evidencia": {
+      "type": "object",
+      "required": ["fonte", "capturado_em", "resumo"],
+      "properties": {
+        "fonte": { "type": "string" },
+        "url": { "type": "string" },
+        "query": { "type": "string" },
+        "capturado_em": { "type": "string", "format": "date-time" },
+        "resumo": { "type": "string" },
+        "raw": { "type": ["string", "object"] }
+      }
+    }
+  }
+}
