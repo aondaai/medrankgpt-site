@@ -19,9 +19,14 @@ dev = ["pytest>=8.0", "respx>=0.21"]
 
 [project.scripts]
 medrank-visibility = "visibility.cli:main"
+medrank-study = "visibility.study.cli:main"
 
 [tool.setuptools]
-packages = ["visibility"]
+packages = ["visibility", "visibility.schema", "visibility.collectors", "visibility.study", "visibility.study.schema"]
+
+[tool.setuptools.package-data]
+"visibility.schema" = ["*.json"]
+"visibility.study.schema" = ["*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
