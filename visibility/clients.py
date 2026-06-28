@@ -43,3 +43,33 @@ class GooglePlacesClient:
             params={"query": query, "key": self.api_key, "language": "pt-BR"})
         r.raise_for_status()
         return r.json()
+
+class LLMClient(Protocol):
+    name: str
+    def ask(self, prompt: str) -> str: ...
+
+class OpenAICompatibleClient:
+    """Works for OpenAI (chatgpt) and Perplexity — same chat-completions shape."""
+    def __init__(self, name: str, api_key: str, model: str,
+                 base_url: str = "https://api.openai.com/v1", timeout: float = 60.0):
+        self.name = name; self.model = model; self.base_url = base_url.rstrip("/")
+        self._client = httpx.Client(timeout=timeout,
+                                    headers={"Authorization": f"Bearer {api_key}"})
+    def ask(self, prompt: str) -> str:
+        r = self._client.post(f"{self.base_url}/chat/completions",
+            json={"model": self.model, "messages": [{"role": "user", "content": prompt}]})
+        r.raise_for_status()
+        return r.json()["choices"][0]["message"]["content"]
+
+class GeminiClient:
+    def __init__(self, name: str, api_key: str, model: str = "gemini-1.5-pro",
+                 timeout: float = 60.0):
+        self.name = name; self.model = model; self.api_key = api_key
+        self._client = httpx.Client(timeout=timeout)
+    def ask(self, prompt: str) -> str:
+        r = self._client.post(
+            f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent",
+            params={"key": self.api_key},
+            json={"contents": [{"parts": [{"text": prompt}]}]})
+        r.raise_for_status()
+        return r.json()["candidates"][0]["content"]["parts"][0]["text"]
