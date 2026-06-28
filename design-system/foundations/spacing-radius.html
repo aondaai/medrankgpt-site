@@ -1,0 +1,68 @@
+<!-- @dsCard group="Foundations" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spacing, Radius &amp; Elevation — MedRankGPT</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap');
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--surface:#FFFFFF;--line:#E4EAE4;--em:#0BA56A;--em-deep:#075E45;
+--font:'Satoshi',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
+--e1:0 1px 3px rgba(12,20,16,.06);--e2:0 6px 18px rgba(12,20,16,.07),0 2px 6px rgba(12,20,16,.05);--e3:0 22px 50px rgba(12,20,16,.12);--e-em:0 12px 28px rgba(11,165,106,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);margin-bottom:6px}
+h1{font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:64ch}
+.group{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--subtle);margin:24px 0 10px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:640px){.cols{grid-template-columns:1fr}}
+.space-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.space-row .tok{font-family:var(--mono);font-size:11px;color:var(--subtle);width:80px;flex:0 0 auto}
+.space-row .bar{height:14px;background:var(--em);border-radius:4px}
+.radii{display:flex;gap:14px;flex-wrap:wrap}
+.radii .box{width:74px;height:54px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--e1)}
+.radii .lab{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:6px;text-align:center}
+.elev{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:640px){.elev{grid-template-columns:repeat(2,1fr)}}
+.elev .e{background:var(--surface);border:1px solid var(--line);border-radius:18px;height:70px;display:grid;place-items:end center;padding-bottom:8px}
+.elev .lab{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style></head><body>
+<h2 class="sr-only">Espaçamento base 4px, escala de raios amigáveis e níveis de elevação do MedRankGPT.</h2>
+<div class="eyebrow">Foundations</div>
+<h1>Spacing · Radius · Elevation</h1>
+<p class="sub">Base 4px, ritmo generoso de landing de produto. Raios amigáveis (botões md 11, cards xl 18) — registro acessível, não bubbly. Sombras suaves com lift de 2px no hover.</p>
+
+<div class="cols">
+  <div>
+    <div class="group">Spacing — base 4px</div>
+    <div class="space-row"><span class="tok">xs · 4</span><span class="bar" style="width:4px"></span></div>
+    <div class="space-row"><span class="tok">sm · 8</span><span class="bar" style="width:8px"></span></div>
+    <div class="space-row"><span class="tok">md · 16</span><span class="bar" style="width:16px"></span></div>
+    <div class="space-row"><span class="tok">lg · 24</span><span class="bar" style="width:24px"></span></div>
+    <div class="space-row"><span class="tok">xl · 32</span><span class="bar" style="width:32px"></span></div>
+    <div class="space-row"><span class="tok">2xl · 48</span><span class="bar" style="width:48px"></span></div>
+    <div class="space-row"><span class="tok">3xl · 64</span><span class="bar" style="width:64px"></span></div>
+    <div class="space-row"><span class="tok">4xl · 96</span><span class="bar" style="width:96px"></span></div>
+  </div>
+  <div>
+    <div class="group">Radius</div>
+    <div class="radii">
+      <div><div class="box" style="border-radius:8px"></div><div class="lab">sm 8</div></div>
+      <div><div class="box" style="border-radius:11px"></div><div class="lab">md 11 · btn</div></div>
+      <div><div class="box" style="border-radius:18px"></div><div class="lab">xl 18 · card</div></div>
+      <div><div class="box" style="border-radius:24px"></div><div class="lab">2xl 24</div></div>
+      <div><div class="box" style="border-radius:999px"></div><div class="lab">pill</div></div>
+    </div>
+    <div class="group">Elevation</div>
+    <div class="elev">
+      <div class="e" style="box-shadow:var(--e1)"><span class="lab">e1</span></div>
+      <div class="e" style="box-shadow:var(--e2)"><span class="lab">e2</span></div>
+      <div class="e" style="box-shadow:var(--e3)"><span class="lab">e3</span></div>
+      <div class="e" style="box-shadow:var(--e-em)"><span class="lab">primary</span></div>
+    </div>
+  </div>
+</div>
+</body></html>

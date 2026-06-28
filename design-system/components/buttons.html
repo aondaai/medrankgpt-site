@@ -1,0 +1,60 @@
+<!-- @dsCard group="Components" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buttons — MedRankGPT</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap');
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--surface:#FFFFFF;--line:#E4EAE4;
+--em:#0BA56A;--em-h:#0A8F5C;--em-deep:#075E45;--coral:#FF6B4A;--coral-h:#F0573A;--on:#FFFFFF;
+--font:'Satoshi',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
+--r-md:11px;--e-em:0 12px 28px rgba(11,165,106,.22);--ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);margin-bottom:6px}
+h1{font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:64ch}
+.group{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--subtle);margin:22px 0 12px}
+.bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{font-family:var(--font);font-weight:700;font-size:15px;line-height:1;display:inline-flex;align-items:center;gap:9px;
+  padding:13px 20px;border-radius:var(--r-md);border:1px solid transparent;cursor:pointer;transition:transform .18s var(--ease),box-shadow .18s,background .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--em);color:var(--on);box-shadow:var(--e-em)}.btn-primary:hover{background:var(--em-h)}
+.btn-ink{background:var(--ink);color:var(--on)}.btn-ink:hover{background:#000}
+.btn-accent{background:var(--coral);color:#2A0F08}.btn-accent:hover{background:var(--coral-h)}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}.btn-ghost:hover{border-color:var(--em);color:var(--em-deep)}
+.btn-sm{padding:9px 14px;font-size:13.5px}.btn-lg{padding:16px 26px;font-size:16.5px}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.cap{font-family:var(--mono);font-size:11px;color:var(--subtle);width:100%;margin-bottom:-4px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style></head><body>
+<h2 class="sr-only">Botões do MedRankGPT: primário esmeralda, tinta (escuro estilo Ryze), acento coral, fantasma, tamanhos e estados.</h2>
+<div class="eyebrow">Components</div>
+<h1>Buttons</h1>
+<p class="sub">Raio md (11), amigável. Primário esmeralda com glow; botão "tinta" preto-quase-puro (CTA confiante estilo Ryze); acento coral para calor. Hover levanta 2px.</p>
+
+<div class="group">Variants</div>
+<div class="bar">
+  <button class="btn btn-primary">Diagnóstico grátis →</button>
+  <button class="btn btn-ink">Quero meu diagnóstico</button>
+  <button class="btn btn-accent">Chamar no WhatsApp</button>
+  <button class="btn btn-ghost">Falar com especialista</button>
+</div>
+
+<div class="group">Sizes</div>
+<div class="bar">
+  <button class="btn btn-primary btn-sm">Agendar</button>
+  <button class="btn btn-primary">Agendar reunião</button>
+  <button class="btn btn-primary btn-lg">Quero meu diagnóstico grátis →</button>
+</div>
+
+<div class="group">States</div>
+<div class="bar">
+  <span class="cap">default · hover · disabled</span>
+  <button class="btn btn-primary">Enviar</button>
+  <button class="btn btn-primary" style="transform:translateY(-2px);background:var(--em-h)">Enviar (hover)</button>
+  <button class="btn btn-primary" disabled>Enviando…</button>
+</div>
+</body></html>

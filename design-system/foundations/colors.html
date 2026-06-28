@@ -1,0 +1,78 @@
+<!-- @dsCard group="Foundations" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Color — MedRankGPT</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap');
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--bg2:#F1FAEF;--surface:#FFFFFF;--line:#E4EAE4;
+--em:#0BA56A;--em-h:#0A8F5C;--em-deep:#075E45;--em-soft:#E6F7EF;
+--indigo:#1E3A8A;--indigo-soft:#E7ECFB;--blue:#2D6BFF;--lime:#9AE600;--lime-soft:#EAFBC2;--coral:#FF6B4A;--amber:#FF9E2C;--error:#E23D2E;
+--font:'Satoshi',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;--r-md:11px;--r-xl:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);margin-bottom:6px}
+h1{font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:64ch}
+.group{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--subtle);margin:22px 0 10px}
+.row{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px}
+.sw{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden}
+.sw .chip{height:54px;border-bottom:1px solid var(--line)}
+.sw .m{padding:9px 11px}
+.sw .nm{font-size:12px;font-weight:700}
+.sw .role{font-size:11px;color:var(--muted)}
+.sw .hx{font-family:var(--mono);font-size:10.5px;color:var(--subtle);margin-top:3px}
+.viz{display:flex;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line)}
+.viz i{flex:1;height:40px;position:relative}
+.viz i span{position:absolute;left:6px;bottom:5px;font-family:var(--mono);font-size:9px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.sem{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px}
+.dot{display:flex;align-items:center;gap:9px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:10px 12px}
+.dot i{width:18px;height:18px;border-radius:6px;flex:0 0 auto}
+.dot .t{font-size:12px;font-weight:700}.dot .hx{font-family:var(--mono);font-size:10px;color:var(--subtle)}
+.note{margin-top:20px;font-size:12px;color:var(--em-deep);background:var(--em-soft);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style></head><body>
+<h2 class="sr-only">Paleta vibrante do MedRankGPT: neutros claros, esmeralda primária, índigo de apoio, rampa de dados (esmeralda, azul, lima, coral, âmbar) e cores semânticas.</h2>
+<div class="eyebrow">Foundations</div>
+<h1>Color</h1>
+<p class="sub">Vibrante, mas ancorado: UMA líder (esmeralda), acentos de energia, tinta quase-preta e neutros claros. A vibração mora na rampa de dados — é ela que faz os dashboards "pop".</p>
+
+<div class="group">Neutrals</div>
+<div class="row">
+  <div class="sw"><div class="chip" style="background:#FFFFFF"></div><div class="m"><div class="nm">White</div><div class="role">surface</div><div class="hx">#FFFFFF</div></div></div>
+  <div class="sw"><div class="chip" style="background:#F1FAEF"></div><div class="m"><div class="nm">Mint</div><div class="role">bg subtle</div><div class="hx">#F1FAEF</div></div></div>
+  <div class="sw"><div class="chip" style="background:#E4EAE4"></div><div class="m"><div class="nm">Border</div><div class="role">lines</div><div class="hx">#E4EAE4</div></div></div>
+  <div class="sw"><div class="chip" style="background:#0C1410"></div><div class="m"><div class="nm">Ink</div><div class="role">text · dark btn</div><div class="hx">#0C1410</div></div></div>
+  <div class="sw"><div class="chip" style="background:#5B6660"></div><div class="m"><div class="nm">Muted</div><div class="role">text muted</div><div class="hx">#5B6660</div></div></div>
+</div>
+
+<div class="group">Brand</div>
+<div class="row">
+  <div class="sw"><div class="chip" style="background:#0BA56A"></div><div class="m"><div class="nm">Emerald</div><div class="role">primary</div><div class="hx">#0BA56A</div></div></div>
+  <div class="sw"><div class="chip" style="background:#075E45"></div><div class="m"><div class="nm">Emerald deep</div><div class="role">green text</div><div class="hx">#075E45</div></div></div>
+  <div class="sw"><div class="chip" style="background:#E6F7EF"></div><div class="m"><div class="nm">Emerald soft</div><div class="role">tint bg</div><div class="hx">#E6F7EF</div></div></div>
+  <div class="sw"><div class="chip" style="background:#1E3A8A"></div><div class="m"><div class="nm">Indigo</div><div class="role">support · trust</div><div class="hx">#1E3A8A</div></div></div>
+  <div class="sw"><div class="chip" style="background:#9AE600"></div><div class="m"><div class="nm">Lime</div><div class="role">highlight fill</div><div class="hx">#9AE600</div></div></div>
+</div>
+
+<div class="group">Data-viz ramp — use for charts &amp; the Índice</div>
+<div class="viz">
+  <i style="background:#0BA56A"><span>emerald</span></i>
+  <i style="background:#2D6BFF"><span>blue</span></i>
+  <i style="background:#9AE600"><span style="color:#0C1410;text-shadow:none">lime</span></i>
+  <i style="background:#FF6B4A"><span>coral</span></i>
+  <i style="background:#FF9E2C"><span>amber</span></i>
+</div>
+
+<div class="group">Semantic</div>
+<div class="sem">
+  <div class="dot"><i style="background:#0BA56A"></i><div><div class="t">Success</div><div class="hx">#0BA56A</div></div></div>
+  <div class="dot"><i style="background:#FF9E2C"></i><div><div class="t">Warning</div><div class="hx">#FF9E2C</div></div></div>
+  <div class="dot"><i style="background:#E23D2E"></i><div><div class="t">Error</div><div class="hx">#E23D2E</div></div></div>
+  <div class="dot"><i style="background:#2D6BFF"></i><div><div class="t">Info</div><div class="hx">#2D6BFF</div></div></div>
+</div>
+
+<div class="note"><b>Regra:</b> lima é preenchimento/realce, nunca texto sobre branco — para texto verde use esmeralda-deep #075E45. Texto sobre branco ≥ 7:1; sobre esmeralda/tinta ≥ 4.5:1.</div>
+</body></html>

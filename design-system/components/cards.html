@@ -1,0 +1,82 @@
+<!-- @dsCard group="Components" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cards — MedRankGPT</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap');
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--surface:#FFFFFF;--line:#E4EAE4;
+--em:#0BA56A;--em-deep:#075E45;--em-soft:#E6F7EF;--lime:#9AE600;--coral:#FF6B4A;--amber:#FF9E2C;--on:#FFFFFF;
+--font:'Satoshi',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
+--r-md:11px;--r-xl:18px;--r-pill:999px;
+--e1:0 1px 3px rgba(12,20,16,.06);--e2:0 6px 18px rgba(12,20,16,.07),0 2px 6px rgba(12,20,16,.05);--e3:0 22px 50px rgba(12,20,16,.12);--e-em:0 12px 28px rgba(11,165,106,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);margin-bottom:6px}
+h1{font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:64ch}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.metric{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:22px;box-shadow:var(--e2)}
+.metric .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.metric .v{font-family:var(--mono);font-size:48px;font-weight:600;line-height:1.02;margin-top:4px}
+.metric .v small{color:var(--em);font-size:20px}
+.metric .ctx{font-size:12.5px;color:var(--muted);margin-top:2px}
+.metric .row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+.metric .row b{color:var(--em)}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:24px;box-shadow:var(--e1)}
+.pillar .ico{width:46px;height:46px;border-radius:12px;background:var(--em-soft);display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.pillar h3{font-weight:900;font-size:21px;letter-spacing:-.01em;margin-bottom:8px}
+.pillar p{color:var(--muted);font-size:14px;margin-bottom:12px}
+.pillar ul{list-style:none}
+.pillar li{position:relative;padding:5px 0 5px 20px;font-size:13.5px;color:var(--muted)}
+.pillar li::before{content:"→";position:absolute;left:0;color:var(--em)}
+.plan{position:relative;background:var(--surface);border:2px solid var(--em);border-radius:var(--r-xl);padding:26px 24px;box-shadow:var(--e3)}
+.plan .medal{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--em);padding:6px 14px;border-radius:var(--r-pill);box-shadow:0 6px 16px rgba(11,165,106,.3)}
+.plan h3{font-weight:900;font-size:26px;letter-spacing:-.015em;margin-bottom:4px}
+.plan .who{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--em-deep);margin-bottom:14px}
+.plan ul{list-style:none;margin-bottom:18px}
+.plan li{display:flex;gap:9px;font-size:13.5px;color:var(--muted);padding:6px 0;border-bottom:1px solid #EFF3EF}
+.plan li::before{content:"✓";color:var(--em);font-weight:900}
+.plan .cta{display:block;text-align:center;font-weight:700;font-size:14.5px;background:var(--em);color:var(--on);padding:12px;border-radius:var(--r-md);box-shadow:var(--e-em)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style></head><body>
+<h2 class="sr-only">Cartões do MedRankGPT: métrica do Índice, cartão de pilar e plano em destaque com borda esmeralda e medalha.</h2>
+<div class="eyebrow">Components</div>
+<h1>Cards</h1>
+<p class="sub">Métrica do Índice em Geist Mono (instrumento). Plano em destaque usa borda esmeralda + e3 + medalha. Pilar com ícone em tint esmeralda.</p>
+
+<div class="grid">
+  <div class="metric">
+    <div class="k">Índice MedRankGPT</div>
+    <div class="v">73<small>%</small></div>
+    <div class="ctx">Share of voice em IA · Dermatologia · SP</div>
+    <div class="row"><span>Citações ChatGPT</span><b>+128%</b></div>
+    <div class="row"><span>Posição média</span><b>1.4</b></div>
+  </div>
+  <div class="pillar">
+    <div class="ico">🤖</div>
+    <h3>AEO / GEO</h3>
+    <p>Otimização para os mecanismos que entregam respostas diretas e citam fontes.</p>
+    <ul>
+      <li>Dados estruturados (schema)</li>
+      <li>FAQs e conteúdo citável</li>
+      <li>ChatGPT, Gemini, Perplexity</li>
+    </ul>
+  </div>
+  <div class="plan">
+    <span class="medal">Mais escolhido</span>
+    <h3>Autoridade</h3>
+    <div class="who">Para virar referência</div>
+    <ul>
+      <li>Tudo do Essencial</li>
+      <li>Estratégia completa de AEO/GEO</li>
+      <li>Início de menções offsite</li>
+      <li>Share of voice monitorado</li>
+    </ul>
+    <span class="cta">Agendar reunião</span>
+  </div>
+</div>
+</body></html>

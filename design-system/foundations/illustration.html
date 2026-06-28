@@ -1,0 +1,87 @@
+<!-- @dsCard group="Foundations" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero Illustration — MedRankGPT</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap');
+:root{--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--line:#E4EAE4;--em:#0BA56A;--em-deep:#075E45;
+--font:'Satoshi',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;--r-xl:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);margin-bottom:6px}
+h1{font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:18px;max-width:64ch}
+.frame{border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden}
+svg{display:block;width:100%;height:auto}
+.use{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+@media(max-width:640px){.use{grid-template-columns:1fr}}
+.u{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.u h4{font-size:13px;font-weight:700;margin-bottom:4px}
+.u p{font-size:12.5px;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style></head><body>
+<h2 class="sr-only">Ilustração clínica-abstrata do hero: linha de pulso/ECG, formas orgânicas de crescimento e pontos de cor sobre malha suave de esmeralda.</h2>
+<div class="eyebrow">Foundations</div>
+<h1>Hero Illustration</h1>
+<p class="sub">Motivo de marca reutilizável: abstrato e clínico — linha de pulso (ECG) que vira crescimento, folhas/curvas orgânicas e pontos de "vitalidade". Substitui foto de banco e gradiente genérico. SVG editável, escala sem perda.</p>
+
+<div class="frame">
+<svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Linha de pulso que floresce em formas de crescimento com pontos coloridos.">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F1FAEF"/><stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="82%" cy="8%" r="42%">
+      <stop offset="0" stop-color="#EAFBC2"/><stop offset="100%" stop-color="#EAFBC2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mesh" cx="20%" cy="105%" r="70%">
+      <stop offset="0" stop-color="#BDEBD3"/><stop offset="100%" stop-color="#BDEBD3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0BA56A"/><stop offset="1" stop-color="#075E45"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="760" height="320" fill="url(#sky)"/>
+  <rect width="760" height="320" fill="url(#sun)"/>
+  <rect width="760" height="320" fill="url(#mesh)"/>
+
+  <!-- organic ground curve -->
+  <path d="M0,250 C140,210 240,300 400,258 C560,216 650,290 760,250 L760,320 L0,320 Z" fill="#E6F7EF"/>
+  <path d="M0,272 C160,244 270,312 430,276 C600,238 680,300 760,272 L760,320 L0,320 Z" fill="#D6F0E2"/>
+
+  <!-- pulse / ECG line that turns into growth -->
+  <path d="M0,180 L150,180 L175,180 L190,120 L210,240 L232,180 L300,180 L330,180
+           C360,180 372,150 396,150 C430,150 440,110 470,96 C520,72 560,96 600,70
+           C640,46 690,58 760,40"
+        fill="none" stroke="#0C1410" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- abstract leaves / growth at the end of the line -->
+  <g transform="translate(596,70)">
+    <path d="M0,0 C26,-30 70,-30 96,-6 C64,4 30,6 0,0 Z" fill="url(#leaf)"/>
+    <path d="M2,2 C-12,32 6,72 40,86 C44,52 30,20 2,2 Z" fill="#0BA56A" opacity=".9"/>
+    <path d="M4,1 C40,-6 78,16 92,52 C58,46 24,30 4,1 Z" fill="#9AE600" opacity=".85"/>
+  </g>
+
+  <!-- vitality dots (the data-viz pops) -->
+  <circle cx="120" cy="150" r="7" fill="#FF6B4A"/>
+  <circle cx="350" cy="128" r="6" fill="#2D6BFF"/>
+  <circle cx="470" cy="96" r="8" fill="#9AE600"/>
+  <circle cx="690" cy="58" r="6" fill="#FF9E2C"/>
+  <circle cx="250" cy="206" r="5" fill="#0BA56A"/>
+
+  <!-- tiny abstract flowers on the ground -->
+  <g fill="#FF6B4A"><circle cx="90" cy="286" r="4"/><circle cx="98" cy="280" r="4"/><circle cx="106" cy="286" r="4"/><circle cx="98" cy="292" r="4"/></g>
+  <circle cx="98" cy="286" r="3" fill="#FF9E2C"/>
+  <g fill="#2D6BFF"><circle cx="520" cy="296" r="4"/><circle cx="528" cy="290" r="4"/><circle cx="536" cy="296" r="4"/><circle cx="528" cy="302" r="4"/></g>
+  <circle cx="528" cy="296" r="3" fill="#9AE600"/>
+</svg>
+</div>
+
+<div class="use">
+  <div class="u"><h4>Onde usar</h4><p>Fundo do hero atrás do título + UI do Índice. Também em CTAs finais e cabeçalhos de seção, recortado.</p></div>
+  <div class="u"><h4>O conceito</h4><p>A linha de pulso (paciente/saúde) vira crescimento (folhas) — "do sintoma à recomendação da IA".</p></div>
+  <div class="u"><h4>Regras</h4><p>Manter abstrato e clínico, não lúdico. Cores só da paleta. Nunca sobre texto sem reduzir opacidade.</p></div>
+</div>
+</body></html>

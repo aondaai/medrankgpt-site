@@ -1,0 +1,46 @@
+<!-- @dsCard group="Components" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comparison Table — MedRankGPT</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap');
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--surface:#FFFFFF;--line:#E4EAE4;
+--em:#0BA56A;--em-deep:#075E45;--em-soft:#E6F7EF;
+--font:'Satoshi',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
+--r-xl:18px;--e2:0 6px 18px rgba(12,20,16,.07),0 2px 6px rgba(12,20,16,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);margin-bottom:6px}
+h1{font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:64ch}
+.ctable{max-width:760px;border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--e2);background:var(--surface)}
+.crow{display:grid;grid-template-columns:1.4fr 1fr 1fr}
+.crow>div{padding:15px 18px;border-bottom:1px solid var(--line);font-size:14px}
+.crow.head>div{background:#FAFCFA;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.crow.head .us{color:var(--em-deep)}
+.feat{color:var(--ink);font-weight:600}
+.them{color:var(--subtle)}
+.us{color:var(--em-deep);font-weight:700;background:var(--em-soft)}
+.us::before{content:"✓";margin-right:7px;color:var(--em);font-weight:900}
+.crow:last-child>div{border-bottom:none}
+.cap{font-family:var(--mono);font-size:11px;color:var(--subtle);margin-top:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style></head><body>
+<h2 class="sr-only">Tabela comparativa entre ferramentas/agências e o MedRankGPT, com a coluna do MedRankGPT destacada em esmeralda.</h2>
+<div class="eyebrow">Components</div>
+<h1>Comparison Table</h1>
+<p class="sub">A coluna do MedRankGPT é destacada com tint esmeralda + check. Cabeçalho em mono. Seção "Não é um painel. É o resultado".</p>
+
+<div class="ctable">
+  <div class="crow head"><div>&nbsp;</div><div>Ferramentas / agências</div><div class="us">MedRankGPT</div></div>
+  <div class="crow"><div class="feat">Quem faz o trabalho</div><div class="them">Você, num painel</div><div class="us">Nós, por você</div></div>
+  <div class="crow"><div class="feat">Foco</div><div class="them">Genérico / B2B</div><div class="us">Exclusivo medicina</div></div>
+  <div class="crow"><div class="feat">Onsite + Offsite</div><div class="them">Geralmente só um</div><div class="us">Os dois integrados</div></div>
+  <div class="crow"><div class="feat">Conformidade CFM</div><div class="them">Não tratam</div><div class="us">Pilar do método</div></div>
+  <div class="crow"><div class="feat">Idioma / mercado</div><div class="them">Inglês / global</div><div class="us">Português / Brasil</div></div>
+</div>
+<p class="cap">Padrão: feature à esquerda · concorrente esmaecido · MedRankGPT em esmeralda com check.</p>
+</body></html>

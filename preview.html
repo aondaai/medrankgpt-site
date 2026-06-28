@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MedRankGPT — Preview (Crescimento)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--mint:#F1FAEF;--soft:#F7FAF6;--surface:#FFFFFF;--line:#E4EAE4;--line2:#D4DCD4;
+--em:#0BA56A;--em-h:#0A8F5C;--em-deep:#075E45;--em-soft:#E6F7EF;--indigo:#1E3A8A;--indigo-soft:#E7ECFB;--blue:#2D6BFF;--lime:#9AE600;--coral:#FF6B4A;--amber:#FF9E2C;--on:#FFFFFF;
+--font:'Satoshi',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'Geist Mono',ui-monospace,Menlo,monospace;
+--r-md:11px;--r-lg:14px;--r-xl:18px;--r-2xl:24px;--r-pill:999px;--maxw:1180px;
+--e1:0 1px 3px rgba(12,20,16,.06);--e2:0 6px 18px rgba(12,20,16,.07),0 2px 6px rgba(12,20,16,.05);--e3:0 22px 50px rgba(12,20,16,.12);--e-em:0 12px 28px rgba(11,165,106,.22);
+--ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{letter-spacing:-.02em;line-height:1.08}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.hl{background:linear-gradient(180deg,transparent 60%,var(--lime) 60%);padding:0 4px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep)}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--lime)}
+.eyebrow.center{justify-content:center}
+.btn{font-family:var(--font);font-weight:700;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:var(--r-md);border:1px solid transparent;cursor:pointer;transition:transform .18s var(--ease),background .18s,box-shadow .18s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-ink{background:var(--ink);color:var(--on)}.btn-ink:hover{background:#000}
+.btn-em{background:var(--em);color:var(--on);box-shadow:var(--e-em)}.btn-em:hover{background:var(--em-h)}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}.btn-ghost:hover{border-color:var(--em);color:var(--em-deep)}
+.btn-wa{background:var(--coral);color:#2A0F08}.btn-wa:hover{background:#F0573A}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:900;font-size:20px}
+.logo .mark{width:30px;height:30px;border-radius:9px;background:var(--em);color:#fff;display:grid;place-items:center;font-size:17px;font-weight:900}
+.logo b{color:var(--em-deep)}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:14.5px;color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--em-deep)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:24px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:64px 0 56px;background:
+  radial-gradient(120% 70% at 88% -10%,#EAFBC2 0%,rgba(234,251,194,0) 42%),
+  radial-gradient(80% 70% at 6% 120%,#BDEBD3 0%,rgba(189,235,211,0) 55%),
+  linear-gradient(180deg,var(--mint) 0%,#FFFFFF 70%)}
+.hero .grid{position:relative;z-index:2;display:grid;grid-template-columns:1.04fr .96fr;gap:42px;align-items:center}
+.hero h1{font-weight:900;font-size:clamp(36px,5.2vw,58px);line-height:1.01;margin:14px 0 16px;letter-spacing:-.03em}
+.hero .lead{font-size:18px;color:var(--muted);max-width:48ch;margin-bottom:22px}
+.hero-cta{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:18px}
+.trust{display:flex;gap:9px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.trust span{background:#fff;border:1px solid var(--line);border-radius:var(--r-pill);padding:6px 11px}
+/* hero product UI */
+.ui{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--e3);overflow:hidden}
+.ui .bar{display:flex;align-items:center;gap:6px;padding:10px 13px;border-bottom:1px solid var(--line);background:var(--soft);font-family:var(--mono);font-size:10px;color:var(--muted)}
+.ui .bar .dot{width:8px;height:8px;border-radius:50%}
+.ui .bar .live{margin-left:auto;color:var(--em-deep)}
+.ui .pad{padding:14px}
+.ui .kpis{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:11px}
+.ui .kpi{border:1px solid var(--line);border-radius:var(--r-lg);padding:10px 12px}
+.ui .kpi .k{font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.ui .kpi .v{font-family:var(--mono);font-size:24px;font-weight:600;line-height:1.1}
+.ui .kpi .d{font-family:var(--mono);font-size:10px;color:var(--em)}
+.ui .rows .r{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;padding:4px 0}
+.ui .rows .r .lbl{width:74px;color:var(--muted)}
+.ui .rows .r .track{flex:1;height:8px;background:var(--soft);border-radius:5px;overflow:hidden}
+.ui .rows .r .fill{display:block;height:100%;border-radius:5px}
+
+/* engines */
+.engines{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);padding:18px 0}
+.engines .wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between}
+.engines .l{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--subtle)}
+.engines .n{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-weight:600;font-size:15px}
+
+section.block{padding:80px 0}
+.section-head{max-width:740px;margin:0 auto 44px;text-align:center}
+.section-head h2{font-weight:900;font-size:clamp(30px,4vw,46px);margin:12px 0 14px}
+.section-head p{color:var(--muted);font-size:17px}
+
+/* stats */
+.stats{background:var(--mint)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:28px 22px;text-align:center;box-shadow:var(--e1);transition:transform .2s var(--ease)}
+.stat:hover{transform:translateY(-4px)}
+.stat .num{font-family:var(--mono);font-size:46px;font-weight:600;color:var(--em);line-height:1}
+.stat .desc{color:var(--muted);font-size:13.5px;margin-top:12px}
+.source{text-align:center;color:var(--subtle);font-size:12px;margin-top:24px}
+
+/* onsite/offsite */
+.offsite-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.obox{border:1px solid var(--line);border-radius:var(--r-xl);padding:30px;background:#fff}
+.obox.big{background:linear-gradient(180deg,var(--em-soft),#fff);border-color:#CFEDDE}
+.obox .pct{font-family:var(--mono);font-size:44px;font-weight:600;line-height:1}
+.obox.big .pct{color:var(--em)}.obox.dim .pct{color:var(--subtle)}
+.obox h3{font-size:22px;font-weight:900;margin:8px 0 10px}
+.obox p{color:var(--muted);font-size:14.5px}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.check{list-style:none;margin-top:20px}
+.check li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;font-size:16px;color:var(--muted)}
+.check li::before{content:"✓";color:var(--em);font-weight:900;margin-top:1px}
+.qa-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:26px;box-shadow:var(--e2)}
+.qa{padding:14px 0;border-bottom:1px solid var(--line)}
+.qa:last-child{border-bottom:none}
+.qa .q{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--subtle);margin-bottom:8px}
+.qa .a{display:flex;gap:11px;align-items:flex-start}
+.qa .a .b{flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--em);display:grid;place-items:center;color:#fff;font-weight:900;font-size:13px}
+.qa .a .b.dim{background:#C9D1CC}
+.qa .a p{font-size:15px}
+.qa .a p b{color:var(--em-deep)}
+
+/* método steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:26px 22px;transition:transform .2s var(--ease)}
+.step:hover{transform:translateY(-5px)}
+.step .n{font-family:var(--mono);font-size:13px;font-weight:600;color:#fff;background:var(--em);width:34px;height:34px;border-radius:10px;display:grid;place-items:center;margin-bottom:14px}
+.step h3{font-size:19px;font-weight:900;margin-bottom:8px}
+.step p{color:var(--muted);font-size:14px}
+
+/* dashboard section */
+.dash{background:linear-gradient(180deg,#0C1410,#10211A);color:#ECF3EE}
+.dash .section-head h2{color:#fff}.dash .section-head p{color:#9FB0A6}
+.dash .eyebrow{color:#7FE3B6}.dash .eyebrow::before{background:var(--lime)}
+.app{max-width:860px;margin:0 auto;border:1px solid rgba(236,243,238,.12);border-radius:var(--r-2xl);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5);background:#0E1A14}
+.app .top{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid rgba(236,243,238,.1);background:#12211A}
+.app .top .dot{width:9px;height:9px;border-radius:50%}
+.app .top .title{font-family:var(--mono);font-size:11px;color:#9FB0A6;margin-left:6px}
+.app .top .live{margin-left:auto;font-family:var(--mono);font-size:10px;color:#7FE3B6;background:rgba(43,214,140,.14);padding:4px 9px;border-radius:999px}
+.app .body{padding:16px}
+.app .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.app .kpi{border:1px solid rgba(236,243,238,.1);border-radius:var(--r-lg);padding:12px 13px;background:#0C1712}
+.app .kpi .k{font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#8FA398}
+.app .kpi .v{font-family:var(--mono);font-size:26px;font-weight:600;margin-top:3px}
+.app .kpi .d{font-family:var(--mono);font-size:10.5px;margin-top:2px;color:#42E29C}
+.app .split2{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.app .panel{border:1px solid rgba(236,243,238,.1);border-radius:var(--r-lg);padding:14px;background:#0C1712}
+.app .panel h4{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#8FA398;margin-bottom:12px}
+.app .rows .r{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.app .rows .r .lbl{width:84px;font-family:var(--mono);font-size:11px;color:#ECF3EE}
+.app .rows .r .track{flex:1;height:10px;background:#1E3329;border-radius:6px;overflow:hidden}
+.app .rows .r .fill{display:block;height:100%;border-radius:6px}
+.app .rows .r .pct{width:36px;text-align:right;font-family:var(--mono);font-size:11px;color:#9FB0A6}
+.app .spark{display:flex;align-items:flex-end;gap:5px;height:92px;padding-top:6px}
+.app .spark i{flex:1;border-radius:4px 4px 0 0;background:var(--em)}
+.app .legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:11px;font-family:var(--mono);font-size:10px;color:#9FB0A6}
+.app .legend span{display:inline-flex;align-items:center;gap:5px}
+.app .legend i{width:9px;height:9px;border-radius:3px}
+
+/* pilares */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:30px;transition:transform .2s var(--ease)}
+.pillar:hover{transform:translateY(-5px)}
+.pillar .ico{width:50px;height:50px;border-radius:13px;background:var(--em-soft);display:grid;place-items:center;font-size:24px;margin-bottom:16px}
+.pillar h3{font-size:22px;font-weight:900;margin-bottom:10px}
+.pillar p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
+.pillar ul{list-style:none}
+.pillar li{position:relative;padding:6px 0 6px 20px;font-size:13.5px;color:var(--subtle)}
+.pillar li::before{content:"→";position:absolute;left:0;color:var(--em)}
+
+/* compare */
+.ctable{max-width:880px;margin:0 auto;border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--e2);background:#fff}
+.crow{display:grid;grid-template-columns:1.4fr 1fr 1fr}
+.crow>div{padding:16px 20px;border-bottom:1px solid var(--line);font-size:14.5px}
+.crow.head>div{background:var(--soft);font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.crow.head .us{color:var(--em-deep)}
+.crow .feat{color:var(--ink);font-weight:600}.crow .them{color:var(--subtle)}
+.crow .us{color:var(--em-deep);font-weight:700;background:var(--em-soft)}
+.crow .us::before{content:"✓";margin-right:7px;color:var(--em);font-weight:900}
+.crow:last-child>div{border-bottom:none}
+
+/* plans */
+.plans{background:var(--mint)}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.plan{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:32px 26px;display:flex;flex-direction:column;box-shadow:var(--e1)}
+.plan.feat{border:2px solid var(--em);box-shadow:var(--e3)}
+.plan .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--em);padding:6px 14px;border-radius:var(--r-pill);box-shadow:0 6px 16px rgba(11,165,106,.3)}
+.plan h3{font-size:28px;font-weight:900;margin-bottom:4px}
+.plan .who{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--em-deep);margin-bottom:16px}
+.plan .pdesc{color:var(--muted);font-size:14.5px;margin-bottom:22px;min-height:46px}
+.plan ul{list-style:none;margin-bottom:26px;flex-grow:1}
+.plan li{display:flex;gap:10px;font-size:14px;color:var(--muted);padding:8px 0;border-bottom:1px solid #EFF3EF}
+.plan li::before{content:"✓";color:var(--em);font-weight:900;flex-shrink:0}
+.plan .btn{width:100%}
+
+/* audience */
+.audience{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.aud{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:34px}
+.aud h3{font-size:24px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:11px}
+.aud p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.aud ul{list-style:none}
+.aud li{position:relative;padding:7px 0 7px 22px;color:var(--muted);font-size:14.5px}
+.aud li::before{content:"✓";position:absolute;left:0;color:var(--em);font-weight:900}
+
+/* diferenciais */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat{padding:26px;border-radius:var(--r-xl);background:#fff;border:1px solid var(--line)}
+.feat .ico{font-size:25px;margin-bottom:12px}
+.feat h3{font-size:19px;font-weight:900;margin-bottom:8px}
+.feat p{color:var(--muted);font-size:14px}
+
+/* faq */
+.faq-list{max-width:840px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:12px;background:#fff;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--ink);font-size:16.5px;font-weight:700;font-family:var(--font);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q:hover{color:var(--em-deep)}
+.faq-q .pm{flex-shrink:0;font-size:22px;color:var(--em);transition:transform .3s;font-weight:400}
+.faq-item.open .pm{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:15px}
+.faq-a div{padding:0 24px 22px}
+.faq-item.open .faq-a{max-height:340px}
+
+/* final cta */
+.final{position:relative;overflow:hidden;padding:84px 0;text-align:center;background:
+  radial-gradient(70% 90% at 50% -10%,#EAFBC2 0%,rgba(234,251,194,0) 60%),
+  linear-gradient(180deg,var(--mint),#fff)}
+.final .wrap{position:relative;z-index:2;max-width:760px}
+.final h2{font-weight:900;font-size:clamp(32px,4.6vw,52px);margin-bottom:16px}
+.final p{color:var(--muted);font-size:18px;margin-bottom:28px}
+.final .hero-cta{justify-content:center}
+
+footer{background:#0C1410;color:#9FB0A6;padding:56px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+footer .logo{color:#fff;margin-bottom:14px}footer .logo b{color:#42E29C}
+.foot-grid h4{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#7FE3B6;margin-bottom:14px}
+.foot-grid a,.foot-grid p{display:block;color:#9FB0A6;font-size:14px;margin-bottom:9px}
+.foot-grid a:hover{color:#fff}
+.foot-about p{max-width:330px;line-height:1.7}
+.foot-bottom{border-top:1px solid rgba(236,243,238,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:12px;color:#7C8C82}
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:80;display:flex;align-items:center;background:var(--coral);color:#2A0F08;border-radius:var(--r-pill);box-shadow:0 12px 30px rgba(255,107,74,.4);overflow:hidden;cursor:pointer}
+.wa-float .ico{width:54px;height:54px;display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.wa-float .txt{max-width:0;white-space:nowrap;overflow:hidden;font-weight:700;font-size:14px;transition:.35s;opacity:0}
+.wa-float:hover{padding-right:20px}.wa-float:hover .txt{max-width:200px;opacity:1}
+
+@media(max-width:980px){
+  .hero .grid,.split,.audience,.offsite-grid{grid-template-columns:1fr;gap:30px}
+  .stats-grid,.steps{grid-template-columns:repeat(2,1fr)}
+  .pillars,.plan-grid,.feat-grid{grid-template-columns:1fr}
+  .app .split2{grid-template-columns:1fr}.app .kpis{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.menu-btn{display:block}
+  .nav-links.show{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 24px;gap:14px;border-bottom:1px solid var(--line)}
+  .plan.feat{order:-1}
+}
+@media(max-width:560px){.stats-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.engines .wrap{justify-content:center;text-align:center}}
+</style></head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#topo" class="logo"><span class="mark">M</span>Med<b>RankGPT</b></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#problema">Por que agora</a>
+      <a href="#onsite-offsite">Onsite + Offsite</a>
+      <a href="#metodo">Método</a>
+      <a href="#planos">Planos</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contato" class="btn btn-ghost">Falar com especialista</a>
+      <a href="#contato" class="btn btn-em">Diagnóstico grátis</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Feito-para-você · Só para a medicina</span>
+      <h1>Seja o médico que a <span class="hl">IA recomenda</span>.</h1>
+      <p class="lead">Seus pacientes perguntam ao ChatGPT, ao Google AI e ao Gemini antes de marcar. A gente coloca você na resposta — no piloto automático, feito por nós, dentro do CFM.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn btn-ink">Quero meu diagnóstico →</a>
+        <a href="#contato" class="btn btn-wa">Chamar no WhatsApp</a>
+      </div>
+      <div class="trust"><span>Onsite + Offsite</span><span>Conformidade CFM</span><span>Médicos e clínicas</span></div>
+    </div>
+    <div class="ui" id="contato">
+      <div class="bar"><span class="dot" style="background:var(--coral)"></span><span class="dot" style="background:var(--amber)"></span><span class="dot" style="background:var(--em)"></span>&nbsp;Índice · Dermatologia · SP<span class="live">● ao vivo</span></div>
+      <div class="pad">
+        <div class="kpis">
+          <div class="kpi"><div class="k">Share of voice IA</div><div class="v">73%</div><div class="d">▲ +128% 30d</div></div>
+          <div class="kpi"><div class="k">Posição média</div><div class="v">1.4</div><div class="d">▲ topo</div></div>
+        </div>
+        <div class="rows">
+          <div class="r"><span class="lbl">ChatGPT</span><span class="track"><span class="fill" style="width:84%;background:var(--em)"></span></span></div>
+          <div class="r"><span class="lbl">Google AI</span><span class="track"><span class="fill" style="width:71%;background:var(--amber)"></span></span></div>
+          <div class="r"><span class="lbl">Gemini</span><span class="track"><span class="fill" style="width:67%;background:var(--blue)"></span></span></div>
+          <div class="r"><span class="lbl">Perplexity</span><span class="track"><span class="fill" style="width:52%;background:var(--coral)"></span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="engines">
+  <div class="wrap">
+    <span class="l">Onde colocamos você na frente</span>
+    <div class="n"><span>ChatGPT</span><span>Google AI Overviews</span><span>Gemini</span><span>Perplexity</span><span>Copilot</span><span>Google</span></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="block stats" id="problema">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow center">A busca mudou de lugar</span>
+      <h2>A decisão do paciente começa numa <span class="hl">pergunta à IA</span></h2>
+      <p>Quem não aparece nas respostas geradas por IA deixa de existir para o paciente. Os números mostram por que esperar é caro.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="num">71%</div><div class="desc">dos brasileiros já usaram IA no último ano para tirar dúvidas sobre sintomas e doenças</div></div>
+      <div class="stat"><div class="num">+100M</div><div class="desc">de buscas com IA acontecem todos os dias no mundo</div></div>
+      <div class="stat"><div class="num">~55%</div><div class="desc">das buscas no Google já exibem uma resposta de IA no topo</div></div>
+      <div class="stat"><div class="num">81%</div><div class="desc">é o uso de IA para saúde entre pacientes crônicos — os de maior valor</div></div>
+    </div>
+    <p class="source">Fontes: CNN Brasil (2025); levantamentos de mercado sobre AEO/GEO (2025–2026). Dados de referência usados apenas para contexto.</p>
+  </div>
+</section>
+
+<!-- ONSITE/OFFSITE -->
+<section class="block" id="onsite-offsite">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow center">O que quase ninguém faz certo</span>
+      <h2>Mexer só no seu site <span class="hl">não faz a IA te recomendar</span></h2>
+      <p>A maior parte do que a IA diz sobre você vem de fontes externas que você não controla. Por isso trabalhamos as duas frentes.</p>
+    </div>
+    <div class="offsite-grid">
+      <div class="obox dim"><div class="pct">23%</div><h3>Onsite (seu site)</h3><p>SEO técnico, conteúdo e dados estruturados no seu próprio site. Essencial — mas, sozinho, é só uma parte. É onde quase todo mundo para.</p></div>
+      <div class="obox big"><div class="pct">77%</div><h3>Offsite (fontes que a IA cita)</h3><p>Artigos, portais e publicações que os modelos de IA leem e citam ao responder. É daqui que vem a maior parte das recomendações — e o que a maioria ignora. Nós conquistamos essas menções para você.</p></div>
+    </div>
+    <p class="source">Referência: análise de +28 mil respostas de IA indica que ~77% do que a IA diz sobre uma marca vem de fontes offsite (Noble, 2026).</p>
+  </div>
+</section>
+
+<!-- A VIRADA -->
+<section class="block" style="background:var(--soft)">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">O novo balcão de recepção</span>
+      <h2 style="font-size:clamp(28px,3.6vw,42px);font-weight:900;margin:12px 0 16px">Quando um paciente pergunta, <span class="hl">quem a IA cita?</span></h2>
+      <p style="color:var(--muted);font-size:16.5px">A IA não devolve dez links. Ela entrega <b style="color:var(--em-deep)">uma resposta</b> e cita pouquíssimas fontes. Estar entre elas é o novo "primeiro lugar do Google" — e é isso que construímos para você.</p>
+      <ul class="check">
+        <li>Seu nome aparece quando perguntam pelo melhor especialista da sua cidade</li>
+        <li>Sua clínica é citada em respostas sobre tratamentos e procedimentos</li>
+        <li>Conteúdo e menções que a IA reconhece como autoridade confiável</li>
+        <li>Presença consistente entre Google, ChatGPT, Gemini e Perplexity</li>
+      </ul>
+    </div>
+    <div class="qa-card">
+      <div class="qa"><div class="q">Paciente pergunta à IA:</div><div class="a"><div class="b">?</div><p>"Qual o melhor dermatologista para acne na Zona Sul de São Paulo?"</p></div></div>
+      <div class="qa"><div class="q">Sem MedRankGPT, a IA responde:</div><div class="a"><div class="b dim">—</div><p style="color:var(--subtle)">Cita clínicas concorrentes que estruturaram presença e menções. Você não é mencionado.</p></div></div>
+      <div class="qa"><div class="q">Com MedRankGPT, a IA responde:</div><div class="a"><div class="b">✓</div><p><b>"Um nome bem avaliado é o Dr(a). [você]"</b> — citado com contexto e autoridade. O paciente chega pronto para agendar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="block" id="metodo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow center">Método MedRankGPT · Feito-para-você</span>
+      <h2>Da invisibilidade à <span class="hl">referência</span>, sem você operar nada</h2>
+      <p>Um processo claro que une SEO clássico, AEO/GEO e menções offsite. Você só aprova o que sai em seu nome.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Diagnóstico</h3><p>Mapeamos como você aparece (ou não) no Google, no ChatGPT e nos demais mecanismos, e onde estão seus concorrentes.</p></div>
+      <div class="step"><div class="n">02</div><h3>Autoridade onsite</h3><p>Construímos SEO técnico, conteúdo e sinais de E-E-A-T que a IA reconhece como fonte médica confiável.</p></div>
+      <div class="step"><div class="n">03</div><h3>Menções offsite</h3><p>Conquistamos menções nas fontes que a IA realmente cita — o que mais move sua recomendação. Tudo com sua aprovação.</p></div>
+      <div class="step"><div class="n">04</div><h3>Monitoramento</h3><p>Acompanhamos suas citações e share of voice em IA e buscas, com relatórios e ajustes contínuos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÍNDICE DASHBOARD -->
+<section class="block dash">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow center">Índice MedRankGPT · ao vivo</span>
+      <h2>Você vê, em números, virar a resposta da IA</h2>
+      <p>Share of voice por mecanismo, citações por semana, posição média e quem ainda está na sua frente.</p>
+    </div>
+    <div class="app">
+      <div class="top">
+        <span class="dot" style="background:var(--coral)"></span><span class="dot" style="background:var(--amber)"></span><span class="dot" style="background:var(--em)"></span>
+        <span class="title">Dr(a). Você · Dermatologia · São Paulo</span><span class="live">ao vivo</span>
+      </div>
+      <div class="body">
+        <div class="kpis">
+          <div class="kpi"><div class="k">Share of voice IA</div><div class="v">73%</div><div class="d">▲ +128% · 30d</div></div>
+          <div class="kpi"><div class="k">Posição média</div><div class="v">1.4</div><div class="d">▲ topo</div></div>
+          <div class="kpi"><div class="k">Citações / sem.</div><div class="v">48</div><div class="d">▲ +22</div></div>
+          <div class="kpi"><div class="k">Concorrentes à frente</div><div class="v">2</div><div class="d" style="color:#FF8A6E">▼ -6</div></div>
+        </div>
+        <div class="split2">
+          <div class="panel">
+            <h4>Share of voice por mecanismo</h4>
+            <div class="rows">
+              <div class="r"><span class="lbl">ChatGPT</span><span class="track"><span class="fill" style="width:84%;background:var(--em)"></span></span><span class="pct">84%</span></div>
+              <div class="r"><span class="lbl">Google AI</span><span class="track"><span class="fill" style="width:71%;background:var(--amber)"></span></span><span class="pct">71%</span></div>
+              <div class="r"><span class="lbl">Gemini</span><span class="track"><span class="fill" style="width:67%;background:var(--blue)"></span></span><span class="pct">67%</span></div>
+              <div class="r"><span class="lbl">Perplexity</span><span class="track"><span class="fill" style="width:52%;background:var(--coral)"></span></span><span class="pct">52%</span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h4>Citações · 12 semanas</h4>
+            <div class="spark"><i style="height:28%"></i><i style="height:34%"></i><i style="height:30%"></i><i style="height:44%"></i><i style="height:52%"></i><i style="height:48%"></i><i style="height:63%"></i><i style="height:70%"></i><i style="height:66%"></i><i style="height:82%"></i><i style="height:90%"></i><i style="height:100%"></i></div>
+            <div class="legend"><span><i style="background:var(--em)"></i>ChatGPT</span><span><i style="background:var(--blue)"></i>Gemini</span><span><i style="background:var(--amber)"></i>Google AI</span><span><i style="background:var(--coral)"></i>Perplexity</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILARES -->
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow center">As frentes da visibilidade</span>
+      <h2>SEO, AEO, GEO e menções — <span class="hl">juntos</span></h2>
+      <p>Não basta aparecer no Google nem só ter um site bonito. É preciso ser citado pela IA, dentro e fora do seu domínio.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><div class="ico">🔎</div><h3>SEO Médico</h3><p>A base: ser encontrado nas buscas por especialidade, procedimento e região.</p><ul><li>Otimização técnica e velocidade</li><li>Conteúdo por especialidade e localidade</li><li>Google Meu Negócio e busca local</li><li>Autoridade e backlinks</li></ul></div>
+      <div class="pillar"><div class="ico">🤖</div><h3>AEO / GEO</h3><p>Otimização para os mecanismos que entregam respostas diretas e citam fontes.</p><ul><li>Dados estruturados (schema)</li><li>FAQs e conteúdo citável</li><li>Sinais de confiança e autoria</li><li>ChatGPT, Gemini, Perplexity</li></ul></div>
+      <div class="pillar"><div class="ico">✨</div><h3>Menções Offsite</h3><p>As citações externas que mais influenciam o que a IA recomenda sobre você.</p><ul><li>Menções nas fontes que a IA cita</li><li>Conteúdo redigido e aprovado por você</li><li>Reputação e consistência entre fontes</li><li>Monitoramento de menções em IA</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="block" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow center">Por que MedRankGPT</span>
+      <h2>Não é um painel. <span class="hl">É o resultado</span>, feito por nós.</h2>
+      <p>As ferramentas de IA entregam um dashboard para você operar. As agências fazem post. Nós fazemos você ser a resposta.</p>
+    </div>
+    <div class="ctable">
+      <div class="crow head"><div>&nbsp;</div><div>Ferramentas / agências</div><div class="us">MedRankGPT</div></div>
+      <div class="crow"><div class="feat">Quem faz o trabalho</div><div class="them">Você, num painel</div><div class="us">Nós, por você</div></div>
+      <div class="crow"><div class="feat">Foco</div><div class="them">Genérico / B2B</div><div class="us">Exclusivo medicina</div></div>
+      <div class="crow"><div class="feat">Onsite + Offsite</div><div class="them">Geralmente só um</div><div class="us">Os dois integrados</div></div>
+      <div class="crow"><div class="feat">Conformidade CFM</div><div class="them">Não tratam</div><div class="us">Pilar do método</div></div>
+      <div class="crow"><div class="feat">Idioma / mercado</div><div class="them">Inglês / global</div><div class="us">Português / Brasil</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="block plans" id="planos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow center">Planos sob medida</span>
+      <h2>Escolha o nível da sua <span class="hl">presença</span></h2>
+      <p>Três níveis para médicos autônomos e clínicas. Os valores são apresentados na reunião.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan">
+        <h3>Essencial</h3><div class="who">Para começar certo</div>
+        <p class="pdesc">Para o médico autônomo que quer existir nas buscas e na era da IA.</p>
+        <ul><li>Diagnóstico completo de visibilidade</li><li>SEO técnico do site/perfil</li><li>Google Meu Negócio otimizado</li><li>Conteúdo inicial citável por IA</li><li>Dados estruturados essenciais</li><li>Relatório mensal de posicionamento</li></ul>
+        <a href="#contato" class="btn btn-ghost">Agendar reunião</a>
+      </div>
+      <div class="plan feat">
+        <span class="tag">Mais escolhido</span>
+        <h3>Autoridade</h3><div class="who">Para virar referência</div>
+        <p class="pdesc">Para quem quer ser citado pela IA e dominar a busca na sua especialidade.</p>
+        <ul><li>Tudo do Essencial</li><li>Estratégia completa de AEO/GEO</li><li>Produção contínua de conteúdo</li><li>Início de menções offsite</li><li>Monitoramento de share of voice</li><li>Otimização de reputação</li><li>Acompanhamento estratégico mensal</li></ul>
+        <a href="#contato" class="btn btn-em">Agendar reunião</a>
+      </div>
+      <div class="plan">
+        <h3>Dominância</h3><div class="who">Para clínicas e grupos</div>
+        <p class="pdesc">Para clínicas que querem ocupar o topo das buscas e das respostas de IA.</p>
+        <ul><li>Tudo do Autoridade</li><li>Menções offsite em escala</li><li>Multi-especialidade e multi-unidade</li><li>Posicionamento de cada médico</li><li>Painel de visibilidade em IA</li><li>Gestor de conta dedicado</li><li>Consultoria estratégica recorrente</li></ul>
+        <a href="#contato" class="btn btn-ghost">Agendar reunião</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow center">Feito para a medicina</span>
+      <h2>Para médicos autônomos e <span class="hl">clínicas</span></h2>
+    </div>
+    <div class="audience">
+      <div class="aud"><h3>🩺 Médicos autônomos</h3><p>Construa autoridade, atraia pacientes mais qualificados e seja o nome lembrado — pela IA e pelo paciente.</p><ul><li>Mais agendamentos vindos de busca e de IA</li><li>Marca pessoal forte na sua especialidade</li><li>Pacientes que chegam decididos e informados</li><li>Menos dependência de plataformas e indicações</li></ul></div>
+      <div class="aud"><h3>🏥 Clínicas e grupos</h3><p>Domine as buscas por especialidade e região e posicione todo o corpo clínico como referência local.</p><ul><li>Topo das respostas por especialidade e bairro</li><li>Cada médico da equipe ganha visibilidade</li><li>Mais leads qualificados para a recepção</li><li>Reputação digital sólida e monitorada</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="block" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow center">Nossos diferenciais</span><h2>Especialistas na medicina e na nova busca</h2></div>
+    <div class="feat-grid">
+      <div class="feat"><div class="ico">🎯</div><h3>Foco exclusivo</h3><p>Trabalhamos só com saúde. Entendemos a linguagem, o público e as regras do marketing médico.</p></div>
+      <div class="feat"><div class="ico">⚖️</div><h3>Conformidade ética</h3><p>Estratégias alinhadas ao Código de Ética Médica e às resoluções do CFM sobre publicidade.</p></div>
+      <div class="feat"><div class="ico">🧩</div><h3>Onsite + Offsite</h3><p>Cuidamos do seu site e das menções externas que mais movem a recomendação da IA.</p></div>
+      <div class="feat"><div class="ico">📊</div><h3>Resultados mensuráveis</h3><p>Você acompanha menções, citações em IA e share of voice com relatórios claros.</p></div>
+      <div class="feat"><div class="ico">🤲</div><h3>Feito-para-você</h3><p>Da estratégia à execução — você não opera painel nenhum, só aprova o que sai em seu nome.</p></div>
+      <div class="feat"><div class="ico">🇧🇷</div><h3>Português e Brasil</h3><p>Pensado para a busca local brasileira: especialidade, cidade e bairro.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow center">Perguntas frequentes</span><h2>Dúvidas sobre posicionamento em IA</h2></div>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q">O que é AEO e GEO e por que importa para médicos? <span class="pm">+</span></button><div class="faq-a"><div>AEO e GEO são a otimização para mecanismos de resposta por IA, como ChatGPT, Gemini e Perplexity. Em vez de listar links, eles entregam uma resposta direta e citam poucas fontes. Para médicos, estar entre as fontes citadas é ser o nome recomendado quando um paciente pergunta à IA.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Só otimizar meu site é suficiente? <span class="pm">+</span></button><div class="faq-a"><div>Não. A maior parte do que a IA diz sobre você vem de fontes externas (offsite) que você não controla. Por isso trabalhamos as duas frentes: a otimização do seu site (onsite) e as menções nas fontes que a IA cita (offsite).</div></div></div>
+      <div class="faq-item"><button class="faq-q">Eu preciso fazer algum trabalho? <span class="pm">+</span></button><div class="faq-a"><div>Não. É um serviço feito-para-você: cuidamos da estratégia, do SEO técnico, do conteúdo e das menções. Você apenas aprova o que é publicado em seu nome.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Isso respeita as normas do CFM? <span class="pm">+</span></button><div class="faq-a"><div>Sim. Respeitamos o Código de Ética Médica e as resoluções do CFM sobre publicidade. O método foca em conteúdo informativo, autoridade técnica e presença qualificada, sem sensacionalismo ou promessas de resultado.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Quanto tempo leva para aparecer? <span class="pm">+</span></button><div class="faq-a"><div>Os primeiros sinais em buscas costumam aparecer entre 60 e 120 dias. A presença em respostas de IA se consolida nos meses seguintes. Na reunião apresentamos um cronograma realista.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow center">Comece agora</span>
+    <h2>A próxima vez que perguntarem à IA, que o nome seja <span class="hl">o seu</span>.</h2>
+    <p>Receba um diagnóstico gratuito da sua presença em buscas e em IA e veja exatamente onde estão as oportunidades.</p>
+    <div class="hero-cta"><a href="#contato" class="btn btn-ink">Quero meu diagnóstico grátis →</a><a href="#contato" class="btn btn-wa">Chamar no WhatsApp</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="#topo" class="logo"><span class="mark">M</span>Med<b>RankGPT</b></a>
+        <p>A consultoria feito-para-você que posiciona médicos e clínicas no ChatGPT, Google AI, Gemini e Perplexity — com SEO, AEO e menções nas fontes que a IA cita, dentro das normas do CFM.</p>
+      </div>
+      <div><h4>Navegação</h4><a href="#problema">Por que agora</a><a href="#onsite-offsite">Onsite + Offsite</a><a href="#metodo">Método</a><a href="#planos">Planos</a><a href="#faq">Dúvidas</a></div>
+      <div><h4>Serviços</h4><a href="#">SEO Médico</a><a href="#">AEO / GEO</a><a href="#">Menções Offsite</a><a href="#">Marca pessoal</a></div>
+      <div><h4>Contato</h4><a href="#">contato@medrankgpt.com.br</a><a href="#">WhatsApp</a><a href="#contato">Diagnóstico grátis</a></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="year"></span> MedRankGPT — Todos os direitos reservados.</span><span>SEO · AEO · GEO para a medicina · Brasil</span></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="#contato"><span class="ico">💬</span><span class="txt">Fale com um especialista</span></a>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("menuBtn").addEventListener("click",function(){document.getElementById("navlinks").classList.toggle("show");});
+document.querySelectorAll("#navlinks a").forEach(function(a){a.addEventListener("click",function(){document.getElementById("navlinks").classList.remove("show");});});
+document.querySelectorAll(".faq-q").forEach(function(b){b.addEventListener("click",function(){b.parentElement.classList.toggle("open");});});
+</script>
+</body></html>

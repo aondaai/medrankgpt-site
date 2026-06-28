@@ -1,0 +1,65 @@
+<!-- @dsCard group="Components" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Badges &amp; Eyebrows — MedRankGPT</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap');
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--surface:#FFFFFF;--line:#E4EAE4;
+--em:#0BA56A;--em-deep:#075E45;--em-soft:#E6F7EF;--indigo:#1E3A8A;--indigo-soft:#E7ECFB;--lime:#9AE600;--coral:#FF6B4A;--amber:#FF9E2C;--error:#E23D2E;
+--font:'Satoshi',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;--r-sm:8px;--r-pill:999px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px}
+.eyebrow-h{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);margin-bottom:6px}
+h1{font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:64ch}
+.group{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--subtle);margin:22px 0 12px}
+.bar{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep)}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--lime)}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--em-deep);background:var(--em-soft);border:1px solid #CFEDDE;padding:6px 12px;border-radius:var(--r-pill)}
+.medal{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:#fff;background:var(--em);padding:7px 14px;border-radius:var(--r-pill);box-shadow:0 6px 16px rgba(11,165,106,.28)}
+.pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:var(--r-pill)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%}
+.pill-success{background:var(--em-soft);color:var(--em-deep)}.pill-success::before{background:var(--em)}
+.pill-warning{background:#FFF1DD;color:#9A5B00}.pill-warning::before{background:var(--amber)}
+.pill-error{background:#FCE6E3;color:#A52A1E}.pill-error::before{background:var(--error)}
+.pill-info{background:var(--indigo-soft);color:var(--indigo)}.pill-info::before{background:#2D6BFF}
+.trust{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:13.5px}
+.trust .d{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:var(--r-pill);padding:7px 13px}
+.trust .d::before{content:"✓";color:var(--em);font-weight:900}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style></head><body>
+<h2 class="sr-only">Selos e rótulos do MedRankGPT: eyebrow com traço de lima, tag, a medalha esmeralda "recomendado pela IA", pílulas de status e chips de confiança.</h2>
+<div class="eyebrow-h">Components</div>
+<h1>Badges &amp; Eyebrows</h1>
+<p class="sub">Rótulos em mono com traço de lima. A medalha esmeralda marca "a fonte que a IA recomenda". Status usa a paleta vibrante; chips de confiança com check.</p>
+
+<div class="group">Eyebrow</div>
+<div class="bar"><span class="eyebrow">Feito-para-você · Só para a medicina</span></div>
+
+<div class="group">Tags &amp; medal</div>
+<div class="bar">
+  <span class="tag">AEO / GEO</span>
+  <span class="tag">Conformidade CFM</span>
+  <span class="medal">★ Recomendado pela IA</span>
+  <span class="medal" style="background:var(--ink);box-shadow:none">Mais escolhido</span>
+</div>
+
+<div class="group">Status</div>
+<div class="bar">
+  <span class="pill pill-success">Citado pela IA</span>
+  <span class="pill pill-warning">Em monitoramento</span>
+  <span class="pill pill-error">Não aparece</span>
+  <span class="pill pill-info">Diagnóstico pronto</span>
+</div>
+
+<div class="group">Trust</div>
+<div class="trust">
+  <span class="d">Onsite + Offsite</span>
+  <span class="d">Conformidade com o CFM</span>
+  <span class="d">Médicos e clínicas</span>
+</div>
+</body></html>

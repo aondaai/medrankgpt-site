@@ -1,0 +1,63 @@
+<!-- @dsCard group="Foundations" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Typography — MedRankGPT</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap');
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--surface:#FFFFFF;--line:#E4EAE4;
+--em:#0BA56A;--em-deep:#075E45;--lime:#9AE600;
+--font:'Satoshi',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;--r-xl:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);margin-bottom:6px}
+h1.title{font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:64ch}
+.fam{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+@media(max-width:640px){.fam{grid-template-columns:1fr}}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:18px}
+.fcard .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--subtle);margin-bottom:8px}
+.fcard .big{font-size:36px;line-height:1;margin-bottom:6px}
+.fcard .name{font-size:13px;font-weight:700}.fcard .meta{font-size:12px;color:var(--muted)}
+.f-display .big{font-family:var(--font);font-weight:900;letter-spacing:-.02em}
+.f-sans .big{font-family:var(--font);font-weight:500}
+.f-mono .big{font-family:var(--mono);font-weight:600}
+.scale{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden}
+.line{display:flex;align-items:baseline;gap:16px;padding:13px 18px;border-bottom:1px solid var(--line)}
+.line:last-child{border-bottom:none}
+.line .tok{font-family:var(--mono);font-size:11px;color:var(--subtle);width:110px;flex:0 0 auto}
+.line .spec{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:auto;flex:0 0 auto}
+.d-xl{font-weight:900;font-size:40px;line-height:1;letter-spacing:-.03em}
+.d-md{font-weight:900;font-size:28px;letter-spacing:-.025em}
+.h1{font-weight:700;font-size:23px;letter-spacing:-.015em}
+.b-lg{font-size:18px;font-weight:400}.b{font-size:16px}
+.cap{font-size:13px;color:var(--muted)}
+.ov{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep)}
+.mn{font-family:var(--mono);font-size:14px}
+.hl{background:linear-gradient(180deg,transparent 58%,var(--lime) 58%);padding:0 3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style></head><body>
+<h2 class="sr-only">Tipografia do MedRankGPT: Satoshi pesada para display, Satoshi para corpo, Geist Mono para dados, com a escala e o realce de lima.</h2>
+<div class="eyebrow">Foundations</div>
+<h1 class="title">Typography</h1>
+<p class="sub">Satoshi pesada (900) dá títulos grandes e confiantes; Satoshi regular dá clareza amigável; Geist Mono faz a medida. Palavras-chave ganham realce de lima.</p>
+
+<div class="fam">
+  <div class="fcard f-display"><div class="role">Display</div><div class="big">Satoshi</div><div class="name">Satoshi · 900</div><div class="meta">títulos, tracking -.025em</div></div>
+  <div class="fcard f-sans"><div class="role">Body / UI</div><div class="big">Satoshi</div><div class="name">Satoshi · 400–500</div><div class="meta">corpo, interface, botões</div></div>
+  <div class="fcard f-mono"><div class="role">Data / Metrics</div><div class="big">Geist Mono</div><div class="name">Geist Mono</div><div class="meta">Índice, share of voice, deltas</div></div>
+</div>
+
+<div class="scale">
+  <div class="line"><span class="tok">display-xl</span><span class="d-xl">Seja o médico que a <span class="hl">IA recomenda</span></span><span class="spec">60 / 1.0</span></div>
+  <div class="line"><span class="tok">display-md</span><span class="d-md">Da invisibilidade à referência</span><span class="spec">36 / 1.08</span></div>
+  <div class="line"><span class="tok">h1</span><span class="h1">Quando o paciente pergunta, quem a IA cita?</span><span class="spec">30 / 1.12</span></div>
+  <div class="line"><span class="tok">body-lg</span><span class="b-lg">Posicionamos você como a resposta que o ChatGPT escolhe.</span><span class="spec">18 / 1.6</span></div>
+  <div class="line"><span class="tok">body</span><span class="b">Onsite + offsite, dentro das normas do CFM, feito para você.</span><span class="spec">16 / 1.6</span></div>
+  <div class="line"><span class="tok">caption</span><span class="cap">Fontes de referência usadas apenas para contexto.</span><span class="spec">13 / 1.5</span></div>
+  <div class="line"><span class="tok">overline</span><span class="ov">Feito-para-você · Só para a medicina</span><span class="spec">11 / .1em</span></div>
+  <div class="line"><span class="tok">mono-sm</span><span class="mn">Índice 73% · SoV +128% · pos. 1.4</span><span class="spec">12 / 1.4</span></div>
+</div>
+</body></html>

@@ -1,0 +1,75 @@
+<!-- @dsCard group="Components" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forms — MedRankGPT</title>
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap');
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--surface:#FFFFFF;--line:#E4EAE4;--line2:#D4DCD4;
+--em:#0BA56A;--em-h:#0A8F5C;--em-deep:#075E45;--on:#FFFFFF;--error:#E23D2E;
+--font:'Satoshi',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
+--r-md:11px;--r-xl:18px;--r-pill:999px;--e3:0 22px 50px rgba(12,20,16,.12);--e-em:0 12px 28px rgba(11,165,106,.22);--focus:0 0 0 3px rgba(11,165,106,.25);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding:28px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);margin-bottom:6px}
+h1{font-weight:900;font-size:30px;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:22px;max-width:64ch}
+.card{max-width:440px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:26px;box-shadow:var(--e3)}
+.tagline{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--em);padding:5px 12px;border-radius:var(--r-pill);margin-bottom:13px}
+.card h3{font-weight:900;font-size:23px;letter-spacing:-.015em;margin-bottom:4px}
+.card .desc{color:var(--muted);font-size:13.5px;margin-bottom:18px}
+.field{margin-bottom:13px}
+label{display:block;font-size:12.5px;font-weight:600;color:var(--ink);margin-bottom:6px}
+input,select{width:100%;font-family:inherit;font-size:14.5px;color:var(--ink);background:#FBFDFB;border:1px solid var(--line2);border-radius:var(--r-md);padding:12px 13px;transition:border-color .18s,box-shadow .18s,background .18s}
+input::placeholder{color:var(--subtle)}
+input:focus,select:focus{outline:none;border-color:var(--em);background:#fff;box-shadow:var(--focus)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.field.err input{border-color:var(--error);box-shadow:0 0 0 3px rgba(226,61,46,.16)}
+.err-msg{font-size:12px;color:var(--error);margin-top:5px}
+.submit{width:100%;font-family:var(--font);font-weight:700;font-size:15px;color:var(--on);background:var(--em);border:none;border-radius:var(--r-md);padding:14px;cursor:pointer;margin-top:4px;box-shadow:var(--e-em);transition:background .18s,transform .18s}
+.submit:hover{background:var(--em-h);transform:translateY(-2px)}
+.priv{font-family:var(--mono);font-size:11px;color:var(--subtle);text-align:center;margin-top:11px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+</style></head><body>
+<h2 class="sr-only">Formulário de diagnóstico do MedRankGPT com campos de nome, e-mail, WhatsApp, perfil e especialidade, incluindo foco esmeralda e estado de erro.</h2>
+<div class="eyebrow">Components</div>
+<h1>Forms</h1>
+<p class="sub">Inputs claros, anel de foco esmeralda, raio amigável. Este é o cartão de captura do "Diagnóstico grátis".</p>
+
+<div class="card">
+  <span class="tagline">Diagnóstico gratuito</span>
+  <h3>Você aparece quando perguntam à IA?</h3>
+  <p class="desc">Rodamos prompts reais da sua especialidade e cidade e mostramos se a IA cita você — ou um concorrente.</p>
+  <form novalidate onsubmit="return false">
+    <div class="field">
+      <label for="nome">Nome completo</label>
+      <input id="nome" type="text" placeholder="Dr(a). Nome Sobrenome">
+    </div>
+    <div class="row2">
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="voce@email.com">
+      </div>
+      <div class="field err">
+        <label for="wa">WhatsApp</label>
+        <input id="wa" type="tel" value="(11) 9" aria-invalid="true">
+        <div class="err-msg">Informe um número válido.</div>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field">
+        <label for="perfil">Você é</label>
+        <select id="perfil"><option>Médico(a) autônomo(a)</option><option>Clínica / grupo médico</option><option>Gestor(a) de marketing</option></select>
+      </div>
+      <div class="field">
+        <label for="esp">Especialidade / Cidade</label>
+        <input id="esp" type="text" placeholder="Ex.: Dermatologia · SP">
+      </div>
+    </div>
+    <button class="submit" type="submit">Receber meu diagnóstico →</button>
+    <p class="priv">🔒 Seus dados são confidenciais e usados apenas para contato.</p>
+  </form>
+</div>
+</body></html>
