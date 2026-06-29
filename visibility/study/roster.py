@@ -1,13 +1,21 @@
 from __future__ import annotations
+import json
 import re
 import httpx
 
 _NAME_RE = re.compile(r'"name"\s*:\s*"(Dr[a]?\.?\s+[^"]{2,60})"')
 
+def _decode(raw: str) -> str:
+    # nomes vêm de JSON-LD com unicode escapado (ã); decodifica via JSON.
+    try:
+        return json.loads('"' + raw + '"')
+    except Exception:
+        return raw
+
 def parse_doctoralia_names(html: str, max_n: int | None = None) -> list[str]:
     seen: list[str] = []
     for m in _NAME_RE.findall(html or ""):
-        nome = re.sub(r"\s+", " ", m).strip()
+        nome = re.sub(r"\s+", " ", _decode(m)).strip()
         if nome not in seen:
             seen.append(nome)
         if max_n is not None and len(seen) >= max_n:
