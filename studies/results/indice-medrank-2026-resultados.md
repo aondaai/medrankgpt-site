@@ -13,6 +13,9 @@
    fontes que dominam o Google: **cita o Doctoralia como fonte em 35%** das respostas.
 3. **A vaga está aberta.** Nenhum médico domina as recomendações da IA (o mais citado
    aparece em só 9 de 720 respostas). Quem se posiciona vira "o nome que a IA dá".
+4. **86% dos médicos são invisíveis pra IA.** De 2.191 médicos reais listados no Doctoralia,
+   só **13,9%** chegam a ser nomeados pelo ChatGPT — e nas especialidades mais concorridas
+   (Dermatologia) é só **5%**.
 
 ---
 
@@ -68,6 +71,29 @@ Via SerpApi. Amostra: **460/540 (85%)** — taxa de supressão estável desde os
 
 ---
 
+## Camada 2 — Visibilidade na IA (denominador real: 2.191 médicos do Doctoralia)
+
+Roster construído a partir das listagens do Doctoralia (top ~15 por especialidade×capital,
+17 especialidades). Cruzamos cada médico real com os nomes que a IA de fato citou na Camada 1.
+
+> **Só 13,9% dos médicos listados chegam a ser nomeados pela IA. → 86% são invisíveis pro ChatGPT.**
+
+| Recorte | % visível na IA |
+|---|---|
+| **Geral** (2.191 médicos) | **13,9%** |
+| Reumatologia (maior) | 26,2% |
+| **Dermatologia (menor)** | **5,2%** |
+| Oftalmologia | 7,4% |
+| Cirurgia Plástica | 9,7% |
+
+**Insight de venda:** as especialidades **mais concorridas têm a MENOR visibilidade** — quanto
+mais médico disputando, mais invisível cada um. É exatamente onde a dor (e a disposição a
+pagar) é maior.
+
+> Nota: o roster já é de médicos prominentes (top Doctoralia), então no universo total a
+> invisibilidade é ainda **maior** — 86% é piso conservador. "Visível" = nomeado nas buscas
+> da Camada 1 (mesma especialidade/cidade).
+
 ## A tese do Índice (com 2 superfícies fechadas)
 
 > **O Google te manda pro Doctoralia. O ChatGPT lê o Doctoralia e nomeia um médico — mas
@@ -92,6 +118,7 @@ provado com dado proprietário nacional.
 
 1. ✅ Pilar C (AIO) fechado (37% supressão). _Opcional: completar os ~80 do tail lento._
 2. **2ª repetição** dos prompts de IA (medir instabilidade da recomendação).
-3. **Camada 2 — AI Visibility Score** sobre rosters reais (distribuição de notas; depende de
-   sourcing de médicos).
+3. ✅ **Camada 2 v1** — visibilidade na IA de 2.191 médicos reais (86% invisíveis).
+   _Pendente: corrigir 3 slugs Doctoralia (ortopedista/otorrino/proctologista) + Visibility
+   Score completo 0-100 por médico (Google + site), quando valer o custo._
 4. Microsite + PDF consumindo o `aggregates.json`.

@@ -546,5 +546,99 @@
         }
       }
     }
+  },
+  "camada2_visibilidade_ia": {
+    "fonte_roster": "Doctoralia (top ~15 por especialidade×capital)",
+    "total_medicos": 2191,
+    "pct_visivel_ia": 0.1387,
+    "pct_invisivel_ia": 0.8613,
+    "por_especialidade": {
+      "Dermatologia": {
+        "n": 135,
+        "visiveis": 7,
+        "pct": 0.0519
+      },
+      "Cirurgia Plástica": {
+        "n": 134,
+        "visiveis": 13,
+        "pct": 0.097
+      },
+      "Oftalmologia": {
+        "n": 135,
+        "visiveis": 10,
+        "pct": 0.0741
+      },
+      "Ginecologia e Obstetrícia": {
+        "n": 135,
+        "visiveis": 17,
+        "pct": 0.1259
+      },
+      "Urologia": {
+        "n": 135,
+        "visiveis": 25,
+        "pct": 0.1852
+      },
+      "Endocrinologia": {
+        "n": 134,
+        "visiveis": 20,
+        "pct": 0.1493
+      },
+      "Cardiologia": {
+        "n": 130,
+        "visiveis": 22,
+        "pct": 0.1692
+      },
+      "Mastologia": {
+        "n": 110,
+        "visiveis": 25,
+        "pct": 0.2273
+      },
+      "Nutrologia": {
+        "n": 125,
+        "visiveis": 14,
+        "pct": 0.112
+      },
+      "Gastroenterologia": {
+        "n": 129,
+        "visiveis": 15,
+        "pct": 0.1163
+      },
+      "Reumatologia": {
+        "n": 122,
+        "visiveis": 32,
+        "pct": 0.2623
+      },
+      "Cirurgia Vascular": {
+        "n": 127,
+        "visiveis": 20,
+        "pct": 0.1575
+      },
+      "Neurologia": {
+        "n": 131,
+        "visiveis": 20,
+        "pct": 0.1527
+      },
+      "Psiquiatria": {
+        "n": 135,
+        "visiveis": 11,
+        "pct": 0.0815
+      },
+      "Pediatria": {
+        "n": 133,
+        "visiveis": 15,
+        "pct": 0.1128
+      },
+      "Pneumologia": {
+        "n": 122,
+        "visiveis": 23,
+        "pct": 0.1885
+      },
+      "Geriatria": {
+        "n": 119,
+        "visiveis": 15,
+        "pct": 0.1261
+      }
+    },
+    "nota": "Visível = a IA nomeou o médico nas buscas da Camada 1 (mesma esp/cidade). Roster = médicos já razoavelmente prominentes (top Doctoralia), logo a invisibilidade no universo total é ainda maior."
   }
 }
