@@ -95,7 +95,7 @@ mais médico disputando, mais invisível cada um. É exatamente onde a dor (e a 
 pagar) é maior.
 
 > Nota: o roster já é de médicos prominentes (top Doctoralia), então no universo total a
-> invisibilidade é ainda **maior** — 86% é piso conservador. "Visível" = nomeado nas buscas
+> invisibilidade é ainda **maior** — 84% é piso conservador. "Visível" = nomeado nas buscas
 > da Camada 1 (mesma especialidade/cidade).
 
 ## A tese do Índice (com 2 superfícies fechadas)
