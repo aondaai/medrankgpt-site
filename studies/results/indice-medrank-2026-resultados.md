@@ -52,10 +52,19 @@ que o posicionamento individual paga.
 
 ## Pilar C — Google AI Overview (a IA do Google)
 
-⏳ **Em coleta.** Sonda inicial confirmou que o Google **suprime o AIO nas buscas
-"quem é o melhor médico"** (conteúdo YMYL) e o mostra mais em info/procedimento. A taxa de
-supressão nacional fecha quando o run terminar — é manchete por si só
-(*"o Google nem liga a IA quando o paciente procura um especialista"*).
+Via SerpApi. Amostra: **460/540 (85%)** — taxa de supressão estável desde os 280 primeiros.
+
+| Tipo de busca | Sem AIO (suprimido) | Quando aparece, cita médico |
+|---|---|---|
+| **Geral** | **37%** | 56% |
+| **"melhor [especialista]"** | **43%** | **92%** |
+| **"[procedimento]"** | 34% | 40% |
+
+**Achados:**
+- O Google **não mostra IA em 37% das buscas médicas** — e em **43%** quando o paciente
+  procura "o melhor [especialista]". Confirma a postura conservadora do Google em saúde (YMYL).
+- Mas quando **mostra** AIO no "melhor", ele **nomeia um médico em 92%** das vezes — ou seja,
+  onde há IA do Google, ela também aponta nomes (e lê as mesmas fontes).
 
 ---
 
@@ -81,7 +90,7 @@ provado com dado proprietário nacional.
 
 ## Próximos passos
 
-1. Fechar o **Pilar C (AIO)** → taxa de supressão.
+1. ✅ Pilar C (AIO) fechado (37% supressão). _Opcional: completar os ~80 do tail lento._
 2. **2ª repetição** dos prompts de IA (medir instabilidade da recomendação).
 3. **Camada 2 — AI Visibility Score** sobre rosters reais (distribuição de notas; depende de
    sourcing de médicos).
