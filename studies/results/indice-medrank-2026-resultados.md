@@ -13,9 +13,11 @@
    fontes que dominam o Google: **cita o Doctoralia como fonte em 35%** das respostas.
 3. **A vaga está aberta.** Nenhum médico domina as recomendações da IA (o mais citado
    aparece em só 9 de 720 respostas). Quem se posiciona vira "o nome que a IA dá".
-4. **86% dos médicos são invisíveis pra IA.** De 2.191 médicos reais listados no Doctoralia,
-   só **13,9%** chegam a ser nomeados pelo ChatGPT — e nas especialidades mais concorridas
+4. **84% dos médicos são invisíveis pra IA.** De **2.567** médicos reais listados no Doctoralia,
+   só **15,5%** chegam a ser nomeados pelo ChatGPT — e nas especialidades mais concorridas
    (Dermatologia) é só **5%**.
+5. **A IA é instável: pergunte 2x, mude o médico em 42%.** O top recomendado muda entre duas
+   perguntas idênticas em 42% das buscas — ser a resposta *consistente* é um diferencial.
 
 ---
 
@@ -32,6 +34,7 @@ Modelo: `gpt-4o-search-preview` (navega na web, como o ChatGPT de consumo). 720 
 | **Cita Doctoralia como fonte** | **35%** |
 | Alegação com risco-CFM | 0% |
 | Concentração (top médico) | 9 / 720 — **pulverizado** |
+| **Instabilidade** (top muda entre 2 reps) | **42%** |
 
 > Nota metodológica decisiva: o modelo **sem busca** (`gpt-4o`) se esquiva e cita médico em
 > só ~6%; o modelo **com busca** cita em 93%. O ChatGPT de consumo navega — então o número
@@ -71,17 +74,18 @@ Via SerpApi. Amostra: **460/540 (85%)** — taxa de supressão estável desde os
 
 ---
 
-## Camada 2 — Visibilidade na IA (denominador real: 2.191 médicos do Doctoralia)
+## Camada 2 — Visibilidade na IA (denominador real: 2.567 médicos do Doctoralia)
 
 Roster construído a partir das listagens do Doctoralia (top ~15 por especialidade×capital,
-17 especialidades). Cruzamos cada médico real com os nomes que a IA de fato citou na Camada 1.
+**20 especialidades**). Cruzamos cada médico real com os nomes que a IA de fato citou na
+Camada 1 (2 repetições).
 
-> **Só 13,9% dos médicos listados chegam a ser nomeados pela IA. → 86% são invisíveis pro ChatGPT.**
+> **Só 15,5% dos médicos listados chegam a ser nomeados pela IA. → 84% são invisíveis pro ChatGPT.**
 
 | Recorte | % visível na IA |
 |---|---|
-| **Geral** (2.191 médicos) | **13,9%** |
-| Reumatologia (maior) | 26,2% |
+| **Geral** (2.567 médicos) | **15,5%** |
+| Reumatologia (maior) | 34,4% |
 | **Dermatologia (menor)** | **5,2%** |
 | Oftalmologia | 7,4% |
 | Cirurgia Plástica | 9,7% |
@@ -117,8 +121,7 @@ provado com dado proprietário nacional.
 ## Próximos passos
 
 1. ✅ Pilar C (AIO) fechado (37% supressão). _Opcional: completar os ~80 do tail lento._
-2. **2ª repetição** dos prompts de IA (medir instabilidade da recomendação).
-3. ✅ **Camada 2 v1** — visibilidade na IA de 2.191 médicos reais (86% invisíveis).
-   _Pendente: corrigir 3 slugs Doctoralia (ortopedista/otorrino/proctologista) + Visibility
-   Score completo 0-100 por médico (Google + site), quando valer o custo._
+2. ✅ **2ª repetição** dos prompts de IA → instabilidade de 42%.
+3. ✅ **Camada 2** — visibilidade na IA de 2.567 médicos reais, 20 especialidades (84% invisíveis).
+   _Pendente opcional: Visibility Score completo 0-100 por médico (Google + site)._
 4. Microsite + PDF consumindo o `aggregates.json`.

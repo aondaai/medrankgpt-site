@@ -203,7 +203,9 @@
         "Dr. Pedro Fontana",
         4
       ]
-    ]
+    ],
+    "repeticoes": 2,
+    "instabilidade_pct_top_medico_muda": 0.4222
   },
   "google_serp": {
     "total": 540,
@@ -549,9 +551,9 @@
   },
   "camada2_visibilidade_ia": {
     "fonte_roster": "Doctoralia (top ~15 por especialidade×capital)",
-    "total_medicos": 2191,
-    "pct_visivel_ia": 0.1387,
-    "pct_invisivel_ia": 0.8613,
+    "total_medicos": 2567,
+    "pct_visivel_ia": 0.1554,
+    "pct_invisivel_ia": 0.8446,
     "por_especialidade": {
       "Dermatologia": {
         "n": 135,
@@ -568,10 +570,20 @@
         "visiveis": 10,
         "pct": 0.0741
       },
+      "Ortopedia e Traumatologia": {
+        "n": 131,
+        "visiveis": 15,
+        "pct": 0.1145
+      },
       "Ginecologia e Obstetrícia": {
         "n": 135,
         "visiveis": 17,
         "pct": 0.1259
+      },
+      "Otorrinolaringologia": {
+        "n": 130,
+        "visiveis": 17,
+        "pct": 0.1308
       },
       "Urologia": {
         "n": 135,
@@ -595,28 +607,28 @@
       },
       "Nutrologia": {
         "n": 125,
-        "visiveis": 14,
-        "pct": 0.112
+        "visiveis": 17,
+        "pct": 0.136
       },
       "Gastroenterologia": {
         "n": 129,
-        "visiveis": 15,
-        "pct": 0.1163
+        "visiveis": 17,
+        "pct": 0.1318
       },
       "Reumatologia": {
         "n": 122,
-        "visiveis": 32,
-        "pct": 0.2623
+        "visiveis": 42,
+        "pct": 0.3443
       },
       "Cirurgia Vascular": {
         "n": 127,
-        "visiveis": 20,
-        "pct": 0.1575
+        "visiveis": 23,
+        "pct": 0.1811
       },
       "Neurologia": {
         "n": 131,
-        "visiveis": 20,
-        "pct": 0.1527
+        "visiveis": 23,
+        "pct": 0.1756
       },
       "Psiquiatria": {
         "n": 135,
@@ -625,20 +637,26 @@
       },
       "Pediatria": {
         "n": 133,
-        "visiveis": 15,
-        "pct": 0.1128
+        "visiveis": 18,
+        "pct": 0.1353
       },
       "Pneumologia": {
         "n": 122,
-        "visiveis": 23,
-        "pct": 0.1885
+        "visiveis": 26,
+        "pct": 0.2131
       },
       "Geriatria": {
         "n": 119,
-        "visiveis": 15,
-        "pct": 0.1261
+        "visiveis": 21,
+        "pct": 0.1765
+      },
+      "Coloproctologia": {
+        "n": 115,
+        "visiveis": 30,
+        "pct": 0.2609
       }
     },
-    "nota": "Visível = a IA nomeou o médico nas buscas da Camada 1 (mesma esp/cidade). Roster = médicos já razoavelmente prominentes (top Doctoralia), logo a invisibilidade no universo total é ainda maior."
+    "nota": "Visível = a IA nomeou o médico nas buscas da Camada 1 (mesma esp/cidade). Roster = médicos já razoavelmente prominentes (top Doctoralia), logo a invisibilidade no universo total é ainda maior.",
+    "especialidades": 20
   }
 }
