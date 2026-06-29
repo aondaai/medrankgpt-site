@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IA na saúde: 25 estatísticas que todo médico deve saber</title>
+<meta name="description" content="1 em cada 4 usuários do ChatGPT pergunta sobre saúde — mas só 17% dos médicos no Brasil usam IA. 25 estatísticas sobre IA, busca e reputação médica." />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<link rel="canonical" href="https://medrankgpt.com.br/listas/estatisticas-ia-saude-medicos/" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="MedRankGPT" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:title" content="IA na saúde: 25 estatísticas que todo médico deve saber" />
+<meta property="og:description" content="1 em cada 4 usuários do ChatGPT pergunta sobre saúde — mas só 17% dos médicos no Brasil usam IA. 25 estatísticas sobre IA, busca e reputação médica." />
+<meta property="og:url" content="https://medrankgpt.com.br/listas/estatisticas-ia-saude-medicos/" />
+<meta property="og:image" content="https://medrankgpt.com.br/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet" />
+<style>
+:root{
+--ink:#0C1410;--muted:#5B6660;--subtle:#8A938C;--bg:#FFFFFF;--mint:#F1FAEF;--soft:#F7FAF6;--surface:#FFFFFF;--line:#E4EAE4;--line2:#D4DCD4;
+--em:#0BA56A;--em-h:#0A8F5C;--em-deep:#075E45;--em-soft:#E6F7EF;--indigo:#1E3A8A;--indigo-soft:#E7ECFB;--blue:#2D6BFF;--lime:#9AE600;--coral:#FF6B4A;--amber:#FF9E2C;--on:#FFFFFF;
+--font:'Satoshi',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--mono:'Geist Mono',ui-monospace,Menlo,monospace;
+--r-md:11px;--r-lg:14px;--r-xl:18px;--r-2xl:24px;--r-pill:999px;--maxw:1180px;
+--e1:0 1px 3px rgba(12,20,16,.06);--e2:0 6px 18px rgba(12,20,16,.07),0 2px 6px rgba(12,20,16,.05);--e3:0 22px 50px rgba(12,20,16,.12);--e-em:0 12px 28px rgba(11,165,106,.22);
+--ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{letter-spacing:-.02em;line-height:1.08}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.hl{background:linear-gradient(180deg,transparent 60%,var(--lime) 60%);padding:0 4px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep)}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--lime)}
+.eyebrow.center{justify-content:center}
+.btn{font-family:var(--font);font-weight:700;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:var(--r-md);border:1px solid transparent;cursor:pointer;transition:transform .18s var(--ease),background .18s,box-shadow .18s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-ink{background:var(--ink);color:var(--on)}.btn-ink:hover{background:#000}
+.btn-em{background:var(--em);color:var(--on);box-shadow:var(--e-em)}.btn-em:hover{background:var(--em-h)}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}.btn-ghost:hover{border-color:var(--em);color:var(--em-deep)}
+.btn-wa{background:var(--coral);color:#2A0F08}.btn-wa:hover{background:#F0573A}
+
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:900;font-size:20px}
+.logo .mark{display:block;flex:0 0 auto;width:30px;height:30px}
+.logo b{color:var(--em-deep)}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-size:14.5px;color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--em-deep)}
+.nav-links a.nav-academy{color:var(--em-deep);font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.nav-links a.nav-academy::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lime)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.menu-btn{display:none;background:none;border:none;color:var(--ink);font-size:24px;cursor:pointer}
+
+.hero{position:relative;overflow:hidden;padding:60px 0 56px;background:
+  radial-gradient(120% 70% at 88% -10%,#EAFBC2 0%,rgba(234,251,194,0) 42%),
+  radial-gradient(80% 70% at 6% 120%,#BDEBD3 0%,rgba(189,235,211,0) 55%),
+  linear-gradient(180deg,var(--mint) 0%,#FFFFFF 70%)}
+.hero .grid{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}
+.hero h1{font-weight:900;font-size:clamp(34px,5vw,56px);line-height:1.02;margin:14px 0 16px;letter-spacing:-.03em}
+.hero .lead{font-size:18px;color:var(--muted);max-width:48ch;margin-bottom:22px}
+.hero-cta{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:18px}
+.trust{display:flex;gap:9px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.trust span{background:#fff;border:1px solid var(--line);border-radius:var(--r-pill);padding:6px 11px}
+
+/* hero form card */
+.lead-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:26px;box-shadow:var(--e3)}
+.lead-card .tagline{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--em);padding:5px 12px;border-radius:var(--r-pill);margin-bottom:12px}
+.lead-card h3{font-size:23px;font-weight:900;margin-bottom:5px}
+.lead-card .sub{color:var(--muted);font-size:13.5px;margin-bottom:18px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px}
+.field input,.field select{width:100%;font-family:inherit;font-size:14.5px;color:var(--ink);background:#FBFDFB;border:1px solid var(--line2);border-radius:var(--r-md);padding:12px 13px;transition:border-color .18s,box-shadow .18s,background .18s}
+.field input::placeholder{color:var(--subtle)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--em);background:#fff;box-shadow:0 0 0 3px rgba(11,165,106,.25)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.lead-card .btn{width:100%;margin-top:6px}
+.lead-card .priv{font-family:var(--mono);font-size:11px;color:var(--subtle);text-align:center;margin-top:11px}
+
+.engines{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--soft);padding:18px 0}
+.engines .wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between}
+.engines .l{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--subtle)}
+.engines .n{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-weight:600;font-size:15px}
+.engines .n span{transition:color .2s}.engines .n span:hover{color:var(--em-deep)}
+
+section.block{padding:80px 0}
+.section-head{max-width:740px;margin:0 auto 44px;text-align:center}
+.section-head h2{font-weight:900;font-size:clamp(30px,4vw,46px);margin:12px 0 14px}
+.section-head p{color:var(--muted);font-size:17px}
+
+.stats{background:var(--mint)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:28px 22px;text-align:center;box-shadow:var(--e1);transition:transform .2s var(--ease)}
+.stat:hover{transform:translateY(-4px)}
+.stat .num{font-family:var(--mono);font-size:46px;font-weight:600;color:var(--em);line-height:1}
+.stat .desc{color:var(--muted);font-size:13.5px;margin-top:12px}
+.source{text-align:center;color:var(--subtle);font-size:12px;margin-top:24px}
+
+.offsite-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.obox{border:1px solid var(--line);border-radius:var(--r-xl);padding:30px;background:#fff}
+.obox.big{background:linear-gradient(180deg,var(--em-soft),#fff);border-color:#CFEDDE}
+.obox .pct{font-family:var(--mono);font-size:44px;font-weight:600;line-height:1}
+.obox.big .pct{color:var(--em)}.obox.dim .pct{color:var(--subtle)}
+.obox h3{font-size:22px;font-weight:900;margin:8px 0 10px}
+.obox p{color:var(--muted);font-size:14.5px}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.check{list-style:none;margin-top:20px}
+.check li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;font-size:16px;color:var(--muted)}
+.check li::before{content:"✓";color:var(--em);font-weight:900;margin-top:1px}
+.qa-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:26px;box-shadow:var(--e2)}
+.qa{padding:14px 0;border-bottom:1px solid var(--line)}
+.qa:last-child{border-bottom:none}
+.qa .q{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--subtle);margin-bottom:8px}
+.qa .a{display:flex;gap:11px;align-items:flex-start}
+.qa .a .b{flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--em);display:grid;place-items:center;color:#fff;font-weight:900;font-size:13px}
+.qa .a .b.dim{background:#C9D1CC}
+.qa .a p{font-size:15px}.qa .a p b{color:var(--em-deep)}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:26px 22px;transition:transform .2s var(--ease)}
+.step:hover{transform:translateY(-5px)}
+.step .n{font-family:var(--mono);font-size:13px;font-weight:600;color:#fff;background:var(--em);width:34px;height:34px;border-radius:10px;display:grid;place-items:center;margin-bottom:14px}
+.step h3{font-size:19px;font-weight:900;margin-bottom:8px}
+.step p{color:var(--muted);font-size:14px}
+
+.dash{background:linear-gradient(180deg,#0C1410,#10211A);color:#ECF3EE}
+.dash .section-head h2{color:#fff}.dash .section-head p{color:#9FB0A6}
+.dash .eyebrow{color:#7FE3B6}.dash .eyebrow::before{background:var(--lime)}
+.app{max-width:860px;margin:0 auto;border:1px solid rgba(236,243,238,.12);border-radius:var(--r-2xl);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5);background:#0E1A14}
+.app .top{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid rgba(236,243,238,.1);background:#12211A}
+.app .top .dot{width:9px;height:9px;border-radius:50%}
+.app .top .title{font-family:var(--mono);font-size:11px;color:#9FB0A6;margin-left:6px}
+.app .top .live{margin-left:auto;font-family:var(--mono);font-size:10px;color:#7FE3B6;background:rgba(43,214,140,.16);padding:4px 9px;border-radius:999px}
+.app .body{padding:16px}
+.app .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.app .kpi{border:1px solid rgba(236,243,238,.1);border-radius:var(--r-lg);padding:12px 13px;background:#0B1611}
+.app .kpi .k{font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#8FA398}
+.app .kpi .v{font-family:var(--mono);font-size:26px;font-weight:600;margin-top:3px}
+.app .kpi .d{font-family:var(--mono);font-size:10.5px;margin-top:2px;color:#42E29C}
+.app .split2{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.app .panel{border:1px solid rgba(236,243,238,.1);border-radius:var(--r-lg);padding:14px;background:#0B1611}
+.app .panel h4{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#8FA398;margin-bottom:12px}
+.app .rows .r{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.app .rows .r .lbl{width:84px;font-family:var(--mono);font-size:11px;color:#ECF3EE}
+.app .rows .r .track{flex:1;height:10px;background:#1E3329;border-radius:6px;overflow:hidden}
+.app .rows .r .fill{display:block;height:100%;border-radius:6px}
+.app .rows .r .pct{width:36px;text-align:right;font-family:var(--mono);font-size:11px;color:#C7D4CC}
+.app .spark{display:flex;align-items:flex-end;gap:5px;height:92px;padding-top:6px}
+.app .spark i{flex:1;border-radius:4px 4px 0 0}
+.app .legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:11px;font-family:var(--mono);font-size:10px;color:#9FB0A6}
+.app .legend span{display:inline-flex;align-items:center;gap:5px}
+.app .legend i{width:9px;height:9px;border-radius:3px}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:30px;transition:transform .2s var(--ease)}
+.pillar:hover{transform:translateY(-5px)}
+.pillar .ico{width:50px;height:50px;border-radius:13px;background:var(--em-soft);display:grid;place-items:center;font-size:24px;margin-bottom:16px}
+.pillar h3{font-size:22px;font-weight:900;margin-bottom:10px}
+.pillar p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
+.pillar ul{list-style:none}
+.pillar li{position:relative;padding:6px 0 6px 20px;font-size:13.5px;color:var(--subtle)}
+.pillar li::before{content:"→";position:absolute;left:0;color:var(--em)}
+
+.ctable{max-width:880px;margin:0 auto;border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--e2);background:#fff}
+.crow{display:grid;grid-template-columns:1.4fr 1fr 1fr}
+.crow>div{padding:16px 20px;border-bottom:1px solid var(--line);font-size:14.5px}
+.crow.head>div{background:var(--soft);font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.crow.head .us{color:var(--em-deep)}
+.crow .feat{color:var(--ink);font-weight:600}.crow .them{color:var(--subtle)}
+.crow .us{color:var(--em-deep);font-weight:700;background:var(--em-soft)}
+.crow .us::before{content:"✓";margin-right:7px;color:var(--em);font-weight:900}
+.crow:last-child>div{border-bottom:none}
+
+.plans{background:var(--mint)}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.plan{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:32px 26px;display:flex;flex-direction:column;box-shadow:var(--e1)}
+.plan.feat{border:2px solid var(--em);box-shadow:var(--e3)}
+.plan .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--em);padding:6px 14px;border-radius:var(--r-pill);box-shadow:0 6px 16px rgba(11,165,106,.3)}
+.plan h3{font-size:28px;font-weight:900;margin-bottom:4px}
+.plan .who{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--em-deep);margin-bottom:16px}
+.plan .pdesc{color:var(--muted);font-size:14.5px;margin-bottom:22px;min-height:46px}
+.plan ul{list-style:none;margin-bottom:26px;flex-grow:1}
+.plan li{display:flex;gap:10px;font-size:14px;color:var(--muted);padding:8px 0;border-bottom:1px solid #EFF3EF}
+.plan li::before{content:"✓";color:var(--em);font-weight:900;flex-shrink:0}
+.plan .btn{width:100%}
+
+.audience{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.aud{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:34px}
+.aud h3{font-size:24px;font-weight:900;margin-bottom:8px;display:flex;align-items:center;gap:11px}
+.aud p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.aud ul{list-style:none}
+.aud li{position:relative;padding:7px 0 7px 22px;color:var(--muted);font-size:14.5px}
+.aud li::before{content:"✓";position:absolute;left:0;color:var(--em);font-weight:900}
+
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat{padding:26px;border-radius:var(--r-xl);background:#fff;border:1px solid var(--line)}
+.feat .ico{font-size:25px;margin-bottom:12px}
+.feat h3{font-size:19px;font-weight:900;margin-bottom:8px}
+.feat p{color:var(--muted);font-size:14px}
+
+.faq-list{max-width:840px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:12px;background:#fff;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--ink);font-size:16.5px;font-weight:700;font-family:var(--font);padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q:hover{color:var(--em-deep)}
+.faq-q .pm{flex-shrink:0;font-size:22px;color:var(--em);transition:transform .3s;font-weight:400}
+.faq-item.open .pm{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted);font-size:15px}
+.faq-a div{padding:0 24px 22px}
+.faq-item.open .faq-a{max-height:360px}
+
+.final{position:relative;overflow:hidden;padding:84px 0;text-align:center;background:
+  radial-gradient(70% 90% at 50% -10%,#EAFBC2 0%,rgba(234,251,194,0) 60%),
+  linear-gradient(180deg,var(--mint),#fff)}
+.final .wrap{position:relative;z-index:2;max-width:760px}
+.final h2{font-weight:900;font-size:clamp(32px,4.6vw,52px);margin-bottom:16px}
+.final p{color:var(--muted);font-size:18px;margin-bottom:28px}
+.final .hero-cta{justify-content:center}
+
+footer{background:#0C1410;color:#9FB0A6;padding:56px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+footer .logo{color:#fff;margin-bottom:14px}footer .logo b{color:#42E29C}
+.foot-grid h4{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#7FE3B6;margin-bottom:14px}
+.foot-grid a,.foot-grid p{display:block;color:#9FB0A6;font-size:14px;margin-bottom:9px;transition:color .2s}
+.foot-grid a:hover{color:#fff}
+.foot-about p{max-width:330px;line-height:1.7}
+.foot-bottom{border-top:1px solid rgba(236,243,238,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:12px;color:#7C8C82}
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:80;display:flex;align-items:center;background:var(--coral);color:#2A0F08;border-radius:var(--r-pill);box-shadow:0 12px 30px rgba(255,107,74,.4);overflow:hidden}
+.wa-float .ico{width:54px;height:54px;display:grid;place-items:center;font-size:24px;flex-shrink:0}
+.wa-float .txt{max-width:0;white-space:nowrap;overflow:hidden;font-weight:700;font-size:14px;transition:.35s;opacity:0}
+.wa-float:hover{padding-right:20px}.wa-float:hover .txt{max-width:200px;opacity:1}
+
+@media(max-width:980px){
+  .hero .grid,.split,.audience,.offsite-grid{grid-template-columns:1fr;gap:30px}
+  .stats-grid,.steps{grid-template-columns:repeat(2,1fr)}
+  .pillars,.plan-grid,.feat-grid{grid-template-columns:1fr}
+  .app .split2{grid-template-columns:1fr}.app .kpis{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.menu-btn{display:block}
+  .nav-links.show{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:#fff;padding:18px 24px;gap:14px;border-bottom:1px solid var(--line)}
+  .plan.feat{order:-1}
+}
+@media(max-width:560px){.stats-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.engines .wrap{justify-content:center;text-align:center}.nav-cta .btn-ghost{display:none}}
+</style>
+
+<style>
+.article-hero{padding:46px 0 6px;background:radial-gradient(120% 70% at 88% -10%,#EAFBC2 0,rgba(234,251,194,0) 42%),linear-gradient(180deg,var(--mint),#fff 80%)}
+.breadcrumb{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--subtle);margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.breadcrumb a{color:var(--em-deep)}.breadcrumb a:hover{color:var(--em)}.breadcrumb .sep{color:var(--line2)}
+.article-hero h1{font-weight:900;font-size:clamp(29px,4.1vw,44px);max-width:22ch;margin:4px 0 0;letter-spacing:-.03em}
+.article-wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.prose{padding:30px 0 18px;font-size:16.5px}
+.prose h2{font-size:clamp(22px,2.6vw,30px);font-weight:900;margin:36px 0 12px;letter-spacing:-.02em}
+.prose h3{font-size:19px;font-weight:800;margin:24px 0 8px}
+.prose p{margin:0 0 16px;color:var(--muted);line-height:1.72}
+.prose .answer{background:var(--em-soft);border:1px solid #CFEDDE;border-left:4px solid var(--em);border-radius:var(--r-lg);padding:18px 20px 4px;color:var(--ink);font-size:17px;line-height:1.6}
+.prose .answer strong{color:var(--em-deep)}
+.prose ul,.prose ol{margin:0 0 18px;padding-left:22px;color:var(--muted)}
+.prose li{margin:7px 0;line-height:1.6}
+.prose a{color:var(--em-deep);text-decoration:underline;text-underline-offset:2px}.prose a:hover{color:var(--em)}
+.prose strong{color:var(--ink)}
+.prose blockquote{margin:18px 0;padding:14px 20px;background:var(--soft);border-left:4px solid var(--lime);border-radius:0 var(--r-md) var(--r-md) 0}
+.prose blockquote p{color:var(--ink);margin:0;font-size:16.5px}
+.prose table{width:100%;border-collapse:collapse;margin:22px 0;font-size:14.5px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.prose th,.prose td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;color:var(--muted)}
+.prose thead th{background:var(--soft);font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.prose tbody tr:last-child td{border-bottom:none}
+.prose td strong,.prose th strong{color:var(--ink)}
+.prose hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+.prose .cta-link{display:inline-flex;align-items:center;gap:8px;background:var(--em);color:#fff;font-weight:700;padding:13px 22px;border-radius:var(--r-md);text-decoration:none;box-shadow:var(--e-em);margin-top:4px}
+.prose .cta-link:hover{background:var(--em-h);color:#fff}
+.prose .cta-link strong{color:#fff}
+.hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:8px 0 10px}
+.hub-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:24px;transition:transform .2s var(--ease),border-color .2s;box-shadow:var(--e1)}
+.hub-card:hover{transform:translateY(-4px);border-color:var(--em)}
+.hub-card h3{font-size:18px;font-weight:800;margin-bottom:8px;letter-spacing:-.01em}
+.hub-card p{color:var(--muted);font-size:14px;line-height:1.55;flex-grow:1}
+.hub-card .go{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--em-deep)}
+@media(max-width:980px){.hub-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.hub-grid{grid-template-columns:1fr}}
+</style>
+
+<style>
+.stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 26px}
+.scard{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);padding:22px 20px;box-shadow:var(--e1)}
+.scard .num{font-family:var(--mono);font-size:34px;font-weight:600;color:var(--em);line-height:1.05}
+.scard .cap{color:var(--muted);font-size:14.5px;margin:10px 0 12px;line-height:1.5}
+.scard .src{font-family:var(--mono);font-size:11px;letter-spacing:.02em;color:var(--subtle)}
+.scard .src a{color:var(--em-deep);text-decoration:none}
+.scard .src a:hover{text-decoration:underline}
+@media(max-width:640px){.stat-cards{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "25 estatísticas de IA na saúde que todo médico deveria saber",
+  "description": "1 em cada 4 usuários do ChatGPT pergunta sobre saúde — mas só 17% dos médicos no Brasil usam IA. 25 estatísticas sobre IA, busca e reputação médica.",
+  "inLanguage": "pt-BR",
+  "mainEntityOfPage": "https://medrankgpt.com.br/listas/estatisticas-ia-saude-medicos/",
+  "author": {
+    "@type": "Organization",
+    "name": "MedRankGPT",
+    "url": "https://medrankgpt.com.br/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MedRankGPT",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://medrankgpt.com.br/og-image.png"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://medrankgpt.com.br/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Academy",
+      "item": "https://medrankgpt.com.br/academy/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "25 estatísticas de IA na saúde que todo médico deveria saber",
+      "item": "https://medrankgpt.com.br/listas/estatisticas-ia-saude-medicos/"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="/#topo" class="logo"><svg class="mark" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><defs><linearGradient id="mrgA" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#86D900"/><stop offset="1" stop-color="#CBF55E"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="#0BA56A"/><path d="M5 24 H11 L13.5 24 L16 15 L18.5 30 L20.8 21.8" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 22 C24 22 26 14 31.6 8.8" fill="none" stroke="url(#mrgA)" stroke-width="3.4" stroke-linecap="round"/><path d="M25.8 8.4 L32.4 8.2 L32 14.8" fill="none" stroke="url(#mrgA)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Med<b>RankGPT</b></span></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="/#problema">Por que agora</a>
+      <a href="/#onsite-offsite">Onsite + Offsite</a>
+      <a href="/#metodo">Método</a>
+      <a href="/#planos">Planos</a>
+      <a href="/#faq">Dúvidas</a>
+      <a href="/academy/" class="nav-academy">Academy</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="/#contato" class="btn btn-ghost">Falar com especialista</a>
+      <a href="/#contato" class="btn btn-em">Diagnóstico grátis</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+<section class="article-hero">
+  <div class="article-wrap">
+    <nav class="breadcrumb"><a href="/">Início</a><span class="sep">/</span><a href="/academy/">Academy</a></nav>
+    <h1>25 estatísticas de IA na saúde que todo médico deveria saber</h1>
+  </div>
+</section>
+<article class="article-wrap prose">
+<p class="answer"><strong>Enquanto você lê isto, mais de 40 milhões de pessoas perguntam ao ChatGPT sobre saúde — todos os dias. A forma como o paciente busca informação, escolhe um médico e decide em quem confiar mudou de canal. Reunimos 25 estatísticas, com fonte, que mostram o tamanho dessa virada — e por que a maioria dos médicos no Brasil ainda não se posicionou nela.</strong></p>
+<p>Todos os números abaixo vêm de fontes públicas publicadas entre 2023 e 2026 — cada um com o link da fonte original. Os dados do Brasil estão identificados na legenda; os demais são internacionais (EUA ou globais) e podem não refletir exatamente a realidade brasileira.</p>
+
+<h2>O paciente já usa IA para cuidar da saúde</h2>
+<p>O ponto de partida é o tamanho da audiência: a IA generativa virou um canal de saúde de massa em poucos meses.</p>
+<div class="stat-cards">
+  <div class="scard">
+    <div class="num">800M</div>
+    <p class="cap">O ChatGPT dobrou para 800 milhões de usuários semanais em oito meses.</p>
+    <div class="src">Fonte: <a href="https://techcrunch.com/2025/10/06/sam-altman-says-chatgpt-has-hit-800m-weekly-active-users/" target="_blank" rel="noopener">OpenAI / TechCrunch, 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">1 em 4</div>
+    <p class="cap">1 em cada 4 usuários do ChatGPT faz uma pergunta de saúde por semana.</p>
+    <div class="src">Fonte: <a href="https://www.emarketer.com/content/1-4-chatgpt-users-submit-prompts-about-healthcare-weekly" target="_blank" rel="noopener">OpenAI, 2026</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">40 milhões/dia</div>
+    <p class="cap">Mais de 40 milhões de pessoas perguntam ao ChatGPT sobre saúde todos os dias.</p>
+    <div class="src">Fonte: <a href="https://www.medicaleconomics.com/view/40-million-people-now-use-chatgpt-daily-for-health-questions-openai-report-finds" target="_blank" rel="noopener">OpenAI, 2026</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">32%</div>
+    <p class="cap">32% dos adultos já usaram um chatbot de IA para buscar informação de saúde no último ano.</p>
+    <div class="src">Fonte: <a href="https://www.kff.org/health-information-trust/poll-1-in-3-adults-are-turning-to-ai-chatbots-for-health-information-equaling-the-share-who-use-social-media-for-health/" target="_blank" rel="noopener">KFF, 2026</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">19%</div>
+    <p class="cap">19% dos brasileiros já usam IA para se informar sobre saúde.</p>
+    <div class="src">Fonte: <a href="https://www.iess.org.br/press-release/seis-em-cada-dez-brasileiros-dizem-buscar-informacoes-sobre-saude-na-internet-mas" target="_blank" rel="noopener">IESS / Vox Populi, 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">18% vs 65%</div>
+    <p class="cap">Só 18% acham a IA precisa em saúde — contra 65% que confiam no médico.</p>
+    <div class="src">Fonte: <a href="https://www.pewresearch.org/science/2026/04/07/users-of-social-media-and-ai-chatbots-for-health-information-are-more-likely-to-say-they-are-convenient-than-accurate/" target="_blank" rel="noopener">Pew Research, 2026</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">31% / 38%</div>
+    <p class="cap">31% não confiam na IA para saúde física; 38% para saúde mental.</p>
+    <div class="src">Fonte: <a href="https://www.kff.org/health-information-trust/new-kff-tracking-poll-on-health-information-and-trust-finds-one-in-three-adults-have-used-ai-chatbots-for-health-advice/" target="_blank" rel="noopener">KFF, 2026</a></div>
+  </div>
+</div>
+
+<h2>A busca de saúde está migrando para respostas de IA</h2>
+<p>A audiência não está só nos chatbots: a própria busca tradicional virou um campo de respostas geradas por IA, e cada vez menos gente clica nos links.</p>
+<div class="stat-cards">
+  <div class="scard">
+    <div class="num">2 bilhões</div>
+    <p class="cap">Os resumos de IA do Google já alcançam 2 bilhões de pessoas por mês.</p>
+    <div class="src">Fonte: <a href="https://techcrunch.com/2025/07/23/googles-ai-overviews-have-2b-monthly-users-ai-mode-100m-in-the-us-and-india/" target="_blank" rel="noopener">Alphabet, Q2 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">58%</div>
+    <p class="cap">58% dos usuários já viram pelo menos um resumo de IA do Google no último mês.</p>
+    <div class="src">Fonte: <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/" target="_blank" rel="noopener">Pew Research, 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">&minus;25%</div>
+    <p class="cap">A busca tradicional deve cair 25% até 2026, com a IA assumindo as respostas.</p>
+    <div class="src">Fonte: <a href="https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents" target="_blank" rel="noopener">Gartner, 2024</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">8%</div>
+    <p class="cap">Com um resumo de IA na tela, só 8% das buscas terminam em clique.</p>
+    <div class="src">Fonte: <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/" target="_blank" rel="noopener">Pew Research, 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">1%</div>
+    <p class="cap">Apenas 1% dos usuários clica na fonte citada dentro do resumo de IA.</p>
+    <div class="src">Fonte: <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/" target="_blank" rel="noopener">Pew Research, 2025</a></div>
+  </div>
+</div>
+
+<h2>Como o paciente escolhe um médico hoje: reputação digital</h2>
+<p>Antes mesmo da IA, o paciente já decidia em quem confiar a partir do que encontra na internet. A reputação digital virou um filtro de entrada.</p>
+<div class="stat-cards">
+  <div class="scard">
+    <div class="num">90%</div>
+    <p class="cap">60% dos brasileiros buscam saúde na internet — e 90% começam pelo Google.</p>
+    <div class="src">Fonte: <a href="https://www.iess.org.br/press-release/seis-em-cada-dez-brasileiros-dizem-buscar-informacoes-sobre-saude-na-internet-mas" target="_blank" rel="noopener">IESS / Vox Populi, 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">~95%</div>
+    <p class="cap">Na rede Doctoralia (média de 6 países, incluindo o Brasil), perfis com 5 estrelas concentram cerca de 95% das consultas marcadas.</p>
+    <div class="src">Fonte: <a href="https://pro.doctoralia.com.br/blog/especialistas/o-paciente-digital" target="_blank" rel="noopener">DocPlanner / Doctoralia, 2022</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">84%</div>
+    <p class="cap">84% dos pacientes consultam avaliações online antes de escolher um novo médico.</p>
+    <div class="src">Fonte: <a href="https://rater8.com/the-next-evolution-of-patient-choice-2025-report/" target="_blank" rel="noopener">rater8, 2024</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">61%</div>
+    <p class="cap">61% confiam mais em avaliações online do que na indicação de amigos e família.</p>
+    <div class="src">Fonte: <a href="https://rater8.com/the-next-evolution-of-patient-choice-2025-report/" target="_blank" rel="noopener">rater8, 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">6 avaliações</div>
+    <p class="cap">51% leem no mínimo 6 avaliações antes de agendar uma consulta.</p>
+    <div class="src">Fonte: <a href="https://rater8.com/the-next-evolution-of-patient-choice-2025-report/" target="_blank" rel="noopener">rater8, 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">50,8%</div>
+    <p class="cap">Metade dos pacientes não escolheria um médico sem nenhuma avaliação online.</p>
+    <div class="src">Fonte: <a href="https://www.repugen.com/patient-review-survey" target="_blank" rel="noopener">RepuGen, 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">40%</div>
+    <p class="cap">40% já cancelaram ou evitaram uma consulta por causa de avaliações negativas.</p>
+    <div class="src">Fonte: <a href="https://rater8.com/the-next-evolution-of-patient-choice-2025-report/" target="_blank" rel="noopener">rater8, 2025</a></div>
+  </div>
+</div>
+
+<h2>A IA erra — e por isso a fonte verificável importa</h2>
+<p>A IA é convincente, mas não é infalível. Quando o assunto é saúde, a qualidade da fonte por trás da resposta faz toda a diferença.</p>
+<div class="stat-cards">
+  <div class="scard">
+    <div class="num">78,6%</div>
+    <p class="cap">Em respostas a perguntas de pacientes no Reddit, avaliadores preferiram o texto do ChatGPT ao de médicos em 78,6% dos casos — medindo qualidade e empatia, não precisão clínica.</p>
+    <div class="src">Fonte: <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2804309" target="_blank" rel="noopener">JAMA Internal Medicine, 2023</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">até 91%</div>
+    <p class="cap">Ao gerar referências para revisões científicas, as taxas de "alucinação" foram de 28,6% (GPT-4) a 91,4% (Bard).</p>
+    <div class="src">Fonte: <a href="https://www.jmir.org/2024/1/e53164" target="_blank" rel="noopener">JMIR, 2024</a></div>
+  </div>
+</div>
+
+<h2>O médico brasileiro ainda não se preparou — e aí está a oportunidade</h2>
+<p>O paciente já migrou. A pergunta é se o médico acompanhou o movimento. No Brasil, os números mostram que a adoção ainda é baixa.</p>
+<div class="stat-cards">
+  <div class="scard">
+    <div class="num">2,5 milhões</div>
+    <p class="cap">O SUS realizou 2,5 milhões de atendimentos de telessaúde em 2024, contra 1,5 milhão em 2023 — alta de 65%.</p>
+    <div class="src">Fonte: <a href="https://www.gov.br/secom/pt-br/assuntos/noticias/2025/08/governo-federal-entrega-3-mil-kits-de-telessaude-e-lanca-edital-para-expandir-atendimento-a-distancia-com-hospitais-privados" target="_blank" rel="noopener">Ministério da Saúde, 2025</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">17%</div>
+    <p class="cap">Apenas 17% dos médicos no Brasil usam IA generativa na rotina.</p>
+    <div class="src">Fonte: <a href="https://sbis.org.br/noticia/estudo-revela-que-17-dos-medicos-no-brasil-utilizam-inteligencia-artificial-o-numero-entre-os-enfermeiros-e-de-16/" target="_blank" rel="noopener">TIC Saúde / Cetic.br, 2024</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">81%</div>
+    <p class="cap">Nos EUA, 81% dos médicos já usam IA — eram 38% em 2023.</p>
+    <div class="src">Fonte: <a href="https://ascopost.com/news/march-2026/ama-survey-finds-rapid-growth-in-physician-ai-adoption/" target="_blank" rel="noopener">AMA, 2026</a></div>
+  </div>
+  <div class="scard">
+    <div class="num">US$187,7 bi</div>
+    <p class="cap">O mercado de IA em saúde deve chegar a US$ 187,7 bilhões em 2030.</p>
+    <div class="src">Fonte: <a href="https://www.prnewswire.com/news-releases/ai-in-healthcare-market-size-to-reach-187-7-billion-by-2030-at-cagr-38-5---grand-view-research-inc-302439558.html" target="_blank" rel="noopener">Grand View Research, 2025</a></div>
+  </div>
+</div>
+
+<h2>O que esses números dizem para o seu consultório</h2>
+<p>Lendo as 25 estatísticas em sequência, surge uma cadeia: o paciente já está na IA — são 40 milhões de perguntas de saúde por dia, e 1 em cada 4 usuários do ChatGPT toca no assunto toda semana. Esse mesmo paciente cada vez mais resolve a dúvida na própria resposta da IA: com um resumo de IA na tela, só 8% das buscas terminam em clique e apenas 1% clica na fonte citada. Ou seja, a IA não está apenas informando — ela está decidindo qual nome aparece, e quase ninguém vai além dela para conferir.</p>
+<p>O problema é que a IA erra. Suas respostas soam convincentes — em um estudo foram preferidas às de médicos —, mas, ao gerar referências científicas, modelos chegaram a inventar fontes em até 91% das vezes. Por isso a fonte verificável importa: a resposta confiável é aquela ancorada em profissionais reais, com registro CFM e RQE conferíveis. E aqui está o descompasso: enquanto nos EUA 81% dos médicos já usam IA, no Brasil só 17% incorporaram a IA generativa à rotina. O paciente mudou de canal; a maioria dos médicos brasileiros ainda não se posicionou nesse canal. Não há promessa de captação nem garantia de resultado nisso — apenas a constatação de que existe uma lacuna entre onde o paciente busca e onde o médico está presente.</p>
+
+<h3>Continue explorando</h3>
+<ul>
+<li><a href="/guia/como-o-chatgpt-escolhe-qual-medico-recomendar/">Como o ChatGPT escolhe qual médico recomendar</a></li>
+<li><a href="/especialidades/">Como a sua especialidade aparece na IA</a></li>
+<li><a href="/cfm/e-permitido-pelo-cfm-aparecer-na-ia-o-que-pode-e-o-que-nao-pode/">É permitido pelo CFM aparecer na IA? O que pode e o que não pode</a></li>
+</ul>
+<hr />
+<p><em>Os dados desta página vêm das fontes públicas citadas em cada estatística. Os dados do Brasil estão identificados na legenda; os demais são internacionais e podem não refletir a realidade brasileira. Este conteúdo é informativo e educativo.</em></p>
+<p><a class="cta-link" href="/#contato"><strong>→ Solicitar diagnóstico grátis</strong></a></p>
+</article>
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="ico">💬</span><span class="txt">Fale com um especialista</span></a>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="/#topo" class="logo"><svg class="mark" viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><defs><linearGradient id="mrgA" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#86D900"/><stop offset="1" stop-color="#CBF55E"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="#0BA56A"/><path d="M5 24 H11 L13.5 24 L16 15 L18.5 30 L20.8 21.8" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 22 C24 22 26 14 31.6 8.8" fill="none" stroke="url(#mrgA)" stroke-width="3.4" stroke-linecap="round"/><path d="M25.8 8.4 L32.4 8.2 L32 14.8" fill="none" stroke="url(#mrgA)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="display:flex;flex-direction:column;line-height:1.05"><span style="white-space:nowrap">Med<b>RankGPT</b></span><span style="font-family:var(--mono,ui-monospace,monospace);font-weight:400;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#9FB0A6;margin-top:5px">Visibilidade médica em IA</span></span></a>
+        <p>A consultoria feito-para-você que posiciona médicos e clínicas no ChatGPT, Google AI, Gemini e Perplexity — com SEO, AEO e menções nas fontes que a IA cita, dentro das normas do CFM.</p>
+      </div>
+      <div><h4>Navegação</h4><a href="/#problema">Por que agora</a><a href="/#onsite-offsite">Onsite + Offsite</a><a href="/#metodo">Método</a><a href="/#planos">Planos</a><a href="/#faq">Dúvidas</a><a href="/academy/">Academy</a></div>
+      <div><h4>Conteúdo</h4><a href="/guia/">Guias AEO/GEO</a><a href="/especialidades/">Especialidades</a><a href="/condicoes/">Condições e sintomas</a><a href="/procedimentos/">Procedimentos</a><a href="/local/">Médicos por cidade</a><a href="/comparativos/">Comparativos</a><a href="/listas/">Listas e checklists</a><a href="/cfm/">CFM e IA</a></div>
+      <div><h4>Contato</h4><a href="mailto:contato@medrankgpt.com.br">contato@medrankgpt.com.br</a><a id="waFootBtn" href="/#" target="_blank" rel="noopener">WhatsApp</a><a href="/#contato">Diagnóstico grátis</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> MedRankGPT — Todos os direitos reservados.</span>
+      <span>SEO · AEO · GEO para a medicina · Brasil</span>
+    </div>
+  </div>
+</footer>
+<script>
+document.getElementById("year")&&(document.getElementById("year").textContent=new Date().getFullYear());
+var CONFIG={whatsapp:"5519989616796",waMsg:"Olá! Vim pelo site da MedRankGPT e quero meu diagnóstico de visibilidade em IA."};
+var waLink="https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(CONFIG.waMsg);
+["waHeroBtn","waFinalBtn","waFloat","waFootBtn"].forEach(function(id){var el=document.getElementById(id);if(el)el.href=waLink;});
+var mb=document.getElementById("menuBtn");mb&&mb.addEventListener("click",function(){document.getElementById("navlinks").classList.toggle("show");});
+</script>
+</body></html>
