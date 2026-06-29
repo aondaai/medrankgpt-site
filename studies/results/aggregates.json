@@ -517,37 +517,17 @@
     ]
   },
   "google_aio": {
-    "total": 460,
-    "pct_sem_aio": 0.3717,
-    "pct_presente": 0.6283,
+    "total": 531,
+    "pct_sem_aio": 0.3522,
+    "pct_presente": 0.6478,
     "entre_presentes": {
-      "n": 289,
-      "pct_cita_medico": 0.5606,
-      "pct_marketplace": 0.1315
+      "n": 344,
+      "pct_cita_medico": 0.5552325581395349,
+      "pct_marketplace": 0.13372093023255813
     },
-    "amostra": "460/540 (85%)",
-    "por_tipo_busca": {
-      "melhor": {
-        "total": 154,
-        "pct_sem_aio": 0.4286,
-        "pct_presente": 0.5714,
-        "entre_presentes": {
-          "n": 88,
-          "pct_cita_medico": 0.9205,
-          "pct_marketplace": 0.0455
-        }
-      },
-      "procedimento": {
-        "total": 306,
-        "pct_sem_aio": 0.3431,
-        "pct_presente": 0.6569,
-        "entre_presentes": {
-          "n": 201,
-          "pct_cita_medico": 0.403,
-          "pct_marketplace": 0.1692
-        }
-      }
-    }
+    "sem_aio_melhor": 0.4222,
+    "sem_aio_procedimento": 0.3162,
+    "nota": "AIO via SerpApi; instável p/ saúde. sem_aio = Google não exibiu IA."
   },
   "camada2_visibilidade_ia": {
     "fonte_roster": "Doctoralia (top ~15 por especialidade×capital)",

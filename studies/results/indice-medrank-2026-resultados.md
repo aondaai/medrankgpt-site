@@ -58,16 +58,16 @@ que o posicionamento individual paga.
 
 ## Pilar C — Google AI Overview (a IA do Google)
 
-Via SerpApi. Amostra: **460/540 (85%)** — taxa de supressão estável desde os 280 primeiros.
+Via SerpApi. Amostra: **531/540 (98%)**.
 
 | Tipo de busca | Sem AIO (suprimido) | Quando aparece, cita médico |
 |---|---|---|
-| **Geral** | **37%** | 56% |
-| **"melhor [especialista]"** | **43%** | **92%** |
-| **"[procedimento]"** | 34% | 40% |
+| **Geral** | **35%** | 56% |
+| **"melhor [especialista]"** | **42%** | **92%** |
+| **"[procedimento]"** | 32% | 40% |
 
 **Achados:**
-- O Google **não mostra IA em 37% das buscas médicas** — e em **43%** quando o paciente
+- O Google **não mostra IA em 35% das buscas médicas** — e em **42%** quando o paciente
   procura "o melhor [especialista]". Confirma a postura conservadora do Google em saúde (YMYL).
 - Mas quando **mostra** AIO no "melhor", ele **nomeia um médico em 92%** das vezes — ou seja,
   onde há IA do Google, ela também aponta nomes (e lê as mesmas fontes).
@@ -120,7 +120,7 @@ provado com dado proprietário nacional.
 
 ## Próximos passos
 
-1. ✅ Pilar C (AIO) fechado (37% supressão). _Opcional: completar os ~80 do tail lento._
+1. ✅ Pilar C (AIO) fechado (35% supressão, 531/540).
 2. ✅ **2ª repetição** dos prompts de IA → instabilidade de 42%.
 3. ✅ **Camada 2** — visibilidade na IA de 2.567 médicos reais, 20 especialidades (84% invisíveis).
    _Pendente opcional: Visibility Score completo 0-100 por médico (Google + site)._
