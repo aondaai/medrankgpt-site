@@ -16,6 +16,7 @@ Conteúdo educativo sobre como médicos e clínicas aparecem (e podem ser citado
 - [Marketing médico na era da IA: o guia completo](https://medrankgpt.com.br/guia/marketing-medico-na-era-da-ia-o-guia-completo/): O paciente agora pergunta à IA antes de escolher um médico. Veja como adaptar o marketing médico para ser citado por ChatGPT, Gemini e o Google AI, dentro do CFM.
 - [Glossário de IA e busca para médicos (AEO, GEO, LLM, prompt)](https://medrankgpt.com.br/guia/glossario-de-ia-e-busca-para-medicos-aeo-geo-llm-prompt/): AEO, GEO, LLM, prompt, schema, E-E-A-T: entenda em definições curtas os termos de IA e busca que todo médico precisa conhecer para aparecer nas respostas.
 - [O que é E-E-A-T médico e por que a IA valoriza](https://medrankgpt.com.br/guia/o-que-e-e-e-a-t-medico-e-por-que-a-ia-valoriza/): E-E-A-T é experiência, especialização, autoridade e confiabilidade. Entenda por que a IA prioriza esses sinais em saúde e como demonstrá-los na sua clínica.
+- [Google Meu Negócio para médicos e a busca por IA](https://medrankgpt.com.br/guia/google-meu-negocio-para-medicos-e-a-busca-por-ia/): O Perfil da Empresa no Google (antigo Google Meu Negócio) alimenta o mapa e o que a IA responde sobre médicos. Veja como otimizar dentro do CFM.
 
 ## Especialidades
 - [Sua especialidade na IA](https://medrankgpt.com.br/especialidades/): Como cada especialidade aparece — e pode ser citada — no ChatGPT, Gemini e Google AI.
