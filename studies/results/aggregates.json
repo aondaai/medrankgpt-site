@@ -1,0 +1,518 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "gerado_em": "2026-06-28",
+    "especialidades": 20,
+    "capitais": 9,
+    "metodologia": "ChatGPT via API gpt-4o-search-preview (navega); Google SERP via Serper; Google AIO via SerpApi. Anonimizado/agregado.",
+    "ressalvas": [
+      "IA via API = proxy do produto de consumo",
+      "SERP/AIO refletem o momento da coleta",
+      "risco-CFM heurístico"
+    ]
+  },
+  "chatgpt": {
+    "total": 720,
+    "modelo": "gpt-4o-search-preview",
+    "pct_cita_medico": 0.9278,
+    "cfm_risco_pct": 0.0028,
+    "doctoralia_como_fonte_pct": 0.3528,
+    "por_tipo_prompt": {
+      "melhor_especialista": 0.9778,
+      "confianca": 1.0,
+      "procedimento": 0.8667
+    },
+    "por_especialidade": {
+      "Dermatologia": {
+        "pct_cita_medico": 0.9167
+      },
+      "Cirurgia Plástica": {
+        "pct_cita_medico": 1.0
+      },
+      "Oftalmologia": {
+        "pct_cita_medico": 0.9167
+      },
+      "Ortopedia e Traumatologia": {
+        "pct_cita_medico": 1.0
+      },
+      "Ginecologia e Obstetrícia": {
+        "pct_cita_medico": 0.9167
+      },
+      "Otorrinolaringologia": {
+        "pct_cita_medico": 1.0
+      },
+      "Urologia": {
+        "pct_cita_medico": 1.0
+      },
+      "Endocrinologia": {
+        "pct_cita_medico": 1.0
+      },
+      "Cardiologia": {
+        "pct_cita_medico": 0.7778
+      },
+      "Mastologia": {
+        "pct_cita_medico": 1.0
+      },
+      "Nutrologia": {
+        "pct_cita_medico": 0.8333
+      },
+      "Gastroenterologia": {
+        "pct_cita_medico": 0.6944
+      },
+      "Reumatologia": {
+        "pct_cita_medico": 1.0
+      },
+      "Cirurgia Vascular": {
+        "pct_cita_medico": 0.9167
+      },
+      "Neurologia": {
+        "pct_cita_medico": 0.9444
+      },
+      "Psiquiatria": {
+        "pct_cita_medico": 0.9167
+      },
+      "Pediatria": {
+        "pct_cita_medico": 0.9444
+      },
+      "Pneumologia": {
+        "pct_cita_medico": 0.9722
+      },
+      "Geriatria": {
+        "pct_cita_medico": 0.9444
+      },
+      "Coloproctologia": {
+        "pct_cita_medico": 0.8611
+      }
+    },
+    "por_cidade": {
+      "São Paulo": {
+        "total": 80,
+        "pct_cita_medico": 0.925
+      },
+      "Rio de Janeiro": {
+        "total": 80,
+        "pct_cita_medico": 0.9125
+      },
+      "Belo Horizonte": {
+        "total": 80,
+        "pct_cita_medico": 0.925
+      },
+      "Curitiba": {
+        "total": 80,
+        "pct_cita_medico": 0.9625
+      },
+      "Porto Alegre": {
+        "total": 80,
+        "pct_cita_medico": 0.925
+      },
+      "Brasília": {
+        "total": 80,
+        "pct_cita_medico": 0.8625
+      },
+      "Recife": {
+        "total": 80,
+        "pct_cita_medico": 0.9375
+      },
+      "Salvador": {
+        "total": 80,
+        "pct_cita_medico": 0.95
+      },
+      "Fortaleza": {
+        "total": 80,
+        "pct_cita_medico": 0.95
+      }
+    },
+    "top_medicos": [
+      [
+        "Dr. Gilberto Studart",
+        9
+      ],
+      [
+        "Dr Milton Rocha",
+        6
+      ],
+      [
+        "Dr. José Lourenço",
+        6
+      ],
+      [
+        "Dr. Nilo Peçanha",
+        5
+      ],
+      [
+        "Dr. Reyner Abrantes Stival",
+        4
+      ],
+      [
+        "Dra. Oona Daronch",
+        4
+      ],
+      [
+        "Dr. Thiago Belfort",
+        4
+      ],
+      [
+        "Dr. Luiz Eduardo Nercolini",
+        4
+      ],
+      [
+        "Dr. José Furtado",
+        4
+      ],
+      [
+        "Dr. Franzé Barros de Oliveira",
+        4
+      ],
+      [
+        "Dr. Tácito Guimarães",
+        4
+      ],
+      [
+        "Dr. Seráfico Júnior",
+        4
+      ],
+      [
+        "Dra. Rejane Belchior Lima Macedo",
+        4
+      ],
+      [
+        "Dra. Lara Maciel",
+        4
+      ],
+      [
+        "Dr. Fabio Klainchot",
+        4
+      ],
+      [
+        "Dr. Cristiano Schmitt",
+        4
+      ],
+      [
+        "Dra. Miriam Galvão",
+        4
+      ],
+      [
+        "Dra. Alice Vianna",
+        4
+      ],
+      [
+        "Dr. Eduardo Melo",
+        4
+      ],
+      [
+        "Dr. Pedro Fontana",
+        4
+      ]
+    ]
+  },
+  "google_serp": {
+    "total": 540,
+    "por_tipo_busca": {
+      "melhor": {
+        "total": 180,
+        "pos1_por_tipo": {
+          "marketplace": 0.8944,
+          "outro": 0.0556,
+          "social": 0.0278,
+          "clinica": 0.0056,
+          "hospital": 0.0167
+        },
+        "share_medio_por_tipo": {
+          "marketplace": 0.1347,
+          "social": 0.1084,
+          "outro": 0.5539,
+          "hospital": 0.08,
+          "clinica": 0.1154,
+          "institucional": 0.0006,
+          "conteudo": 0.007
+        },
+        "top_dominios_pos1": [
+          [
+            "doctoralia.com.br",
+            160
+          ],
+          [
+            "rededorsaoluiz.com.br",
+            6
+          ],
+          [
+            "instagram.com",
+            5
+          ],
+          [
+            "alessandradrummond.com.br",
+            1
+          ],
+          [
+            "clinicabelfort.com.br",
+            1
+          ],
+          [
+            "agendarconsulta.com",
+            1
+          ],
+          [
+            "hopr.com.br",
+            1
+          ],
+          [
+            "einstein.br",
+            1
+          ],
+          [
+            "hospitalmoinhos.org.br",
+            1
+          ],
+          [
+            "marcelopavan.com.br",
+            1
+          ],
+          [
+            "hospitalsiriolibanes.org.br",
+            1
+          ],
+          [
+            "vascularbrasilia.com.br",
+            1
+          ]
+        ]
+      },
+      "procedimento": {
+        "total": 360,
+        "pos1_por_tipo": {
+          "outro": 0.3639,
+          "social": 0.2222,
+          "clinica": 0.1111,
+          "hospital": 0.1056,
+          "marketplace": 0.1556,
+          "institucional": 0.0417
+        },
+        "share_medio_por_tipo": {
+          "outro": 0.5275,
+          "social": 0.1382,
+          "clinica": 0.1249,
+          "marketplace": 0.087,
+          "hospital": 0.0831,
+          "institucional": 0.0387,
+          "conteudo": 0.0006
+        },
+        "top_dominios_pos1": [
+          [
+            "instagram.com",
+            76
+          ],
+          [
+            "doctoralia.com.br",
+            56
+          ],
+          [
+            "santacasa.org.br",
+            8
+          ],
+          [
+            "hospitalmoinhos.org.br",
+            6
+          ],
+          [
+            "drachristianavanni.com.br",
+            4
+          ],
+          [
+            "bp.org.br",
+            4
+          ],
+          [
+            "clinicadrcarlosnavarro.com.br",
+            3
+          ],
+          [
+            "rededorsaoluiz.com.br",
+            3
+          ],
+          [
+            "institutociroventura.com.br",
+            3
+          ],
+          [
+            "saocamilofortaleza.org.br",
+            3
+          ],
+          [
+            "hospitalcostantini.com.br",
+            3
+          ],
+          [
+            "saude.df.gov.br",
+            3
+          ],
+          [
+            "saude.ce.gov.br",
+            3
+          ],
+          [
+            "diagmax.com",
+            3
+          ],
+          [
+            "sbpt.org.br",
+            3
+          ]
+        ]
+      }
+    },
+    "por_especialidade": {
+      "Dermatologia": {
+        "pct_pos1_marketplace": 0.2963
+      },
+      "Cirurgia Plástica": {
+        "pct_pos1_marketplace": 0.2222
+      },
+      "Oftalmologia": {
+        "pct_pos1_marketplace": 0.2593
+      },
+      "Ortopedia e Traumatologia": {
+        "pct_pos1_marketplace": 0.4444
+      },
+      "Ginecologia e Obstetrícia": {
+        "pct_pos1_marketplace": 0.4074
+      },
+      "Otorrinolaringologia": {
+        "pct_pos1_marketplace": 0.4444
+      },
+      "Urologia": {
+        "pct_pos1_marketplace": 0.3704
+      },
+      "Endocrinologia": {
+        "pct_pos1_marketplace": 0.4815
+      },
+      "Cardiologia": {
+        "pct_pos1_marketplace": 0.4074
+      },
+      "Mastologia": {
+        "pct_pos1_marketplace": 0.4074
+      },
+      "Nutrologia": {
+        "pct_pos1_marketplace": 0.4815
+      },
+      "Gastroenterologia": {
+        "pct_pos1_marketplace": 0.2593
+      },
+      "Reumatologia": {
+        "pct_pos1_marketplace": 0.4815
+      },
+      "Cirurgia Vascular": {
+        "pct_pos1_marketplace": 0.3333
+      },
+      "Neurologia": {
+        "pct_pos1_marketplace": 0.3333
+      },
+      "Psiquiatria": {
+        "pct_pos1_marketplace": 0.6667
+      },
+      "Pediatria": {
+        "pct_pos1_marketplace": 0.4074
+      },
+      "Pneumologia": {
+        "pct_pos1_marketplace": 0.3704
+      },
+      "Geriatria": {
+        "pct_pos1_marketplace": 0.4444
+      },
+      "Coloproctologia": {
+        "pct_pos1_marketplace": 0.5185
+      }
+    },
+    "por_cidade": {
+      "São Paulo": {
+        "pct_pos1_marketplace": 0.2667
+      },
+      "Rio de Janeiro": {
+        "pct_pos1_marketplace": 0.4667
+      },
+      "Belo Horizonte": {
+        "pct_pos1_marketplace": 0.4667
+      },
+      "Curitiba": {
+        "pct_pos1_marketplace": 0.3833
+      },
+      "Porto Alegre": {
+        "pct_pos1_marketplace": 0.4333
+      },
+      "Brasília": {
+        "pct_pos1_marketplace": 0.3333
+      },
+      "Recife": {
+        "pct_pos1_marketplace": 0.3833
+      },
+      "Salvador": {
+        "pct_pos1_marketplace": 0.4
+      },
+      "Fortaleza": {
+        "pct_pos1_marketplace": 0.4833
+      }
+    },
+    "top_dominios_pos1": [
+      [
+        "doctoralia.com.br",
+        216
+      ],
+      [
+        "instagram.com",
+        81
+      ],
+      [
+        "rededorsaoluiz.com.br",
+        9
+      ],
+      [
+        "santacasa.org.br",
+        8
+      ],
+      [
+        "hospitalmoinhos.org.br",
+        7
+      ],
+      [
+        "drachristianavanni.com.br",
+        4
+      ],
+      [
+        "bp.org.br",
+        4
+      ],
+      [
+        "clinicadrcarlosnavarro.com.br",
+        3
+      ],
+      [
+        "institutociroventura.com.br",
+        3
+      ],
+      [
+        "saocamilofortaleza.org.br",
+        3
+      ],
+      [
+        "hospitalcostantini.com.br",
+        3
+      ],
+      [
+        "saude.df.gov.br",
+        3
+      ],
+      [
+        "saude.ce.gov.br",
+        3
+      ],
+      [
+        "diagmax.com",
+        3
+      ],
+      [
+        "sbpt.org.br",
+        3
+      ]
+    ]
+  },
+  "google_aio": null
+}
