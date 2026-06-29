@@ -143,6 +143,7 @@ Conteúdo educativo sobre como médicos e clínicas aparecem (e podem ser citado
 - [As 7 melhores práticas de AEO para consultórios](https://medrankgpt.com.br/listas/as-7-melhores-praticas-de-aeo-para-consultorios/): As 7 melhores práticas de AEO para consultórios: resposta citável, página por pergunta, FAQ, dados estruturados, E-E-A-T, consistência de dados e CFM. Playbook prático.
 - [Checklist: seu consultório está pronto para a busca por IA?](https://medrankgpt.com.br/listas/checklist-seu-consultorio-esta-pronto-para-a-busca-por-ia/): Checklist em 12 itens para saber se seu consultório está pronto para a busca por IA: site, resposta citável, FAQ, schema, E-E-A-T, perfil no Google, CFM e mais.
 - [9 erros que deixam médicos invisíveis para a IA](https://medrankgpt.com.br/listas/9-erros-que-deixam-medicos-invisiveis-para-a-ia/): 9 erros que deixam médicos invisíveis para a IA: site sem conteúdo, falta de resposta citável, sem schema, dados inconsistentes, autoria oculta e mais. Como corrigir.
+- [25 estatísticas de IA na saúde que todo médico deveria saber](https://medrankgpt.com.br/listas/estatisticas-ia-saude-medicos/): 25 estatísticas com fonte sobre IA na saúde, busca por IA e escolha de médicos — ChatGPT e saúde, Google AI Overviews, zero-click, reputação digital e adoção de IA por médicos no Brasil (só 17%).
 
 ## CFM e IA
 - [Conformidade CFM](https://medrankgpt.com.br/cfm/): O que o CFM permite na publicidade médica e na era da IA.
