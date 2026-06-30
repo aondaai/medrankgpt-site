@@ -110,7 +110,7 @@ a{color:inherit;text-decoration:none}
 .btn-ink{background:var(--ink);color:var(--on)}.btn-ink:hover{background:#000}
 .btn-em{background:var(--em);color:var(--on);box-shadow:var(--e-em)}.btn-em:hover{background:var(--em-h)}
 .btn-ghost{background:#fff;border-color:var(--line);color:var(--ink)}.btn-ghost:hover{border-color:var(--em);color:var(--em-deep)}
-.btn-wa{background:var(--coral);color:#2A0F08}.btn-wa:hover{background:#F0573A}
+.btn-wa{background:#fff;border-color:var(--line);color:var(--ink)}.btn-wa:hover{border-color:var(--em);color:var(--em-deep)}
 
 header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
@@ -313,6 +313,7 @@ footer .logo{color:#fff;margin-bottom:14px}footer .logo b{color:#42E29C}
   .plan.feat{order:-1}
 }
 @media(max-width:560px){.stats-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.engines .wrap{justify-content:center;text-align:center}.nav-cta .btn-ghost{display:none}}
+@media(max-width:480px){.nav-cta .btn-em{display:none}}
 </style>
 </head>
 <body>
