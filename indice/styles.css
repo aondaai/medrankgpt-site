@@ -87,3 +87,20 @@ footer ul { color: var(--color-text-subtle); font-size: var(--fs-body-sm); }
   .chart svg, .hero-chart svg { max-width: 360px; }
   a { color: #000; text-decoration: none; }
 }
+
+/* Tabela de dados completa — citável por IA, legível sem JS */
+.dados-completos { margin-top: var(--space-xl); }
+.dados-completos > summary { cursor: pointer; font-family: var(--font-mono);
+  font-size: var(--fs-body-sm); color: var(--color-primary-deep); font-weight: var(--w-medium);
+  padding: var(--space-sm) 0; }
+.dados { width: 100%; border-collapse: collapse; margin-top: var(--space-md);
+  font-size: var(--fs-body-sm); }
+.dados caption { text-align: left; color: var(--color-text-subtle);
+  font-size: var(--fs-caption); margin-bottom: var(--space-sm); }
+.dados th, .dados td { padding: 10px 12px; border-bottom: 1px solid var(--color-border);
+  text-align: right; }
+.dados thead th { color: var(--color-text-muted); font-weight: var(--w-medium);
+  border-bottom: 1px solid var(--color-border-strong); }
+.dados th[scope="row"], .dados thead th:first-child { text-align: left; }
+.dados td { font-family: var(--font-mono); color: var(--color-text); }
+.dados th[scope="row"] { font-weight: var(--w-medium); color: var(--color-text); }
