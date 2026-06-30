@@ -50,8 +50,24 @@ footer { margin-top: var(--space-3xl); border-top: 1px solid var(--color-border-
 footer ul { color: var(--color-text-subtle); font-size: var(--fs-body-sm); }
 .src code { font-family: var(--font-mono); }
 
+.virada-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);
+  margin-top: var(--space-lg); max-width: 560px; }
+.virada-grid figure { margin: 0; }
+.virada-grid figcaption { font-family: var(--font-mono); font-size: var(--fs-mono-sm);
+  color: var(--color-text-muted); margin-bottom: var(--space-xs); }
+.virada-top { font-family: var(--font-mono); font-size: var(--fs-body-sm);
+  color: var(--color-text-muted); margin-top: var(--space-xs); }
+.nota-metodo { font-family: var(--font-mono); font-size: var(--fs-mono-sm);
+  color: var(--color-text-muted); margin-top: var(--space-md); }
+.legenda { list-style: none; padding: 0; margin: var(--space-md) 0 0;
+  display: flex; flex-wrap: wrap; gap: var(--space-md);
+  font-family: var(--font-mono); font-size: var(--fs-mono-sm); color: var(--color-text-muted); }
+.legenda li { display: flex; align-items: center; gap: var(--space-2xs); }
+.legenda .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
 @media (max-width: 640px) {
   .hero h1 { font-size: var(--fs-display-md); }
   .tela h2 { font-size: var(--fs-h1); }
   .tela { padding: var(--space-3xl) var(--space-md); }
+  .virada-grid { grid-template-columns: 1fr; }
 }

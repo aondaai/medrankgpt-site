@@ -43,6 +43,28 @@
     <div class="chart" data-chart="serp-donut"></div>
   </section>
 
+  <!-- 3b. A VIRADA: PROCEDIMENTO -->
+  <section class="tela" id="virada">
+    <h2>Mas quando o paciente busca um procedimento, o jogo vira</h2>
+    <p>Na busca específica ("rinoplastia", "catarata"), o marketplace cai para <span data-fill="virada-proc">—</span> dos #1 — e quem lidera passa a ser o <strong>Instagram</strong>, à frente do próprio Doctoralia. É onde o médico compete com o canal dele.</p>
+    <div class="virada-grid">
+      <figure><figcaption>"melhor [especialista]"</figcaption><div class="chart" data-chart="virada-melhor"></div><p class="virada-top" data-fill="virada-top-melhor"></p></figure>
+      <figure><figcaption>"[procedimento]"</figcaption><div class="chart" data-chart="virada-proc-donut"></div><p class="virada-top" data-fill="virada-top-proc"></p></figure>
+    </div>
+    <ul class="legenda">
+      <li><span class="dot" style="background:var(--viz-4)"></span>marketplace</li>
+      <li><span class="dot" style="background:var(--viz-2)"></span>Instagram</li>
+      <li><span class="dot" style="background:var(--viz-1)"></span>resto</li>
+    </ul>
+  </section>
+
+  <!-- 3c. REGIONAL -->
+  <section class="tela" id="regional">
+    <h2>O Google esconde o médico de forma desigual pelo país</h2>
+    <p>Em <strong data-fill="regional-melhor-cidade">—</strong> o marketplace fica no #1 em só <span data-fill="regional-melhor-pct">—</span> das buscas; em <strong data-fill="regional-pior-cidade">—</strong> chega a <span data-fill="regional-pior-pct">—</span>. Já o ChatGPT nomeia médico em todas as capitais por igual — a IA é um jogo nacional; o Google, regional.</p>
+    <div class="chart" data-chart="regional-bars"></div>
+  </section>
+
   <!-- 4. CHATGPT -->
   <section class="tela" id="chatgpt">
     <h2>O ChatGPT nomeia um médico — mas lê o Doctoralia</h2>
@@ -65,6 +87,14 @@
       <select id="esp-select"></select>
       <p class="selector-out" data-fill="esp-out" aria-live="polite"></p>
     </div>
+  </section>
+
+  <!-- 6b. MAPA DE OPORTUNIDADE -->
+  <section class="tela" id="oportunidade">
+    <h2>Onde a vaga está mais aberta</h2>
+    <p>Cruzando as duas pontas — invisibilidade na IA e domínio do marketplace no Google — dá para ver onde o médico está mais espremido (e onde posicionar-se vale mais). <strong data-fill="oport-top">—</strong> lidera.</p>
+    <div class="chart" data-chart="oport-bars"></div>
+    <p class="nota-metodo">Índice de oportunidade = 60% invisibilidade na IA + 40% marketplace no #1 do Google. Composição editorial.</p>
   </section>
 
   <!-- 7. ROLETA -->

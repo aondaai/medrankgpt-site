@@ -35,6 +35,29 @@ loadData().then((N) => {
   // aio
   set('aio-melhor', pct(N.aio.semAioMelhor));
 
+  // virada: melhor vs procedimento — mesmos 3 segmentos, cores fixas p/ comparar
+  const dom = ([host, n]) => `${host} lidera o #1 (${n}×)`;
+  const viradaDonut = (mkt, social) => donutSVG([
+    { label: 'marketplace', value: mkt, color: 'var(--viz-4)' },
+    { label: 'Instagram', value: social, color: 'var(--viz-2)' },
+    { label: 'resto', value: Math.max(0, 1 - mkt - social), color: 'var(--viz-1)' },
+  ]);
+  set('virada-proc', pct(N.virada.procMarketplace));
+  chart('virada-melhor', viradaDonut(N.virada.melhorMarketplace, N.virada.melhorSocial));
+  chart('virada-proc-donut', viradaDonut(N.virada.procMarketplace, N.virada.procSocial));
+  set('virada-top-melhor', dom(N.virada.melhorTop));
+  set('virada-top-proc', dom(N.virada.procTop));
+
+  // regional: Google espreme desigual; ChatGPT uniforme
+  const reg = N.regional;
+  set('regional-melhor-cidade', reg[0].cidade);
+  set('regional-melhor-pct', pct(reg[0].marketplaceGoogle));
+  set('regional-pior-cidade', reg[reg.length - 1].cidade);
+  set('regional-pior-pct', pct(reg[reg.length - 1].marketplaceGoogle));
+  chart('regional-bars', barChartSVG(reg.map((r, i) => ({
+    label: r.cidade, value: r.marketplaceGoogle, highlight: i === 0,
+  }))));
+
   // clímax: barras + seletor
   const list = especialidadesList(N);
   chart('esp-bars', barChartSVG(list.slice(0, 12).map((e) => ({
@@ -50,6 +73,12 @@ loadData().then((N) => {
     select.addEventListener('change', update);
     select.value = 'Dermatologia'; update();
   }
+
+  // oportunidade: índice de dor por especialidade
+  set('oport-top', N.oportunidade[0].especialidade);
+  chart('oport-bars', barChartSVG(N.oportunidade.slice(0, 12).map((o, i) => ({
+    label: o.especialidade, value: o.scoreDor, highlight: i === 0,
+  }))));
 
   // ressalvas
   set('ressalvas', (N.meta.ressalvas || []).map((r) => `<li>${r}</li>`).join(''));
