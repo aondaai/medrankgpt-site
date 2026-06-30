@@ -1,7 +1,7 @@
 import { loadData } from './data.js';
 import { bigNumberSVG, barChartSVG, donutSVG } from './charts.js';
 import { especialidadesList, specialtyValue } from './specialty.js';
-import { buildPayload, submitLead } from './capture.js';
+import { buildBridgePayload, submitLead } from './capture.js';
 
 const pct = (v) => `${Math.round(v * 100 - 1e-9)}%`;
 const set = (key, html) => { for (const el of document.querySelectorAll(`[data-fill="${key}"]`)) el.innerHTML = html; };
@@ -83,22 +83,28 @@ loadData().then((N) => {
   // ressalvas
   set('ressalvas', (N.meta.ressalvas || []).map((r) => `<li>${r}</li>`).join(''));
 
-  // captura
+  // captura -> bridge da mainpage (Slack)
   const form = document.getElementById('lead-form');
+  const pdfWrap = document.getElementById('pdf-wrap');
   if (form) form.addEventListener('submit', async (ev) => {
     ev.preventDefault();
     const data = Object.fromEntries(new FormData(form).entries());
+    let payload;
     try {
-      const payload = buildPayload(data, 'diagnostico');
-      await submitLead(payload);
-      set('form-msg', 'Recebido! Em breve você recebe seu diagnóstico. ✅');
+      payload = buildBridgePayload(data);
+    } catch (e) {
+      set('form-msg', `Confira os dados: ${e.message}`);
+      return;
+    }
+    set('form-msg', 'Enviando…');
+    const res = await submitLead(payload);
+    if (res.ok) {
+      set('form-msg', 'Recebido! Seu diagnóstico chega em breve. ✅ Relatório liberado abaixo.');
+      if (pdfWrap) pdfWrap.hidden = false;
       form.reset();
-    } catch (e) { set('form-msg', `Confira os dados: ${e.message}`); }
+    } else {
+      set('form-msg', 'Não consegui enviar agora — tente de novo em instantes.');
+    }
   });
-  const pdf = document.getElementById('pdf-link');
-  if (pdf) pdf.addEventListener('click', (ev) => { ev.preventDefault();
-    try { const data = Object.fromEntries(new FormData(form).entries());
-      const p = buildPayload(data, 'pdf'); submitLead(p); set('form-msg', 'Preencha e envie o form acima para receber o PDF.'); }
-    catch { set('form-msg', 'Preencha o form acima para liberar o PDF.'); } });
 }).catch((e) => { document.body.insertAdjacentHTML('afterbegin',
   `<p style="color:red;padding:1rem">Erro ao carregar dados: ${e.message}</p>`); });
