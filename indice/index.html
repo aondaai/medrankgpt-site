@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Índice MedRank 2026 — 84% dos médicos são invisíveis para a IA</title>
+<meta name="description" content="Estudo proprietário: 84% dos médicos listados são invisíveis para a IA. Analisamos 2.567 médicos em ChatGPT, Google e AI Overview, em 20 especialidades e 9 capitais.">
+<meta property="og:title" content="Índice MedRank 2026 — 84% dos médicos são invisíveis para a IA">
+<meta property="og:description" content="Quando o paciente pergunta à IA, ela quase nunca cita o seu médico. O estudo que prova isso.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Dataset","name":"Índice MedRank 2026",
+"description":"Visibilidade de médicos brasileiros em motores de IA (ChatGPT, Google AI Overview) e busca, 20 especialidades x 9 capitais, 2.567 médicos.",
+"creator":{"@type":"Organization","name":"MedRankGPT"},"temporalCoverage":"2026"}
+</script>
+</head>
+<body>
+<main>
+  <!-- 1. HERÓI -->
+  <section class="tela hero" id="hero">
+    <p class="overline">Índice MedRank 2026 · O Estado das Buscas Médicas com IA</p>
+    <h1>De cada 100 médicos, <span class="hl" data-fill="hero-num">—</span> são invisíveis para a IA.</h1>
+    <p class="lead">Analisamos <span data-fill="hero-n">—</span> médicos reais em 3 superfícies de IA, 20 especialidades e 9 capitais. O que a IA responde quando o paciente pergunta "quem é o melhor médico?"</p>
+    <div class="hero-chart" data-chart="hero"></div>
+    <a class="scroll-cue" href="#experimento">↓ ver o estudo</a>
+  </section>
+
+  <!-- 2. O EXPERIMENTO -->
+  <section class="tela" id="experimento">
+    <h2>O experimento</h2>
+    <p>Rodamos as buscas que um paciente faz — "melhor [especialista] em [cidade]" — em três superfícies que ele realmente encontra, e cruzamos com 2.567 médicos reais listados no Doctoralia.</p>
+    <ul class="stats" data-fill="experimento-stats"></ul>
+  </section>
+
+  <!-- 3. GOOGLE -> DOCTORALIA -->
+  <section class="tela" id="google">
+    <h2>No Google, o paciente cai no marketplace</h2>
+    <p>Em <span data-fill="serp-melhor">—</span> das buscas "melhor [especialista]", quem ocupa a posição #1 é o <strong>Doctoralia</strong> — não o médico.</p>
+    <div class="chart" data-chart="serp-donut"></div>
+  </section>
+
+  <!-- 3b. A VIRADA: PROCEDIMENTO -->
+  <section class="tela" id="virada">
+    <h2>Mas quando o paciente busca um procedimento, o jogo vira</h2>
+    <p>Na busca específica ("rinoplastia", "catarata"), o marketplace cai para <span data-fill="virada-proc">—</span> dos #1 — e quem lidera passa a ser o <strong>Instagram</strong>, à frente do próprio Doctoralia. É onde o médico compete com o canal dele.</p>
+    <div class="virada-grid">
+      <figure><figcaption>"melhor [especialista]"</figcaption><div class="chart" data-chart="virada-melhor"></div><p class="virada-top" data-fill="virada-top-melhor"></p></figure>
+      <figure><figcaption>"[procedimento]"</figcaption><div class="chart" data-chart="virada-proc-donut"></div><p class="virada-top" data-fill="virada-top-proc"></p></figure>
+    </div>
+    <ul class="legenda">
+      <li><span class="dot" style="background:var(--viz-4)"></span>marketplace</li>
+      <li><span class="dot" style="background:var(--viz-2)"></span>Instagram</li>
+      <li><span class="dot" style="background:var(--viz-1)"></span>resto</li>
+    </ul>
+  </section>
+
+  <!-- 3c. REGIONAL -->
+  <section class="tela" id="regional">
+    <h2>O Google esconde o médico de forma desigual pelo país</h2>
+    <p>Em <strong data-fill="regional-melhor-cidade">—</strong> o marketplace fica no #1 em só <span data-fill="regional-melhor-pct">—</span> das buscas; em <strong data-fill="regional-pior-cidade">—</strong> chega a <span data-fill="regional-pior-pct">—</span>. Já o ChatGPT nomeia médico em todas as capitais por igual — a IA é um jogo nacional; o Google, regional.</p>
+    <div class="chart" data-chart="regional-bars"></div>
+  </section>
+
+  <!-- 4. CHATGPT -->
+  <section class="tela" id="chatgpt">
+    <h2>O ChatGPT nomeia um médico — mas lê o Doctoralia</h2>
+    <p>O ChatGPT cita um médico em <span data-fill="cg-cita">—</span> das vezes. Só que escolhe a partir das mesmas fontes: cita o Doctoralia como fonte em <span data-fill="cg-fonte">—</span> das respostas.</p>
+  </section>
+
+  <!-- 5. AIO -->
+  <section class="tela" id="aio">
+    <h2>O Google esconde a própria IA em saúde</h2>
+    <p>Em <span data-fill="aio-melhor">—</span> das buscas por "melhor [especialista]", o Google <strong>não mostra</strong> o AI Overview. Ele liga menos a IA justamente quando o paciente procura um especialista.</p>
+  </section>
+
+  <!-- 6. CLÍMAX + SELETOR -->
+  <section class="tela climax" id="invisiveis">
+    <h2><span data-fill="hero-num2">—</span> dos médicos são invisíveis para a IA</h2>
+    <p>De 2.567 médicos reais, só uma fração chega a ser nomeada pela IA. E quanto mais concorrida a especialidade, pior:</p>
+    <div class="chart" data-chart="esp-bars"></div>
+    <div class="selector">
+      <label for="esp-select">Veja a sua especialidade:</label>
+      <select id="esp-select"></select>
+      <p class="selector-out" data-fill="esp-out" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- 6b. MAPA DE OPORTUNIDADE -->
+  <section class="tela" id="oportunidade">
+    <h2>Onde a vaga está mais aberta</h2>
+    <p>Cruzando as duas pontas — invisibilidade na IA e domínio do marketplace no Google — dá para ver onde o médico está mais espremido (e onde posicionar-se vale mais). <strong data-fill="oport-top">—</strong> lidera.</p>
+    <div class="chart" data-chart="oport-bars"></div>
+    <p class="nota-metodo">Índice de oportunidade = 60% invisibilidade na IA + 40% marketplace no #1 do Google. Composição editorial.</p>
+  </section>
+
+  <!-- 7. ROLETA -->
+  <section class="tela" id="roleta">
+    <h2>A IA é uma roleta</h2>
+    <p>Faça a mesma pergunta duas vezes e, em <span data-fill="cg-instab">—</span> das vezes, o médico recomendado muda. Ser a resposta <em>consistente</em> é um diferencial.</p>
+  </section>
+
+  <!-- 8. PLAYBOOK -->
+  <section class="tela" id="playbook">
+    <h2>Dá para virar o jogo</h2>
+    <p>A IA não inventa nomes — ela lê fontes. Quem aparece de forma consistente nessas fontes (perfis, conteúdo, menções, site com sinais técnicos) vira "o nome que a IA dá". É disso que trata o AEO (Answer Engine Optimization) — posicionar o médico como a resposta que ChatGPT, Gemini e o Google recomendam, dentro das regras do CFM.</p>
+  </section>
+
+  <!-- 9. CTA + RODAPÉ -->
+  <section class="tela cta" id="cta">
+    <h2>Descubra se VOCÊ aparece na IA</h2>
+    <p>Diagnóstico gratuito da sua visibilidade nos motores de IA.</p>
+    <form id="lead-form" class="lead-form" novalidate>
+      <input name="nome" placeholder="Seu nome" autocomplete="name" required>
+      <input name="especialidade" placeholder="Especialidade" required>
+      <input name="cidade" placeholder="Cidade" required>
+      <input name="telefone" placeholder="WhatsApp (opcional)" autocomplete="tel" inputmode="tel">
+      <input name="email" type="email" placeholder="E-mail" autocomplete="email" required>
+      <button type="submit">Quero meu diagnóstico</button>
+      <p class="form-msg" data-fill="form-msg" aria-live="polite"></p>
+    </form>
+    <p class="pdf" id="pdf-wrap" hidden><a id="pdf-link" href="./indice-medrank-2026.pdf" download>Baixe o relatório completo em PDF →</a></p>
+    <footer>
+      <h3>Metodologia</h3>
+      <ul data-fill="ressalvas"></ul>
+      <p class="src">Fonte: Índice MedRank 2026 · dados em <code>aggregates.json</code>.</p>
+    </footer>
+  </section>
+</main>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
