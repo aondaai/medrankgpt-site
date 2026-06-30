@@ -26,6 +26,58 @@ function deriveInsights(raw) {
   return { regional, oportunidade, virada };
 }
 
+// Cortes extras só para o relatório longo. Aditivo: o microsite não lê nada disto.
+function deriveReportInsights(raw) {
+  const gpt = raw.chatgpt, serp = raw.google_serp, aio = raw.google_aio, cam = raw.camada2_visibilidade_ia;
+  const tb = serp.por_tipo_busca;
+
+  const chatgptPorEsp = Object.entries(gpt.por_especialidade)
+    .map(([nome, v]) => ({ nome, cita: v.pct_cita_medico }))
+    .sort((a, b) => a.cita - b.cita);
+
+  // tabela por especialidade: visível IA · marketplace #1 Google · ChatGPT cita
+  const tabelaEsp = Object.entries(cam.por_especialidade).map(([nome, v]) => ({
+    nome,
+    visivelIa: v.pct,
+    marketplace1: serp.por_especialidade[nome]?.pct_pos1_marketplace ?? 0,
+    chatgptCita: gpt.por_especialidade[nome]?.pct_cita_medico ?? 0,
+  })).sort((a, b) => a.visivelIa - b.visivelIa);
+
+  // tabela por capital: marketplace #1 · ChatGPT cita
+  const tabelaCidade = Object.entries(serp.por_cidade).map(([cidade, v]) => ({
+    cidade,
+    marketplace1: v.pct_pos1_marketplace,
+    chatgptCita: gpt.por_cidade[cidade]?.pct_cita_medico ?? 0,
+  })).sort((a, b) => a.marketplace1 - b.marketplace1);
+
+  return {
+    promptChatgpt: {
+      melhor: gpt.por_tipo_prompt.melhor_especialista,
+      confianca: gpt.por_tipo_prompt.confianca,
+      procedimento: gpt.por_tipo_prompt.procedimento,
+    },
+    cfmRisco: gpt.cfm_risco_pct,
+    citaMedicoGeral: gpt.pct_cita_medico,
+    shareMarketplaceMelhor: tb.melhor.share_medio_por_tipo.marketplace ?? 0,
+    procInstagram: tb.procedimento.top_dominios_pos1.find(([d]) => d.includes('instagram')) ?? ['instagram.com', 0],
+    procDoctoralia: tb.procedimento.top_dominios_pos1.find(([d]) => d.includes('doctoralia')) ?? ['doctoralia.com.br', 0],
+    procSocialPos1: tb.procedimento.pos1_por_tipo.social ?? 0,
+    procMarketplacePos1: tb.procedimento.pos1_por_tipo.marketplace ?? 0,
+    aio: {
+      presente: aio.pct_presente,
+      semAio: aio.pct_sem_aio,
+      semAioMelhor: aio.sem_aio_melhor,
+      semAioProc: aio.sem_aio_procedimento,
+      citaMedicoPresente: aio.entre_presentes.pct_cita_medico,
+      marketplacePresente: aio.entre_presentes.pct_marketplace,
+    },
+    chatgptPorEsp,
+    topMedicos: (gpt.top_medicos || []).slice(0, 8),
+    tabelaEsp,
+    tabelaCidade,
+  };
+}
+
 export function normalizeData(raw) {
   const c2 = raw.camada2_visibilidade_ia;
   const porEspecialidade = {};
@@ -34,6 +86,7 @@ export function normalizeData(raw) {
   }
   return {
     ...deriveInsights(raw),
+    reporte: deriveReportInsights(raw),
     hero: { pctInvisivel: c2.pct_invisivel_ia, totalMedicos: c2.total_medicos },
     meta: { especialidades: raw.meta.especialidades, capitais: raw.meta.capitais,
             ressalvas: raw.meta.ressalvas || [] },
