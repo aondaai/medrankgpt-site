@@ -92,18 +92,18 @@ loadData().then((N) => {
     let payload;
     try {
       payload = buildBridgePayload(data);
-    } catch (e) {
-      set('form-msg', `Confira os dados: ${e.message}`);
+    } catch {
+      set('form-msg', 'Esse e-mail parece incompleto — confere pra gente?');
       return;
     }
     set('form-msg', 'Enviando…');
     const res = await submitLead(payload);
     if (res.ok) {
-      set('form-msg', 'Recebido! Seu diagnóstico chega em breve. ✅ Relatório liberado abaixo.');
+      set('form-msg', 'Pronto! Seu diagnóstico está a caminho. O relatório completo está liberado aqui embaixo ⬇');
       if (pdfWrap) pdfWrap.hidden = false;
       form.reset();
     } else {
-      set('form-msg', 'Não consegui enviar agora — tente de novo em instantes.');
+      set('form-msg', 'Algo falhou no envio. Tenta de novo em instantes?');
     }
   });
 }).catch((e) => { document.body.insertAdjacentHTML('afterbegin',
