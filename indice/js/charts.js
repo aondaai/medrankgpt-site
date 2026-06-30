@@ -44,3 +44,32 @@ export function donutSVG(segments, { size = 220, thickness = 38 } = {}) {
   }).join('\n');
   return `<svg viewBox="0 0 ${size} ${size}" role="img" xmlns="http://www.w3.org/2000/svg">${arcs}</svg>`;
 }
+
+// Barras com formatador de valor custom (p/ %, ×, casas decimais). Mesma estética do barChartSVG.
+export function groupedBarSVG(items, { width = 520, barH = 26, gap = 14, fmt = pct } = {}) {
+  const max = Math.max(...items.map((i) => i.value), 0.0001);
+  const labelW = 180, trackW = width - labelW - 70;
+  const rows = items.map((it, i) => {
+    const y = i * (barH + gap);
+    const w = Math.max(2, (it.value / max) * trackW);
+    const fill = it.highlight ? 'var(--color-accent-coral)' : 'var(--viz-1)';
+    return `<text x="0" y="${y + barH * 0.7}" font-family="var(--font-sans)" font-size="14"
+        fill="var(--color-text)">${esc(it.label)}</text>
+    <rect x="${labelW}" y="${y}" width="${w}" height="${barH}" rx="6" fill="${fill}"/>
+    <text x="${labelW + w + 8}" y="${y + barH * 0.7}" font-family="var(--font-mono)" font-size="13"
+        fill="var(--color-text-muted)">${esc(fmt(it.value, it))}</text>`;
+  }).join('\n');
+  const h = items.length * (barH + gap);
+  return `<svg viewBox="0 0 ${width} ${h}" role="img" xmlns="http://www.w3.org/2000/svg">${rows}</svg>`;
+}
+
+// Tabela de dados semântica. headers: string[]; rows: (string|number)[][]; highlightCol opcional.
+export function tableHTML(headers, rows, { caption = '' } = {}) {
+  const head = `<tr>${headers.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr>`;
+  const body = rows.map((r) =>
+    `<tr>${r.map((c, i) => i === 0
+      ? `<th scope="row">${esc(c)}</th>`
+      : `<td>${esc(c)}</td>`).join('')}</tr>`).join('\n');
+  const cap = caption ? `<caption>${esc(caption)}</caption>` : '';
+  return `<table class="data-table">${cap}<thead>${head}</thead><tbody>${body}</tbody></table>`;
+}
