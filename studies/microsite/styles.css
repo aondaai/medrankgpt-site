@@ -71,3 +71,19 @@ footer ul { color: var(--color-text-subtle); font-size: var(--fs-body-sm); }
   .tela { padding: var(--space-3xl) var(--space-md); }
   .virada-grid { grid-template-columns: 1fr; }
 }
+
+/* garante que o atributo hidden esconda mesmo com display custom */
+[hidden] { display: none !important; }
+
+/* PDF: a página vira um relatório limpo de papel */
+@media print {
+  body { background: #fff; color: #000; }
+  .tela { min-height: auto; page-break-inside: avoid; padding: 24px 0; }
+  .cta { background: #fff; color: #000; }
+  .cta h2, .cta p { color: #000; }
+  .scroll-cue, .lead-form, .pdf, .selector select { display: none !important; }
+  .hero h1 { font-size: 32pt; }
+  .tela h2 { font-size: 20pt; }
+  .chart svg, .hero-chart svg { max-width: 360px; }
+  a { color: #000; text-decoration: none; }
+}

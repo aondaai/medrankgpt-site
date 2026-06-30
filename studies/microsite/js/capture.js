@@ -1,21 +1,30 @@
-export function buildPayload(form, origem) {
+export function buildBridgePayload(form) {
   const nome = (form.nome || '').trim();
   const email = (form.email || '').trim().toLowerCase();
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw new Error('email inválido');
+  const especialidade = (form.especialidade || '').trim();
+  const cidade = (form.cidade || '').trim();
   return {
-    nome, email, origem,
-    especialidade: (form.especialidade || '').trim(),
-    cidade: (form.cidade || '').trim(),
-    capturado_em: new Date().toISOString(),
+    nome,
+    email,
+    telefone: (form.telefone || '').trim(),
+    perfil: 'Índice MedRank 2026',
+    especialidade: cidade ? `${especialidade} — ${cidade}` : especialidade,
   };
 }
 
-// Endpoint do Google Sheet — definido na Frente 3. Vazio = modo log (não envia).
-export const LEAD_ENDPOINT = '';
+// Bridge de leads da mainpage (posta no Slack #medrankgpt). Segredo fica no bridge.
+export const LEAD_ENDPOINT = 'https://mainline-finance.onrender.com/api/medrank-lead';
 
 export async function submitLead(payload, endpoint = LEAD_ENDPOINT) {
-  if (!endpoint) { console.info('[lead]', payload); return { ok: true, logged: true }; }
-  const r = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload) });
-  return { ok: r.ok };
+  try {
+    const r = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    return { ok: r.ok };
+  } catch {
+    return { ok: false };
+  }
 }

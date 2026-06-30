@@ -117,11 +117,12 @@
       <input name="nome" placeholder="Seu nome" autocomplete="name" required>
       <input name="especialidade" placeholder="Especialidade" required>
       <input name="cidade" placeholder="Cidade" required>
+      <input name="telefone" placeholder="WhatsApp (opcional)" autocomplete="tel" inputmode="tel">
       <input name="email" type="email" placeholder="E-mail" autocomplete="email" required>
       <button type="submit">Quero meu diagnóstico</button>
       <p class="form-msg" data-fill="form-msg" aria-live="polite"></p>
     </form>
-    <p class="pdf"><a id="pdf-link" href="#cta">Ou baixe o relatório completo em PDF →</a></p>
+    <p class="pdf" id="pdf-wrap" hidden><a id="pdf-link" href="./indice-medrank-2026.pdf" download>Baixe o relatório completo em PDF →</a></p>
     <footer>
       <h3>Metodologia</h3>
       <ul data-fill="ressalvas"></ul>
