@@ -1,5 +1,5 @@
 /* studies/microsite/styles.css */
-@import url("../../design-system/tokens.css");
+@import url("./tokens.css");
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
