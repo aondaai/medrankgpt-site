@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MedRank Study Aggregates",
+  "type": "object",
+  "required": ["schema_version", "meta", "demanda", "oferta"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "meta": {
+      "type": "object",
+      "required": ["gerado_em", "pipeline_version"],
+      "additionalProperties": false,
+      "properties": {
+        "gerado_em": {"type": "string"},
+        "pipeline_version": {"type": "string"},
+        "idioma": {"type": "string"}
+      }
+    },
+    "demanda": {
+      "type": "object",
+      "required": ["total_respostas", "pct_com_medico_nominal", "pct_marketplace",
+                   "pct_nenhum", "cfm_risco_pct", "divergencia_motores_pct",
+                   "por_especialidade", "top_medicos", "top_marketplaces"],
+      "additionalProperties": false,
+      "properties": {
+        "total_respostas": {"type": "integer", "minimum": 0},
+        "pct_com_medico_nominal": {"type": "number"},
+        "pct_marketplace": {"type": "number"},
+        "pct_nenhum": {"type": "number"},
+        "cfm_risco_pct": {"type": "number"},
+        "divergencia_motores_pct": {"type": "number"},
+        "por_especialidade": {"type": "object"},
+        "top_medicos": {"type": "array", "items": {"type": "array"}},
+        "top_marketplaces": {"type": "array", "items": {"type": "array"}}
+      }
+    },
+    "oferta": {
+      "type": "object",
+      "required": ["por_especialidade"],
+      "additionalProperties": false,
+      "properties": {
+        "por_especialidade": {"type": "object"}
+      }
+    }
+  }
+}

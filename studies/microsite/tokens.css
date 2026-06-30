@@ -1,0 +1,121 @@
+/* MedRankGPT — Design Tokens ("Crescimento": vibrant, emerald-led, product-led)
+   Three layers: primitive -> semantic -> component.
+   Source of truth: DESIGN.md. Load Satoshi (Fontshare) + Geist Mono (Google). */
+
+:root {
+  /* ---------- PRIMITIVE: color ---------- */
+  --white:#FFFFFF;
+  --mint-50:#F1FAEF; --green-tint:#F7FAF6;
+  --sand-100:#EFF1EE; --line-100:#E4EAE4; --line-200:#D4DCD4;
+  --ink-900:#0C1410; --ink-700:#1C2620; --ink-500:#5B6660; --ink-400:#8A938C;
+  --emerald-900:#063D2C; --emerald-700:#075E45; --emerald-600:#0A8F5C; --emerald-500:#0BA56A; --emerald-100:#E6F7EF;
+  --indigo-700:#1E3A8A; --indigo-500:#2D6BFF; --indigo-100:#E7ECFB;
+  --lime-500:#9AE600; --lime-100:#EAFBC2;
+  --coral-500:#FF6B4A; --amber-500:#FF9E2C;
+  --raw-error:#E23D2E;
+
+  /* ---------- PRIMITIVE: type ---------- */
+  --font-display:'Satoshi', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-sans:'Satoshi', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --fs-display-xl:60px; --fs-display-lg:48px; --fs-display-md:36px;
+  --fs-h1:30px; --fs-h2:24px; --fs-h3:20px;
+  --fs-body-lg:18px; --fs-body:16px; --fs-body-sm:14px; --fs-caption:13px;
+  --fs-mono-sm:12px; --fs-overline:11px;
+  --lh-tight:1.0; --lh-snug:1.3; --lh-body:1.6;
+  --tracking-display:-.025em; --tracking-overline:.1em;
+  --w-regular:400; --w-medium:500; --w-bold:700; --w-black:900;
+
+  /* ---------- PRIMITIVE: space / radius / motion ---------- */
+  --space-2xs:2px; --space-xs:4px; --space-sm:8px; --space-md:16px;
+  --space-lg:24px; --space-xl:32px; --space-2xl:48px; --space-3xl:64px; --space-4xl:96px;
+  --radius-sm:8px; --radius-md:11px; --radius-lg:14px; --radius-xl:18px; --radius-2xl:24px; --radius-pill:999px;
+  --maxw:1180px;
+  --ease-standard:cubic-bezier(.2,.8,.2,1);
+  --ease-exit:cubic-bezier(.4,0,1,1);
+  --dur-micro:90ms; --dur-short:180ms; --dur-medium:260ms; --dur-long:420ms;
+
+  /* ---------- SEMANTIC ---------- */
+  --color-bg:var(--white);
+  --color-bg-subtle:var(--mint-50);
+  --color-surface:var(--white);
+  --color-surface-2:var(--green-tint);
+  --color-border:var(--line-100);
+  --color-border-strong:var(--line-200);
+  --color-text:var(--ink-900);
+  --color-text-muted:var(--ink-500);
+  --color-text-subtle:var(--ink-400);
+
+  --color-primary:var(--emerald-500);
+  --color-primary-hover:var(--emerald-600);
+  --color-primary-deep:var(--emerald-700);     /* emerald TEXT on light */
+  --color-primary-soft:var(--emerald-100);
+  --color-on-primary:#FFFFFF;
+
+  --color-ink-btn:var(--ink-900);              /* dark "Ryze" CTA */
+  --color-on-ink:#FFFFFF;
+
+  --color-secondary:var(--indigo-700);
+  --color-secondary-soft:var(--indigo-100);
+
+  --color-accent-lime:var(--lime-500);         /* highlight / underline fill */
+  --color-accent-coral:var(--coral-500);
+  --color-accent-amber:var(--amber-500);
+
+  /* vibrant data-viz ramp */
+  --viz-1:var(--emerald-500); --viz-2:var(--indigo-500); --viz-3:var(--lime-500);
+  --viz-4:var(--coral-500); --viz-5:var(--amber-500);
+
+  --color-success:var(--emerald-500);
+  --color-warning:var(--amber-500);
+  --color-error:var(--raw-error);
+  --color-info:var(--indigo-500);
+
+  --shadow-e1:0 1px 3px rgba(12,20,16,.06);
+  --shadow-e2:0 6px 18px rgba(12,20,16,.07), 0 2px 6px rgba(12,20,16,.05);
+  --shadow-e3:0 22px 50px rgba(12,20,16,.12);
+  --shadow-primary:0 12px 28px rgba(11,165,106,.22);
+
+  /* ---------- COMPONENT ---------- */
+  --btn-radius:var(--radius-md);
+  --btn-pad-y:12px; --btn-pad-x:20px;
+  --card-radius:var(--radius-xl);
+  --card-pad:24px;
+  --input-radius:var(--radius-md);
+  --focus-ring:0 0 0 3px rgba(11,165,106,.25);
+  --hl-fill:linear-gradient(180deg, transparent 60%, var(--lime-500) 60%);
+}
+
+[data-theme="dark"] {
+  --color-bg:#07120D;
+  --color-bg-subtle:#0A1711;
+  --color-surface:#0E1A14;
+  --color-surface-2:#12211A;
+  --color-border:rgba(236,243,238,.12);
+  --color-border-strong:rgba(236,243,238,.20);
+  --color-text:#ECF3EE;
+  --color-text-muted:#9FB0A6;
+  --color-text-subtle:#7C8C82;
+
+  --color-primary:#2BD68C;
+  --color-primary-hover:#42E29C;
+  --color-primary-deep:#8FF0C4;
+  --color-primary-soft:rgba(43,214,140,.14);
+  --color-on-primary:#06231A;
+
+  --color-ink-btn:#ECF3EE;
+  --color-on-ink:#07120D;
+
+  --color-secondary:#6E8BFF;
+  --color-secondary-soft:rgba(110,139,255,.16);
+
+  --shadow-e1:0 1px 3px rgba(0,0,0,.45);
+  --shadow-e2:0 8px 22px rgba(0,0,0,.5);
+  --shadow-e3:0 26px 56px rgba(0,0,0,.6);
+  --shadow-primary:0 12px 28px rgba(43,214,140,.22);
+  --focus-ring:0 0 0 3px rgba(43,214,140,.32);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration:.001ms !important; animation-duration:.001ms !important; }
+}

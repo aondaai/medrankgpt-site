@@ -49,15 +49,20 @@ class LLMClient(Protocol):
     def ask(self, prompt: str) -> str: ...
 
 class OpenAICompatibleClient:
-    """Works for OpenAI (chatgpt) and Perplexity — same chat-completions shape."""
+    """Works for OpenAI (chatgpt) and Perplexity — same chat-completions shape.
+    `extra_body` is merged into the request (e.g. {"web_search_options": {}} to enable
+    browsing with gpt-4o-search-preview)."""
     def __init__(self, name: str, api_key: str, model: str,
-                 base_url: str = "https://api.openai.com/v1", timeout: float = 60.0):
+                 base_url: str = "https://api.openai.com/v1", timeout: float = 60.0,
+                 extra_body: dict | None = None):
         self.name = name; self.model = model; self.base_url = base_url.rstrip("/")
+        self.extra_body = extra_body or {}
         self._client = httpx.Client(timeout=timeout,
                                     headers={"Authorization": f"Bearer {api_key}"})
     def ask(self, prompt: str) -> str:
-        r = self._client.post(f"{self.base_url}/chat/completions",
-            json={"model": self.model, "messages": [{"role": "user", "content": prompt}]})
+        body = {"model": self.model, "messages": [{"role": "user", "content": prompt}],
+                **self.extra_body}
+        r = self._client.post(f"{self.base_url}/chat/completions", json=body)
         r.raise_for_status()
         return r.json()["choices"][0]["message"]["content"]
 
