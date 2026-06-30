@@ -1,0 +1,13 @@
+@import url("../tokens.css");
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+.report { max-width: 760px; margin: 0 auto; padding: var(--space-3xl) var(--space-xl); }
