@@ -1,0 +1,338 @@
+{
+  "fonte": "derivado de aggregates.json (sem nova coleta)",
+  "gerado_de": "2026-06-28",
+  "ressalva_score_dor": "score_dor = 0.6*(1-visivel_ia) + 0.4*marketplace_pos1; composição editorial, não métrica do engine.",
+  "regional": [
+    {
+      "cidade": "São Paulo",
+      "marketplace_pos1_google": 0.2667,
+      "cita_medico_chatgpt": 0.925
+    },
+    {
+      "cidade": "Brasília",
+      "marketplace_pos1_google": 0.3333,
+      "cita_medico_chatgpt": 0.8625
+    },
+    {
+      "cidade": "Curitiba",
+      "marketplace_pos1_google": 0.3833,
+      "cita_medico_chatgpt": 0.9625
+    },
+    {
+      "cidade": "Recife",
+      "marketplace_pos1_google": 0.3833,
+      "cita_medico_chatgpt": 0.9375
+    },
+    {
+      "cidade": "Salvador",
+      "marketplace_pos1_google": 0.4,
+      "cita_medico_chatgpt": 0.95
+    },
+    {
+      "cidade": "Porto Alegre",
+      "marketplace_pos1_google": 0.4333,
+      "cita_medico_chatgpt": 0.925
+    },
+    {
+      "cidade": "Rio de Janeiro",
+      "marketplace_pos1_google": 0.4667,
+      "cita_medico_chatgpt": 0.9125
+    },
+    {
+      "cidade": "Belo Horizonte",
+      "marketplace_pos1_google": 0.4667,
+      "cita_medico_chatgpt": 0.925
+    },
+    {
+      "cidade": "Fortaleza",
+      "marketplace_pos1_google": 0.4833,
+      "cita_medico_chatgpt": 0.95
+    }
+  ],
+  "oportunidade": [
+    {
+      "especialidade": "Psiquiatria",
+      "visivel_ia": 0.0815,
+      "marketplace_pos1_google": 0.6667,
+      "n_medicos": 135,
+      "score_dor": 0.8178
+    },
+    {
+      "especialidade": "Nutrologia",
+      "visivel_ia": 0.136,
+      "marketplace_pos1_google": 0.4815,
+      "n_medicos": 125,
+      "score_dor": 0.711
+    },
+    {
+      "especialidade": "Ortopedia e Traumatologia",
+      "visivel_ia": 0.1145,
+      "marketplace_pos1_google": 0.4444,
+      "n_medicos": 131,
+      "score_dor": 0.7091
+    },
+    {
+      "especialidade": "Endocrinologia",
+      "visivel_ia": 0.1493,
+      "marketplace_pos1_google": 0.4815,
+      "n_medicos": 134,
+      "score_dor": 0.703
+    },
+    {
+      "especialidade": "Otorrinolaringologia",
+      "visivel_ia": 0.1308,
+      "marketplace_pos1_google": 0.4444,
+      "n_medicos": 130,
+      "score_dor": 0.6993
+    },
+    {
+      "especialidade": "Dermatologia",
+      "visivel_ia": 0.0519,
+      "marketplace_pos1_google": 0.2963,
+      "n_medicos": 135,
+      "score_dor": 0.6874
+    },
+    {
+      "especialidade": "Ginecologia e Obstetrícia",
+      "visivel_ia": 0.1259,
+      "marketplace_pos1_google": 0.4074,
+      "n_medicos": 135,
+      "score_dor": 0.6874
+    },
+    {
+      "especialidade": "Pediatria",
+      "visivel_ia": 0.1353,
+      "marketplace_pos1_google": 0.4074,
+      "n_medicos": 133,
+      "score_dor": 0.6818
+    },
+    {
+      "especialidade": "Geriatria",
+      "visivel_ia": 0.1765,
+      "marketplace_pos1_google": 0.4444,
+      "n_medicos": 119,
+      "score_dor": 0.6719
+    },
+    {
+      "especialidade": "Cardiologia",
+      "visivel_ia": 0.1692,
+      "marketplace_pos1_google": 0.4074,
+      "n_medicos": 130,
+      "score_dor": 0.6614
+    },
+    {
+      "especialidade": "Oftalmologia",
+      "visivel_ia": 0.0741,
+      "marketplace_pos1_google": 0.2593,
+      "n_medicos": 135,
+      "score_dor": 0.6593
+    },
+    {
+      "especialidade": "Coloproctologia",
+      "visivel_ia": 0.2609,
+      "marketplace_pos1_google": 0.5185,
+      "n_medicos": 115,
+      "score_dor": 0.6509
+    },
+    {
+      "especialidade": "Urologia",
+      "visivel_ia": 0.1852,
+      "marketplace_pos1_google": 0.3704,
+      "n_medicos": 135,
+      "score_dor": 0.637
+    },
+    {
+      "especialidade": "Cirurgia Plástica",
+      "visivel_ia": 0.097,
+      "marketplace_pos1_google": 0.2222,
+      "n_medicos": 134,
+      "score_dor": 0.6307
+    },
+    {
+      "especialidade": "Neurologia",
+      "visivel_ia": 0.1756,
+      "marketplace_pos1_google": 0.3333,
+      "n_medicos": 131,
+      "score_dor": 0.628
+    },
+    {
+      "especialidade": "Mastologia",
+      "visivel_ia": 0.2273,
+      "marketplace_pos1_google": 0.4074,
+      "n_medicos": 110,
+      "score_dor": 0.6266
+    },
+    {
+      "especialidade": "Cirurgia Vascular",
+      "visivel_ia": 0.1811,
+      "marketplace_pos1_google": 0.3333,
+      "n_medicos": 127,
+      "score_dor": 0.6247
+    },
+    {
+      "especialidade": "Gastroenterologia",
+      "visivel_ia": 0.1318,
+      "marketplace_pos1_google": 0.2593,
+      "n_medicos": 129,
+      "score_dor": 0.6246
+    },
+    {
+      "especialidade": "Pneumologia",
+      "visivel_ia": 0.2131,
+      "marketplace_pos1_google": 0.3704,
+      "n_medicos": 122,
+      "score_dor": 0.6203
+    },
+    {
+      "especialidade": "Reumatologia",
+      "visivel_ia": 0.3443,
+      "marketplace_pos1_google": 0.4815,
+      "n_medicos": 122,
+      "score_dor": 0.586
+    }
+  ],
+  "melhor_vs_procedimento": {
+    "melhor": {
+      "n": 180,
+      "pos1_por_tipo": {
+        "marketplace": 0.8944,
+        "outro": 0.0556,
+        "social": 0.0278,
+        "clinica": 0.0056,
+        "hospital": 0.0167
+      },
+      "share_medio_por_tipo": {
+        "marketplace": 0.1347,
+        "social": 0.1084,
+        "outro": 0.5539,
+        "hospital": 0.08,
+        "clinica": 0.1154,
+        "institucional": 0.0006,
+        "conteudo": 0.007
+      },
+      "top_dominios_pos1": [
+        [
+          "doctoralia.com.br",
+          160
+        ],
+        [
+          "rededorsaoluiz.com.br",
+          6
+        ],
+        [
+          "instagram.com",
+          5
+        ],
+        [
+          "alessandradrummond.com.br",
+          1
+        ],
+        [
+          "clinicabelfort.com.br",
+          1
+        ],
+        [
+          "agendarconsulta.com",
+          1
+        ]
+      ]
+    },
+    "procedimento": {
+      "n": 360,
+      "pos1_por_tipo": {
+        "outro": 0.3639,
+        "social": 0.2222,
+        "clinica": 0.1111,
+        "hospital": 0.1056,
+        "marketplace": 0.1556,
+        "institucional": 0.0417
+      },
+      "share_medio_por_tipo": {
+        "outro": 0.5275,
+        "social": 0.1382,
+        "clinica": 0.1249,
+        "marketplace": 0.087,
+        "hospital": 0.0831,
+        "institucional": 0.0387,
+        "conteudo": 0.0006
+      },
+      "top_dominios_pos1": [
+        [
+          "instagram.com",
+          76
+        ],
+        [
+          "doctoralia.com.br",
+          56
+        ],
+        [
+          "santacasa.org.br",
+          8
+        ],
+        [
+          "hospitalmoinhos.org.br",
+          6
+        ],
+        [
+          "drachristianavanni.com.br",
+          4
+        ],
+        [
+          "bp.org.br",
+          4
+        ]
+      ]
+    }
+  },
+  "aio_presente": {
+    "pct_sem_aio": 0.3522,
+    "sem_aio_melhor": 0.4222,
+    "entre_presentes": {
+      "n": 344,
+      "pct_cita_medico": 0.5552325581395349,
+      "pct_marketplace": 0.13372093023255813
+    }
+  },
+  "top_medicos_ia": [
+    [
+      "Dr. Gilberto Studart",
+      9
+    ],
+    [
+      "Dr Milton Rocha",
+      6
+    ],
+    [
+      "Dr. José Lourenço",
+      6
+    ],
+    [
+      "Dr. Nilo Peçanha",
+      5
+    ],
+    [
+      "Dr. Reyner Abrantes Stival",
+      4
+    ],
+    [
+      "Dra. Oona Daronch",
+      4
+    ],
+    [
+      "Dr. Thiago Belfort",
+      4
+    ],
+    [
+      "Dr. Luiz Eduardo Nercolini",
+      4
+    ],
+    [
+      "Dr. José Furtado",
+      4
+    ],
+    [
+      "Dr. Franzé Barros de Oliveira",
+      4
+    ]
+  ]
+}
