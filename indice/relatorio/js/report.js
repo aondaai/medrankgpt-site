@@ -3,6 +3,7 @@ import { barChartSVG, donutSVG, groupedBarSVG, tableHTML } from '../../js/charts
 import { especialidadesList } from '../../js/specialty.js';
 
 const pct = (v) => `${Math.round(v * 100 - 1e-9)}%`;
+const pctFine = (v) => `${(v * 100).toLocaleString('pt-BR', { maximumFractionDigits: 2 })}%`;
 const set = (key, html) => { for (const el of document.querySelectorAll(`[data-fill="${key}"]`)) el.innerHTML = html; };
 const chart = (key, svg) => { const el = document.querySelector(`[data-chart="${key}"]`); if (el) el.innerHTML = svg; };
 const kpisHTML = (pairs) => pairs.map(([b, l]) => `<li><b>${b}</b><span>${l}</span></li>`).join('');
@@ -43,7 +44,7 @@ loadData('../aggregates.json').then((N) => {
   // ---- 3. A IA JÁ NOMEIA E CONFIA ----
   set('cita-geral', pct(R.citaMedicoGeral));
   set('prompt-confianca', pct(R.promptChatgpt.confianca));
-  set('cfm-risco', '0,28%');
+  set('cfm-risco', pctFine(R.cfmRisco));
   chart('prompt-bars', groupedBarSVG([
     { label: '"em quem confiar"', value: R.promptChatgpt.confianca, highlight: true },
     { label: '"melhor especialista"', value: R.promptChatgpt.melhor },
@@ -121,7 +122,7 @@ loadData('../aggregates.json').then((N) => {
   // ---- 12. CONCLUSÕES ----
   set('conclusoes', [
     `A IA já recomenda médicos: o ChatGPT nomeia um médico em ${pct(R.citaMedicoGeral)} das respostas, e em ${pct(R.promptChatgpt.confianca)} quando a pergunta é de confiança.`,
-    `A IA é segura o bastante para isso: só 0,28% das respostas trazem afirmação com risco-CFM.`,
+    `A IA é segura o bastante para isso: só ${pctFine(R.cfmRisco)} das respostas trazem afirmação com risco-CFM.`,
     `A IA repete as fontes existentes: cita o Doctoralia como fonte em ${pct(N.chatgpt.doctoraliaFonte)} das vezes.`,
     `No Google, o marketplace fica no #1 em ${pct(N.serp.melhorMarketplacePos1)} das buscas por especialista — mas com só ${pct(R.shareMarketplaceMelhor)} do share da página.`,
     `O domínio do marketplace é regional: de ${pct(N.regional[0].marketplaceGoogle)} (${N.regional[0].cidade}) a ${pct(N.regional[N.regional.length - 1].marketplaceGoogle)} (${N.regional[N.regional.length - 1].cidade}).`,
