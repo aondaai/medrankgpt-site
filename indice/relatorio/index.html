@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Índice MedRank 2026 — Relatório completo</title>
+<meta name="description" content="Relatório completo do Índice MedRank 2026: o estado das buscas médicas com IA no Brasil. 2.567 médicos, 20 especialidades, 9 capitais, 3 superfícies de IA.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="report.css">
+</head>
+<body>
+<main class="report" id="report">
+
+  <!-- 1. SUMÁRIO EXECUTIVO -->
+  <header class="section">
+    <p class="overline">Índice MedRank 2026 · Relatório completo</p>
+    <h1>Quando o paciente pergunta à IA "quem é o melhor médico?", ela responde — mas quase nunca cita você.</h1>
+    <p class="lead">Analisamos <span data-fill="n-medicos">—</span> médicos reais em 3 superfícies de IA, 20 especialidades e 9 capitais. A IA já recomenda médicos todos os dias; o problema é que <span class="hl"><span data-fill="invisivel">—</span> deles são invisíveis para ela</span> — e os poucos visíveis vêm das mesmas fontes de sempre.</p>
+    <ul class="kpis" data-fill="kpis"></ul>
+    <div class="takeaway">5 conclusões em 30 segundos:
+      <ol class="conclusoes" data-fill="resumo-conclusoes"></ol>
+    </div>
+  </header>
+
+  <!-- 2. METODOLOGIA -->
+  <section class="section">
+    <h2>Como medimos</h2>
+    <p>Reproduzimos as buscas que um paciente real faz e cruzamos com médicos reais. Três tipos de pergunta ("melhor [especialista] em [cidade]", uma pergunta de confiança, e a busca por um procedimento), em três superfícies, contra um roster de <span data-fill="n-medicos-2">—</span> médicos listados no Doctoralia (os ~15 mais proeminentes por especialidade × capital).</p>
+    <ul class="kpis" data-fill="metodo-kpis"></ul>
+    <p><strong>Superfícies:</strong> ChatGPT via API <code>gpt-4o-search-preview</code> (navega a web); Google SERP via Serper; Google AI Overview via SerpApi. <strong>"Visível"</strong> = a IA nomeou aquele médico nas buscas da mesma especialidade/cidade.</p>
+    <p class="meta-list"><strong>Ressalvas honestas:</strong> IA via API é um proxy do produto de consumo; SERP e AIO refletem o momento da coleta (jun/2026); o risco-CFM é uma classificação heurística. Como o roster já é de médicos prominentes, a invisibilidade no universo total de médicos é ainda maior que a medida aqui.</p>
+  </section>
+
+  <!-- 3. A IA JÁ NOMEIA E CONFIA -->
+  <section class="section">
+    <h2>A IA já nomeia médicos — e confia o suficiente para isso</h2>
+    <p>O ChatGPT cita um médico específico em <strong><span data-fill="cita-geral">—</span></strong> das respostas. E ele não trava por receio: quando o paciente faz uma pergunta de <em>confiança</em> ("em quem confiar para…"), a IA nomeia um médico em <strong><span data-fill="prompt-confianca">—</span></strong> das vezes. Só <strong><span data-fill="cfm-risco">—</span></strong> das respostas trazem alguma afirmação com risco perante o CFM.</p>
+    <figure>
+      <figcaption>ChatGPT cita um médico, por tipo de pergunta</figcaption>
+      <div class="chart" data-chart="prompt-bars"></div>
+    </figure>
+    <div class="takeaway">A pergunta não é <em>se</em> a IA recomenda um médico — ela já recomenda. A pergunta é <strong>quem</strong> ela nomeia.</div>
+  </section>
+
+  <!-- 4. MAS LÊ AS MESMAS FONTES -->
+  <section class="section">
+    <h2>Mas ela lê as mesmas fontes de sempre</h2>
+    <p>A IA não inventa nomes — ela lê a web e repete o que encontra. Nas respostas em que cita a origem, o <strong>Doctoralia aparece como fonte em <span data-fill="doctoralia-fonte">—</span></strong> das vezes. Quem domina as fontes que a IA lê, domina a resposta que ela dá.</p>
+    <div class="takeaway">Aparecer na IA não é sobre "enganar o algoritmo": é estar, de forma consistente, nas fontes que ela já consulta.</div>
+  </section>
+
+  <!-- 5. GOOGLE: MARKETPLACE -->
+  <section class="section">
+    <h2>No Google, o paciente cai no marketplace</h2>
+    <p>Na busca "melhor [especialista]", o <strong>Doctoralia ocupa o #1 em <span data-fill="serp-melhor">—</span></strong> das vezes. Mas há uma nuance que muda a estratégia: apesar de dominar o topo, o marketplace responde por só <strong><span data-fill="serp-share">—</span> do share médio</strong> da primeira página. Os médicos <em>estão</em> lá — só que pulverizados, cada um com uma fatia mínima, enquanto o marketplace ocupa a posição que importa.</p>
+    <figure>
+      <figcaption>Domínio do #1 nas buscas "melhor [especialista]"</figcaption>
+      <div class="chart" data-chart="serp-donut"></div>
+    </figure>
+    <h3>E ele esconde o médico de forma desigual pelo país</h3>
+    <p>Em <strong data-fill="regional-melhor-cidade">—</strong> o marketplace fica no #1 em só <span data-fill="regional-melhor-pct">—</span> das buscas; em <strong data-fill="regional-pior-cidade">—</strong> chega a <span data-fill="regional-pior-pct">—</span>. O Google é um jogo regional.</p>
+    <figure>
+      <figcaption>Marketplace no #1, por capital</figcaption>
+      <div class="chart" data-chart="regional-bars"></div>
+    </figure>
+  </section>
+
+  <!-- 6. A VIRADA DO PROCEDIMENTO -->
+  <section class="section">
+    <h2>Mas quando o paciente busca um procedimento, o jogo vira</h2>
+    <p>Na busca específica ("rinoplastia", "catarata"), o marketplace despenca para <strong><span data-fill="proc-mkt">—</span></strong> dos #1 — e quem lidera passa a ser o <strong>Instagram</strong> (<span data-fill="proc-ig">—</span> no #1, à frente do próprio Doctoralia com <span data-fill="proc-doc">—</span>). Redes sociais respondem por <span data-fill="proc-social">—</span> dos #1, e sites de hospitais e clínicas aparecem com força.</p>
+    <figure>
+      <figcaption>"melhor [especialista]" vs "[procedimento]" — quem ocupa o #1</figcaption>
+      <div class="virada-grid">
+        <figure><figcaption>"melhor [especialista]"</figcaption><div class="chart" data-chart="virada-melhor"></div></figure>
+        <figure><figcaption>"[procedimento]"</figcaption><div class="chart" data-chart="virada-proc"></div></figure>
+      </div>
+      <ul class="legenda">
+        <li><span class="dot" style="background:var(--viz-4)"></span>marketplace</li>
+        <li><span class="dot" style="background:var(--viz-2)"></span>Instagram</li>
+        <li><span class="dot" style="background:var(--viz-1)"></span>resto</li>
+      </ul>
+    </figure>
+    <div class="takeaway">Na busca específica, as <strong>propriedades próprias do médico</strong> — site, Instagram, página da clínica — competem de verdade pelo #1. É o terreno onde dá para vencer.</div>
+  </section>
+
+  <!-- 7. GOOGLE ESCONDE A PRÓPRIA IA -->
+  <section class="section">
+    <h2>O Google esconde a própria IA justamente em saúde</h2>
+    <p>O Google não exibe o AI Overview em <strong><span data-fill="aio-sem">—</span></strong> das buscas — e some ainda mais na busca por especialista (<span data-fill="aio-sem-melhor">—</span> sem IA, contra <span data-fill="aio-sem-proc">—</span> em procedimento). Mas o achado que importa é o outro lado: <strong>quando o AIO aparece, ele cita um médico em <span data-fill="aio-cita">—</span></strong> das vezes e o marketplace em só <span data-fill="aio-mkt">—</span>. O AI Overview é a superfície <em>mais</em> amigável ao médico — e é a que o Google mais esconde em saúde.</p>
+    <div class="takeaway">Onde a IA do Google aparece, o médico tem a melhor chance de ser nomeado. A oportunidade está em existir nas fontes para quando ela aparecer.</div>
+  </section>
+
+  <!-- 8. A CAMADA DA INVISIBILIDADE -->
+  <section class="section section--tint">
+    <h2><span data-fill="invisivel-2">—</span> dos médicos são invisíveis para a IA</h2>
+    <p>De <span data-fill="n-medicos-3">—</span> médicos reais, só uma fração chega a ser nomeada. E a dispersão entre especialidades é enorme: <strong data-fill="esp-top-nome">—</strong> é a mais visível (<span data-fill="esp-top-pct">—</span>), enquanto <strong data-fill="esp-bot-nome">—</strong> é a mais invisível (<span data-fill="esp-bot-pct">—</span>) — uma diferença de várias vezes.</p>
+    <figure>
+      <figcaption>% de médicos visíveis na IA, por especialidade</figcaption>
+      <div class="chart" data-chart="esp-bars"></div>
+    </figure>
+    <h3>E a visibilidade é concentrada em poucos nomes</h3>
+    <p>Entre os que aparecem, poucos absorvem a maior parte das citações. O nome mais citado, <strong data-fill="top-medico-nome">—</strong>, foi nomeado <span data-fill="top-medico-n">—</span> — sinal de que a IA, hoje, repete um conjunto pequeno de médicos.</p>
+    <figure>
+      <figcaption>Médicos mais nomeados pela IA (nº de citações)</figcaption>
+      <div class="chart" data-chart="top-medicos-bars"></div>
+    </figure>
+    <div class="takeaway">A visibilidade na IA é escassa e concentrada. Isso é uma má notícia para quem está fora — e uma vantagem clara de quem chega primeiro.</div>
+  </section>
+
+  <!-- 9. ROLETA -->
+  <section class="section">
+    <h2>A IA é uma roleta</h2>
+    <p>Faça a mesma pergunta duas vezes e, em <strong><span data-fill="instab">—</span></strong> das vezes, o médico recomendado muda. Para o médico, ser a resposta <em>consistente</em> — a que aparece repetida, pergunta após pergunta — é um diferencial defensável.</p>
+  </section>
+
+  <!-- 10. MAPA DE OPORTUNIDADE -->
+  <section class="section">
+    <h2>Onde a vaga está mais aberta</h2>
+    <p>Cruzando as duas pontas — invisibilidade na IA e domínio do marketplace no Google — dá para ver onde o médico está mais espremido (e onde posicionar-se vale mais). <strong data-fill="oport-top">—</strong> lidera.</p>
+    <figure>
+      <figcaption>Índice de oportunidade, por especialidade</figcaption>
+      <div class="chart" data-chart="oport-bars"></div>
+    </figure>
+    <p class="meta-list">Índice de oportunidade = 60% invisibilidade na IA + 40% marketplace no #1 do Google. Composição editorial.</p>
+  </section>
+
+  <!-- 11. PLAYBOOK -->
+  <section class="section">
+    <h2>Dá para virar o jogo: o playbook AEO</h2>
+    <p>A IA não inventa nomes — ela lê fontes. Quem aparece de forma consistente nessas fontes vira "o nome que a IA dá". É disso que trata o <strong>AEO (Answer Engine Optimization)</strong>: posicionar o médico como a resposta que ChatGPT, Gemini e o Google recomendam, dentro das regras do CFM. Na prática:</p>
+    <ul class="checklist">
+      <li>Perfis completos e consistentes nas fontes que a IA lê (Doctoralia e equivalentes), com mesma grafia de nome, especialidade e cidade.</li>
+      <li>Site próprio com sinais técnicos que a IA entende (dados estruturados, página por especialidade e por procedimento).</li>
+      <li>Conteúdo que responde às perguntas reais do paciente — inclusive por procedimento, onde as propriedades próprias competem pelo #1.</li>
+      <li>Menções e presença em fontes de terceiros confiáveis, que reforçam o nome.</li>
+      <li>Consistência ao longo do tempo, para virar a resposta repetida — e não a sorte da roleta.</li>
+      <li>Tudo dentro da Resolução CFM de publicidade médica.</li>
+    </ul>
+  </section>
+
+  <!-- 12. CONCLUSÕES -->
+  <section class="section section--tint">
+    <h2>Conclusões</h2>
+    <ol class="conclusoes" data-fill="conclusoes"></ol>
+  </section>
+
+  <!-- 13. APÊNDICE DE DADOS -->
+  <section class="section">
+    <h2>Apêndice: os números por especialidade e por capital</h2>
+    <div data-fill="tabela-esp"></div>
+    <div data-fill="tabela-cidade"></div>
+  </section>
+
+  <!-- 14. CTA + RODAPÉ -->
+  <section class="section cta-block no-print">
+    <h2>Descubra se VOCÊ aparece na IA</h2>
+    <p>Diagnóstico gratuito da sua visibilidade nos motores de IA — ChatGPT, Gemini e o Google.</p>
+    <p><a href="../#cta" style="color:var(--color-on-ink);text-decoration:underline">Quero meu diagnóstico →</a></p>
+  </section>
+
+  <footer>
+    <h3>Metodologia e ressalvas</h3>
+    <ul class="meta-list" data-fill="ressalvas"></ul>
+    <p class="src">Fonte: Índice MedRank 2026 · dados em <code>aggregates.json</code> · coleta jun/2026.</p>
+  </footer>
+
+</main>
+<script type="module" src="js/report.js"></script>
+</body>
+</html>
